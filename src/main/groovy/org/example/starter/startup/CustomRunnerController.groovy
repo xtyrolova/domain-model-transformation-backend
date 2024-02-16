@@ -24,6 +24,7 @@ class CustomRunnerController extends RunnerController {
             FlushSessionsRunner,
             MailRunner,
             PostalCodeImporter,
+            NetRunner,
 //TODO:     CUSTOM IMPORT RUNNER
             // CUSTOM IMPORT RUNNERS
 

@@ -1,0 +1,2344 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no" ?>
+<Package name="Dokument" guid="{1F334B43-C45B-4d5e-A50B-7A8A5A4CA04A}">
+	<Table name="t_package">
+		<Row>
+			<Column name="Package_ID" value="957"/>
+			<Column name="Name" value="Dokument"/>
+			<Column name="Parent_ID" value="69"/>
+			<Column name="CreatedDate" value="2023-05-15 10:43:49"/>
+			<Column name="ModifiedDate" value="2023-05-15 10:43:49"/>
+			<Column name="ea_guid" value="{1F334B43-C45B-4d5e-A50B-7A8A5A4CA04A}"/>
+			<Column name="IsControlled" value="0"/>
+			<Column name="Version" value="1.0"/>
+			<Column name="Protected" value="0"/>
+			<Column name="UseDTD" value="0"/>
+			<Column name="LogXML" value="0"/>
+			<Column name="TPos" value="2"/>
+			<Extension/>
+		</Row>
+	</Table>
+	<Table name="t_object">
+		<Row>
+			<Column name="Object_ID" value="18998"/>
+			<Column name="Object_Type" value="Package"/>
+			<Column name="Diagram_ID" value="0"/>
+			<Column name="Name" value="Dokument"/>
+			<Column name="Author" value="TS"/>
+			<Column name="Version" value="1.0"/>
+			<Column name="Package_ID" value="69"/>
+			<Column name="NType" value="0"/>
+			<Column name="Complexity" value="1"/>
+			<Column name="Effort" value="0"/>
+			<Column name="Backcolor" value="-1"/>
+			<Column name="BorderStyle" value="0"/>
+			<Column name="BorderWidth" value="-1"/>
+			<Column name="Fontcolor" value="-1"/>
+			<Column name="Bordercolor" value="-1"/>
+			<Column name="CreatedDate" value="2023-05-15 10:43:49"/>
+			<Column name="ModifiedDate" value="2023-05-15 10:43:49"/>
+			<Column name="Status" value="Proposed"/>
+			<Column name="Abstract" value="0"/>
+			<Column name="Tagged" value="0"/>
+			<Column name="PDATA1" value="957"/>
+			<Column name="GenType" value="Java"/>
+			<Column name="Phase" value="1.0"/>
+			<Column name="Scope" value="Public"/>
+			<Column name="Classifier" value="0"/>
+			<Column name="ea_guid" value="{1F334B43-C45B-4d5e-A50B-7A8A5A4CA04A}"/>
+			<Column name="ParentID" value="0"/>
+			<Column name="TPos" value="2"/>
+			<Column name="IsRoot" value="0"/>
+			<Column name="IsLeaf" value="0"/>
+			<Column name="IsSpec" value="0"/>
+			<Column name="IsActive" value="0"/>
+			<Extension PDATA1="{1F334B43-C45B-4d5e-A50B-7A8A5A4CA04A}"/>
+		</Row>
+		<Row>
+			<Column name="Object_ID" value="19002"/>
+			<Column name="Object_Type" value="Class"/>
+			<Column name="Diagram_ID" value="0"/>
+			<Column name="Name" value="Oblas&#x165; dokumentu"/>
+			<Column name="Alias" value="DocumentArea"/>
+			<Column name="Author" value="TS"/>
+			<Column name="Version" value="1.0"/>
+			<Column name="Note" value="Entita pre triedenie dokumentov do oblast&amp;#237; v r&amp;#225;mci pr&amp;#237;loh podania, resp. objektu v r&amp;#225;mci referen&#x10D;n&amp;#233;ho registra"/>
+			<Column name="Package_ID" value="957"/>
+			<Column name="NType" value="0"/>
+			<Column name="Complexity" value="1"/>
+			<Column name="Effort" value="0"/>
+			<Column name="Backcolor" value="-1"/>
+			<Column name="BorderStyle" value="0"/>
+			<Column name="BorderWidth" value="-1"/>
+			<Column name="Fontcolor" value="-1"/>
+			<Column name="Bordercolor" value="-1"/>
+			<Column name="CreatedDate" value="2023-05-15 23:53:09"/>
+			<Column name="ModifiedDate" value="2023-06-08 10:21:06"/>
+			<Column name="Status" value="Proposed"/>
+			<Column name="Abstract" value="0"/>
+			<Column name="Tagged" value="0"/>
+			<Column name="PDATA4" value="0"/>
+			<Column name="GenType" value="Java"/>
+			<Column name="Phase" value="1.0"/>
+			<Column name="Scope" value="Public"/>
+			<Column name="Classifier" value="0"/>
+			<Column name="ea_guid" value="{24F409E4-E72A-4a05-B7C6-A6DB98CCBE32}"/>
+			<Column name="ParentID" value="0"/>
+			<Column name="IsRoot" value="0"/>
+			<Column name="IsLeaf" value="0"/>
+			<Column name="IsSpec" value="0"/>
+			<Column name="IsActive" value="0"/>
+			<Extension Package_ID="{1F334B43-C45B-4d5e-A50B-7A8A5A4CA04A}"/>
+		</Row>
+		<Row>
+			<Column name="Object_ID" value="10334"/>
+			<Column name="Object_Type" value="Class"/>
+			<Column name="Diagram_ID" value="0"/>
+			<Column name="Name" value="Dokument"/>
+			<Column name="Alias" value="Document"/>
+			<Column name="Author" value="TS"/>
+			<Column name="Version" value="1.0"/>
+			<Column name="Package_ID" value="957"/>
+			<Column name="NType" value="0"/>
+			<Column name="Complexity" value="1"/>
+			<Column name="Effort" value="0"/>
+			<Column name="Backcolor" value="-1"/>
+			<Column name="BorderStyle" value="0"/>
+			<Column name="BorderWidth" value="-1"/>
+			<Column name="Fontcolor" value="-1"/>
+			<Column name="Bordercolor" value="-1"/>
+			<Column name="CreatedDate" value="2023-01-07 23:18:32"/>
+			<Column name="ModifiedDate" value="2023-05-15 10:45:01"/>
+			<Column name="Status" value="Proposed"/>
+			<Column name="Abstract" value="0"/>
+			<Column name="Tagged" value="0"/>
+			<Column name="PDATA4" value="0"/>
+			<Column name="GenType" value="Java"/>
+			<Column name="Phase" value="1.0"/>
+			<Column name="Scope" value="Public"/>
+			<Column name="Classifier" value="0"/>
+			<Column name="ea_guid" value="{7FA0D346-92B8-4423-BAE6-DA965C7B4975}"/>
+			<Column name="ParentID" value="0"/>
+			<Column name="IsRoot" value="0"/>
+			<Column name="IsLeaf" value="0"/>
+			<Column name="IsSpec" value="0"/>
+			<Column name="IsActive" value="0"/>
+			<Extension Package_ID="{1F334B43-C45B-4d5e-A50B-7A8A5A4CA04A}"/>
+		</Row>
+		<Row>
+			<Column name="Object_ID" value="19012"/>
+			<Column name="Object_Type" value="Enumeration"/>
+			<Column name="Diagram_ID" value="0"/>
+			<Column name="Name" value="Stav Podpisu"/>
+			<Column name="Alias" value="SignatureState"/>
+			<Column name="Author" value="p4km9y"/>
+			<Column name="Version" value="1.0"/>
+			<Column name="Package_ID" value="957"/>
+			<Column name="NType" value="0"/>
+			<Column name="Complexity" value="1"/>
+			<Column name="Effort" value="0"/>
+			<Column name="Backcolor" value="-1"/>
+			<Column name="BorderStyle" value="0"/>
+			<Column name="BorderWidth" value="-1"/>
+			<Column name="Fontcolor" value="-1"/>
+			<Column name="Bordercolor" value="-1"/>
+			<Column name="CreatedDate" value="2023-05-17 00:03:39"/>
+			<Column name="ModifiedDate" value="2023-05-17 00:08:45"/>
+			<Column name="Status" value="Proposed"/>
+			<Column name="Abstract" value="0"/>
+			<Column name="Tagged" value="0"/>
+			<Column name="PDATA4" value="0"/>
+			<Column name="GenType" value="Java"/>
+			<Column name="Phase" value="1.0"/>
+			<Column name="Scope" value="Public"/>
+			<Column name="Classifier" value="0"/>
+			<Column name="ea_guid" value="{BDC1A1C1-6D8C-4fc7-BF15-5474B782DB55}"/>
+			<Column name="ParentID" value="0"/>
+			<Column name="IsRoot" value="0"/>
+			<Column name="IsLeaf" value="0"/>
+			<Column name="IsSpec" value="0"/>
+			<Column name="IsActive" value="0"/>
+			<Extension Package_ID="{1F334B43-C45B-4d5e-A50B-7A8A5A4CA04A}"/>
+		</Row>
+		<Row>
+			<Column name="Object_ID" value="19011"/>
+			<Column name="Object_Type" value="Class"/>
+			<Column name="Diagram_ID" value="0"/>
+			<Column name="Name" value="Elektronický Podpis"/>
+			<Column name="Alias" value="ElectronicSignature"/>
+			<Column name="Author" value="p4km9y"/>
+			<Column name="Version" value="1.0"/>
+			<Column name="Package_ID" value="957"/>
+			<Column name="NType" value="0"/>
+			<Column name="Complexity" value="1"/>
+			<Column name="Effort" value="0"/>
+			<Column name="Backcolor" value="-1"/>
+			<Column name="BorderStyle" value="0"/>
+			<Column name="BorderWidth" value="-1"/>
+			<Column name="Fontcolor" value="-1"/>
+			<Column name="Bordercolor" value="-1"/>
+			<Column name="CreatedDate" value="2023-05-17 00:03:34"/>
+			<Column name="ModifiedDate" value="2023-05-17 00:08:29"/>
+			<Column name="Status" value="Proposed"/>
+			<Column name="Abstract" value="0"/>
+			<Column name="Tagged" value="0"/>
+			<Column name="PDATA4" value="0"/>
+			<Column name="GenType" value="Java"/>
+			<Column name="Phase" value="1.0"/>
+			<Column name="Scope" value="Public"/>
+			<Column name="Classifier" value="0"/>
+			<Column name="ea_guid" value="{D5C3ABB5-B431-4273-BBD1-640E066B6B33}"/>
+			<Column name="ParentID" value="0"/>
+			<Column name="IsRoot" value="0"/>
+			<Column name="IsLeaf" value="0"/>
+			<Column name="IsSpec" value="0"/>
+			<Column name="IsActive" value="0"/>
+			<Extension Package_ID="{1F334B43-C45B-4d5e-A50B-7A8A5A4CA04A}"/>
+		</Row>
+		<Row>
+			<Column name="Object_ID" value="10335"/>
+			<Column name="Object_Type" value="Enumeration"/>
+			<Column name="Diagram_ID" value="0"/>
+			<Column name="Name" value="Typ dokumentu"/>
+			<Column name="Alias" value="DocumentType"/>
+			<Column name="Author" value="TS"/>
+			<Column name="Version" value="1.0"/>
+			<Column name="Package_ID" value="957"/>
+			<Column name="NType" value="0"/>
+			<Column name="Complexity" value="1"/>
+			<Column name="Effort" value="0"/>
+			<Column name="Backcolor" value="-1"/>
+			<Column name="BorderStyle" value="0"/>
+			<Column name="BorderWidth" value="-1"/>
+			<Column name="Fontcolor" value="-1"/>
+			<Column name="Bordercolor" value="-1"/>
+			<Column name="CreatedDate" value="2023-01-07 23:18:46"/>
+			<Column name="ModifiedDate" value="2023-05-15 10:47:45"/>
+			<Column name="Status" value="Proposed"/>
+			<Column name="Abstract" value="0"/>
+			<Column name="Tagged" value="0"/>
+			<Column name="GenType" value="Java"/>
+			<Column name="Phase" value="1.0"/>
+			<Column name="Scope" value="Public"/>
+			<Column name="Classifier" value="0"/>
+			<Column name="ea_guid" value="{D958CEB9-9D24-4395-995D-1288D01F068B}"/>
+			<Column name="ParentID" value="0"/>
+			<Column name="IsRoot" value="0"/>
+			<Column name="IsLeaf" value="0"/>
+			<Column name="IsSpec" value="0"/>
+			<Column name="IsActive" value="0"/>
+			<Extension Package_ID="{1F334B43-C45B-4d5e-A50B-7A8A5A4CA04A}"/>
+		</Row>
+	</Table>
+	<Table name="t_attribute">
+		<Row>
+			<Column name="Object_ID" value="10335"/>
+			<Column name="Name" value="...."/>
+			<Column name="Scope" value="Public"/>
+			<Column name="Stereotype" value="enum"/>
+			<Column name="Containment" value="Not Specified"/>
+			<Column name="IsStatic" value="0"/>
+			<Column name="IsCollection" value="0"/>
+			<Column name="IsOrdered" value="0"/>
+			<Column name="AllowDuplicates" value="0"/>
+			<Column name="LowerBound" value="1"/>
+			<Column name="UpperBound" value="1"/>
+			<Column name="ID" value="12166"/>
+			<Column name="Pos" value="11"/>
+			<Column name="ea_guid" value="{07A013BD-A06C-4854-8791-EB395681FE9D}"/>
+			<Column name="StyleEx" value="IsLiteral=1;volatile=0;"/>
+			<Extension Object_ID="{D958CEB9-9D24-4395-995D-1288D01F068B}"/>
+		</Row>
+		<Row>
+			<Column name="Object_ID" value="10335"/>
+			<Column name="Name" value="U&#x10D;ebná osnova"/>
+			<Column name="Scope" value="Public"/>
+			<Column name="Stereotype" value="enum"/>
+			<Column name="Containment" value="Not Specified"/>
+			<Column name="IsStatic" value="0"/>
+			<Column name="IsCollection" value="0"/>
+			<Column name="IsOrdered" value="0"/>
+			<Column name="AllowDuplicates" value="0"/>
+			<Column name="LowerBound" value="1"/>
+			<Column name="UpperBound" value="1"/>
+			<Column name="ID" value="14990"/>
+			<Column name="Pos" value="8"/>
+			<Column name="Style" value="Word, PDF"/>
+			<Column name="ea_guid" value="{0F74E6E5-6EE3-4405-B3CD-354A233E6B3C}"/>
+			<Column name="StyleEx" value="IsLiteral=1;volatile=0;"/>
+			<Extension Object_ID="{D958CEB9-9D24-4395-995D-1288D01F068B}"/>
+		</Row>
+		<Row>
+			<Column name="Object_ID" value="10335"/>
+			<Column name="Name" value="Príkaz na úhradu"/>
+			<Column name="Scope" value="Public"/>
+			<Column name="Stereotype" value="enum"/>
+			<Column name="Containment" value="Not Specified"/>
+			<Column name="IsStatic" value="0"/>
+			<Column name="IsCollection" value="0"/>
+			<Column name="IsOrdered" value="0"/>
+			<Column name="AllowDuplicates" value="0"/>
+			<Column name="LowerBound" value="1"/>
+			<Column name="UpperBound" value="1"/>
+			<Column name="ID" value="3001"/>
+			<Column name="Pos" value="0"/>
+			<Column name="Style" value="PDF"/>
+			<Column name="ea_guid" value="{0FD5727E-C58F-413f-8EC0-F404149C8218}"/>
+			<Column name="StyleEx" value="IsLiteral=1;volatile=0;"/>
+			<Extension Object_ID="{D958CEB9-9D24-4395-995D-1288D01F068B}"/>
+		</Row>
+		<Row>
+			<Column name="Object_ID" value="19002"/>
+			<Column name="Name" value="Názov oblasti"/>
+			<Column name="Scope" value="Private"/>
+			<Column name="Containment" value="Not Specified"/>
+			<Column name="IsStatic" value="0"/>
+			<Column name="IsCollection" value="0"/>
+			<Column name="IsOrdered" value="0"/>
+			<Column name="AllowDuplicates" value="0"/>
+			<Column name="LowerBound" value="1"/>
+			<Column name="UpperBound" value="1"/>
+			<Column name="ID" value="12165"/>
+			<Column name="Pos" value="0"/>
+			<Column name="Style" value="AreaName"/>
+			<Column name="Classifier" value="0"/>
+			<Column name="Type" value="string"/>
+			<Column name="ea_guid" value="{0FE7C775-F457-4b04-8B27-DBED7B15448A}"/>
+			<Column name="StyleEx" value="volatile=0;"/>
+			<Extension Object_ID="{24F409E4-E72A-4a05-B7C6-A6DB98CCBE32}"/>
+		</Row>
+		<Row>
+			<Column name="Object_ID" value="10334"/>
+			<Column name="Name" value="ID v DMS"/>
+			<Column name="Scope" value="Private"/>
+			<Column name="Containment" value="Not Specified"/>
+			<Column name="IsStatic" value="0"/>
+			<Column name="IsCollection" value="0"/>
+			<Column name="IsOrdered" value="0"/>
+			<Column name="AllowDuplicates" value="0"/>
+			<Column name="LowerBound" value="1"/>
+			<Column name="UpperBound" value="1"/>
+			<Column name="ID" value="12158"/>
+			<Column name="Pos" value="3"/>
+			<Column name="Style" value="IdDMS"/>
+			<Column name="Classifier" value="0"/>
+			<Column name="Type" value="string"/>
+			<Column name="ea_guid" value="{29FEAE60-EF84-4aee-917E-970D865863E7}"/>
+			<Column name="StyleEx" value="volatile=0;"/>
+			<Extension Object_ID="{7FA0D346-92B8-4423-BAE6-DA965C7B4975}"/>
+		</Row>
+		<Row>
+			<Column name="Object_ID" value="10334"/>
+			<Column name="Name" value="Názov súboru"/>
+			<Column name="Scope" value="Private"/>
+			<Column name="Containment" value="Not Specified"/>
+			<Column name="IsStatic" value="0"/>
+			<Column name="IsCollection" value="0"/>
+			<Column name="IsOrdered" value="0"/>
+			<Column name="AllowDuplicates" value="0"/>
+			<Column name="LowerBound" value="1"/>
+			<Column name="UpperBound" value="1"/>
+			<Column name="ID" value="13327"/>
+			<Column name="Pos" value="1"/>
+			<Column name="Style" value="FileName"/>
+			<Column name="Classifier" value="0"/>
+			<Column name="Type" value="string"/>
+			<Column name="ea_guid" value="{321FBBD7-9190-4c7d-A3CC-D5FFA27600EC}"/>
+			<Column name="StyleEx" value="volatile=0;"/>
+			<Extension Object_ID="{7FA0D346-92B8-4423-BAE6-DA965C7B4975}"/>
+		</Row>
+		<Row>
+			<Column name="Object_ID" value="10335"/>
+			<Column name="Name" value="Prevádzková príru&#x10D;ka"/>
+			<Column name="Scope" value="Public"/>
+			<Column name="Stereotype" value="enum"/>
+			<Column name="Containment" value="Not Specified"/>
+			<Column name="IsStatic" value="0"/>
+			<Column name="IsCollection" value="0"/>
+			<Column name="IsOrdered" value="0"/>
+			<Column name="AllowDuplicates" value="0"/>
+			<Column name="LowerBound" value="1"/>
+			<Column name="UpperBound" value="1"/>
+			<Column name="ID" value="14989"/>
+			<Column name="Pos" value="7"/>
+			<Column name="Style" value="Word, PDF"/>
+			<Column name="ea_guid" value="{3A29C5F3-8111-4a13-8E47-F6E2EBF93FEC}"/>
+			<Column name="StyleEx" value="IsLiteral=1;volatile=0;"/>
+			<Extension Object_ID="{D958CEB9-9D24-4395-995D-1288D01F068B}"/>
+		</Row>
+		<Row>
+			<Column name="Object_ID" value="10335"/>
+			<Column name="Name" value="Fotografia držite&#x13E;a preukazu"/>
+			<Column name="Scope" value="Public"/>
+			<Column name="Stereotype" value="enum"/>
+			<Column name="Containment" value="Not Specified"/>
+			<Column name="IsStatic" value="0"/>
+			<Column name="IsCollection" value="0"/>
+			<Column name="IsOrdered" value="0"/>
+			<Column name="AllowDuplicates" value="0"/>
+			<Column name="LowerBound" value="1"/>
+			<Column name="UpperBound" value="1"/>
+			<Column name="ID" value="4205"/>
+			<Column name="Pos" value="4"/>
+			<Column name="Style" value="JPG"/>
+			<Column name="ea_guid" value="{3ECC39C1-C486-47cf-A014-9D1D095D0E33}"/>
+			<Column name="StyleEx" value="IsLiteral=1;volatile=0;"/>
+			<Extension Object_ID="{D958CEB9-9D24-4395-995D-1288D01F068B}"/>
+		</Row>
+		<Row>
+			<Column name="Object_ID" value="19012"/>
+			<Column name="Name" value="Pravdepodobne platný"/>
+			<Column name="Scope" value="Public"/>
+			<Column name="Stereotype" value="enum"/>
+			<Column name="Containment" value="Not Specified"/>
+			<Column name="IsStatic" value="0"/>
+			<Column name="IsCollection" value="0"/>
+			<Column name="IsOrdered" value="0"/>
+			<Column name="AllowDuplicates" value="0"/>
+			<Column name="LowerBound" value="1"/>
+			<Column name="UpperBound" value="1"/>
+			<Column name="Notes" value="4"/>
+			<Column name="Derived" value="0"/>
+			<Column name="ID" value="12193"/>
+			<Column name="Pos" value="4"/>
+			<Column name="Length" value="0"/>
+			<Column name="Const" value="0"/>
+			<Column name="Classifier" value="0"/>
+			<Column name="ea_guid" value="{4D4AEAE5-041E-4085-8AB1-95436EA43617}"/>
+			<Column name="StyleEx" value="IsLiteral=1;volatile=0;union=0;"/>
+			<Extension Object_ID="{BDC1A1C1-6D8C-4fc7-BF15-5474B782DB55}"/>
+		</Row>
+		<Row>
+			<Column name="Object_ID" value="10334"/>
+			<Column name="Name" value="Dátum vytvorenia"/>
+			<Column name="Scope" value="Private"/>
+			<Column name="Containment" value="Not Specified"/>
+			<Column name="IsStatic" value="0"/>
+			<Column name="IsCollection" value="0"/>
+			<Column name="IsOrdered" value="0"/>
+			<Column name="AllowDuplicates" value="0"/>
+			<Column name="LowerBound" value="1"/>
+			<Column name="UpperBound" value="1"/>
+			<Column name="ID" value="3002"/>
+			<Column name="Pos" value="2"/>
+			<Column name="Style" value="CreationDate"/>
+			<Column name="Classifier" value="0"/>
+			<Column name="Type" value="datetime"/>
+			<Column name="ea_guid" value="{4EFBD25D-AC79-4af8-A1F9-8E5B4ED11A79}"/>
+			<Column name="StyleEx" value="volatile=0;"/>
+			<Extension Object_ID="{7FA0D346-92B8-4423-BAE6-DA965C7B4975}"/>
+		</Row>
+		<Row>
+			<Column name="Object_ID" value="10334"/>
+			<Column name="Name" value="Identifikátor xml dokumentu"/>
+			<Column name="Scope" value="Private"/>
+			<Column name="Containment" value="Not Specified"/>
+			<Column name="IsStatic" value="0"/>
+			<Column name="IsCollection" value="0"/>
+			<Column name="IsOrdered" value="0"/>
+			<Column name="AllowDuplicates" value="0"/>
+			<Column name="LowerBound" value="1"/>
+			<Column name="UpperBound" value="1"/>
+			<Column name="ID" value="12195"/>
+			<Column name="Pos" value="4"/>
+			<Column name="Style" value="TargetNamespace"/>
+			<Column name="Classifier" value="0"/>
+			<Column name="Type" value="string"/>
+			<Column name="ea_guid" value="{5088EBB3-DF4C-453e-BEFA-C4130F543A4F}"/>
+			<Column name="StyleEx" value="volatile=0;"/>
+			<Extension Object_ID="{7FA0D346-92B8-4423-BAE6-DA965C7B4975}"/>
+		</Row>
+		<Row>
+			<Column name="Object_ID" value="19012"/>
+			<Column name="Name" value="Neoverite&#x13E;ný"/>
+			<Column name="Scope" value="Public"/>
+			<Column name="Stereotype" value="enum"/>
+			<Column name="Containment" value="Not Specified"/>
+			<Column name="IsStatic" value="0"/>
+			<Column name="IsCollection" value="0"/>
+			<Column name="IsOrdered" value="0"/>
+			<Column name="AllowDuplicates" value="0"/>
+			<Column name="LowerBound" value="1"/>
+			<Column name="UpperBound" value="1"/>
+			<Column name="Notes" value="5"/>
+			<Column name="Derived" value="0"/>
+			<Column name="ID" value="12194"/>
+			<Column name="Pos" value="5"/>
+			<Column name="Length" value="0"/>
+			<Column name="Const" value="0"/>
+			<Column name="Classifier" value="0"/>
+			<Column name="ea_guid" value="{5F2618EA-A7EB-42d5-8918-5D302BA4ADEB}"/>
+			<Column name="StyleEx" value="IsLiteral=1;volatile=0;union=0;"/>
+			<Extension Object_ID="{BDC1A1C1-6D8C-4fc7-BF15-5474B782DB55}"/>
+		</Row>
+		<Row>
+			<Column name="Object_ID" value="19012"/>
+			<Column name="Name" value="Predbežne platný"/>
+			<Column name="Scope" value="Public"/>
+			<Column name="Stereotype" value="enum"/>
+			<Column name="Containment" value="Not Specified"/>
+			<Column name="IsStatic" value="0"/>
+			<Column name="IsCollection" value="0"/>
+			<Column name="IsOrdered" value="0"/>
+			<Column name="AllowDuplicates" value="0"/>
+			<Column name="LowerBound" value="1"/>
+			<Column name="UpperBound" value="1"/>
+			<Column name="Notes" value="3"/>
+			<Column name="Derived" value="0"/>
+			<Column name="ID" value="12192"/>
+			<Column name="Pos" value="3"/>
+			<Column name="Length" value="0"/>
+			<Column name="Const" value="0"/>
+			<Column name="Classifier" value="0"/>
+			<Column name="ea_guid" value="{60A4AC42-6700-4e82-AA3B-C8C937B88287}"/>
+			<Column name="StyleEx" value="IsLiteral=1;volatile=0;union=0;"/>
+			<Extension Object_ID="{BDC1A1C1-6D8C-4fc7-BF15-5474B782DB55}"/>
+		</Row>
+		<Row>
+			<Column name="Object_ID" value="19012"/>
+			<Column name="Name" value="Platný"/>
+			<Column name="Scope" value="Public"/>
+			<Column name="Stereotype" value="enum"/>
+			<Column name="Containment" value="Not Specified"/>
+			<Column name="IsStatic" value="0"/>
+			<Column name="IsCollection" value="0"/>
+			<Column name="IsOrdered" value="0"/>
+			<Column name="AllowDuplicates" value="0"/>
+			<Column name="LowerBound" value="1"/>
+			<Column name="UpperBound" value="1"/>
+			<Column name="Notes" value="1"/>
+			<Column name="Derived" value="0"/>
+			<Column name="ID" value="12190"/>
+			<Column name="Pos" value="1"/>
+			<Column name="Length" value="0"/>
+			<Column name="Const" value="0"/>
+			<Column name="Classifier" value="0"/>
+			<Column name="ea_guid" value="{915D8CB2-10B4-48e6-81E6-277A3DF5DAF7}"/>
+			<Column name="StyleEx" value="IsLiteral=1;volatile=0;union=0;"/>
+			<Extension Object_ID="{BDC1A1C1-6D8C-4fc7-BF15-5474B782DB55}"/>
+		</Row>
+		<Row>
+			<Column name="Object_ID" value="19011"/>
+			<Column name="Name" value="Dátum a &#x10D;as &#x10D;asovej pe&#x10D;iatky"/>
+			<Column name="Scope" value="Private"/>
+			<Column name="Containment" value="Not Specified"/>
+			<Column name="IsStatic" value="0"/>
+			<Column name="IsCollection" value="0"/>
+			<Column name="IsOrdered" value="0"/>
+			<Column name="AllowDuplicates" value="0"/>
+			<Column name="LowerBound" value="1"/>
+			<Column name="UpperBound" value="1"/>
+			<Column name="Notes" value="&lt;a href=&quot;mailto:SKESIGN@103.510:AttrDateTSDateTime&quot;&gt;SKESIGN@103.510:AttrDateTSDateTime&lt;/a&gt;"/>
+			<Column name="ID" value="12188"/>
+			<Column name="Pos" value="4"/>
+			<Column name="Const" value="0"/>
+			<Column name="Style" value="TimestempDatetime"/>
+			<Column name="Classifier" value="0"/>
+			<Column name="Type" value="datetime"/>
+			<Column name="ea_guid" value="{92408E71-685E-4849-9CAC-E9EADFFE820A}"/>
+			<Column name="StyleEx" value="volatile=0;union=0;"/>
+			<Extension Object_ID="{D5C3ABB5-B431-4273-BBD1-640E066B6B33}"/>
+		</Row>
+		<Row>
+			<Column name="Object_ID" value="19011"/>
+			<Column name="Name" value="Meno"/>
+			<Column name="Scope" value="Private"/>
+			<Column name="Containment" value="Not Specified"/>
+			<Column name="IsStatic" value="0"/>
+			<Column name="IsCollection" value="0"/>
+			<Column name="IsOrdered" value="0"/>
+			<Column name="AllowDuplicates" value="0"/>
+			<Column name="LowerBound" value="1"/>
+			<Column name="UpperBound" value="1"/>
+			<Column name="Notes" value="&lt;a href=&quot;mailto:COOSYSTEM@1.1:objname&quot;&gt;COOSYSTEM@1.1:objname&lt;/a&gt;"/>
+			<Column name="ID" value="12185"/>
+			<Column name="Pos" value="1"/>
+			<Column name="Const" value="0"/>
+			<Column name="Style" value="Name"/>
+			<Column name="Classifier" value="0"/>
+			<Column name="Type" value="string"/>
+			<Column name="ea_guid" value="{9753F147-A741-476d-9CAA-56D92E9B7BAE}"/>
+			<Column name="StyleEx" value="volatile=0;union=0;"/>
+			<Extension Object_ID="{D5C3ABB5-B431-4273-BBD1-640E066B6B33}"/>
+		</Row>
+		<Row>
+			<Column name="Object_ID" value="19011"/>
+			<Column name="Name" value="Dátum a &#x10D;as podpisu"/>
+			<Column name="Scope" value="Private"/>
+			<Column name="Containment" value="Not Specified"/>
+			<Column name="IsStatic" value="0"/>
+			<Column name="IsCollection" value="0"/>
+			<Column name="IsOrdered" value="0"/>
+			<Column name="AllowDuplicates" value="0"/>
+			<Column name="LowerBound" value="1"/>
+			<Column name="UpperBound" value="1"/>
+			<Column name="Notes" value="&lt;a href=&quot;mailto:SKESIGN@103.510:AttrDateTSDateTime&quot;&gt;SKESIGN@103.510:AttrDateTSDateTime&lt;/a&gt;"/>
+			<Column name="ID" value="12187"/>
+			<Column name="Pos" value="3"/>
+			<Column name="Style" value="SignatureDatetime"/>
+			<Column name="Classifier" value="0"/>
+			<Column name="Type" value="datetime"/>
+			<Column name="ea_guid" value="{AC63BB7F-D23D-42c9-973F-51AD9AA365F2}"/>
+			<Column name="StyleEx" value="volatile=0;"/>
+			<Extension Object_ID="{D5C3ABB5-B431-4273-BBD1-640E066B6B33}"/>
+		</Row>
+		<Row>
+			<Column name="Object_ID" value="10335"/>
+			<Column name="Name" value="Chartrová zmluva"/>
+			<Column name="Scope" value="Public"/>
+			<Column name="Stereotype" value="enum"/>
+			<Column name="Containment" value="Not Specified"/>
+			<Column name="IsStatic" value="0"/>
+			<Column name="IsCollection" value="0"/>
+			<Column name="IsOrdered" value="0"/>
+			<Column name="AllowDuplicates" value="0"/>
+			<Column name="LowerBound" value="1"/>
+			<Column name="UpperBound" value="1"/>
+			<Column name="ID" value="15355"/>
+			<Column name="Pos" value="10"/>
+			<Column name="Style" value="PDF"/>
+			<Column name="ea_guid" value="{ACA6EE7A-7C84-45f9-8C8E-34FCDD3FFD34}"/>
+			<Column name="StyleEx" value="IsLiteral=1;volatile=0;"/>
+			<Extension Object_ID="{D958CEB9-9D24-4395-995D-1288D01F068B}"/>
+		</Row>
+		<Row>
+			<Column name="Object_ID" value="19011"/>
+			<Column name="Name" value="Držite&#x13E; certifikátu"/>
+			<Column name="Scope" value="Private"/>
+			<Column name="Containment" value="Not Specified"/>
+			<Column name="IsStatic" value="0"/>
+			<Column name="IsCollection" value="0"/>
+			<Column name="IsOrdered" value="0"/>
+			<Column name="AllowDuplicates" value="0"/>
+			<Column name="LowerBound" value="1"/>
+			<Column name="UpperBound" value="*"/>
+			<Column name="Notes" value="&lt;a href=&quot;mailto:SKESIGN@103.510:AttrStrESignPersonName&quot;&gt;SKESIGN@103.510:AttrStrESignPersonName&lt;/a&gt;"/>
+			<Column name="ID" value="12186"/>
+			<Column name="Pos" value="2"/>
+			<Column name="Style" value="CertificateHolder"/>
+			<Column name="Classifier" value="0"/>
+			<Column name="Type" value="string"/>
+			<Column name="ea_guid" value="{B1B6983D-7CAB-4fe1-BBC8-BD84AEAEA4FE}"/>
+			<Column name="StyleEx" value="volatile=0;"/>
+			<Extension Object_ID="{D5C3ABB5-B431-4273-BBD1-640E066B6B33}"/>
+		</Row>
+		<Row>
+			<Column name="Object_ID" value="10335"/>
+			<Column name="Name" value="QR kód preukazu"/>
+			<Column name="Scope" value="Public"/>
+			<Column name="Stereotype" value="enum"/>
+			<Column name="Containment" value="Not Specified"/>
+			<Column name="IsStatic" value="0"/>
+			<Column name="IsCollection" value="0"/>
+			<Column name="IsOrdered" value="0"/>
+			<Column name="AllowDuplicates" value="0"/>
+			<Column name="LowerBound" value="1"/>
+			<Column name="UpperBound" value="1"/>
+			<Column name="ID" value="52988"/>
+			<Column name="Pos" value="6"/>
+			<Column name="Style" value="JPG"/>
+			<Column name="ea_guid" value="{B242E9B2-50CB-4092-A424-F1BA367E7C5B}"/>
+			<Column name="StyleEx" value="IsLiteral=1;volatile=0;"/>
+			<Extension Object_ID="{D958CEB9-9D24-4395-995D-1288D01F068B}"/>
+		</Row>
+		<Row>
+			<Column name="Object_ID" value="10335"/>
+			<Column name="Name" value="Report výsledkov testu"/>
+			<Column name="Scope" value="Public"/>
+			<Column name="Stereotype" value="enum"/>
+			<Column name="Containment" value="Not Specified"/>
+			<Column name="IsStatic" value="0"/>
+			<Column name="IsCollection" value="0"/>
+			<Column name="IsOrdered" value="0"/>
+			<Column name="AllowDuplicates" value="0"/>
+			<Column name="LowerBound" value="1"/>
+			<Column name="UpperBound" value="1"/>
+			<Column name="ID" value="3635"/>
+			<Column name="Pos" value="3"/>
+			<Column name="Style" value="PDF"/>
+			<Column name="ea_guid" value="{B483AA49-2C0B-44e7-9B77-0A37AF6F0FB3}"/>
+			<Column name="StyleEx" value="IsLiteral=1;volatile=0;"/>
+			<Extension Object_ID="{D958CEB9-9D24-4395-995D-1288D01F068B}"/>
+		</Row>
+		<Row>
+			<Column name="Object_ID" value="10335"/>
+			<Column name="Name" value="eKolok"/>
+			<Column name="Scope" value="Public"/>
+			<Column name="Stereotype" value="enum"/>
+			<Column name="Containment" value="Not Specified"/>
+			<Column name="IsStatic" value="0"/>
+			<Column name="IsCollection" value="0"/>
+			<Column name="IsOrdered" value="0"/>
+			<Column name="AllowDuplicates" value="0"/>
+			<Column name="LowerBound" value="1"/>
+			<Column name="UpperBound" value="1"/>
+			<Column name="ID" value="3014"/>
+			<Column name="Pos" value="1"/>
+			<Column name="Style" value="PDF, JPG"/>
+			<Column name="ea_guid" value="{C0C9B63E-4D7E-4186-AAF1-0939986EFFCC}"/>
+			<Column name="StyleEx" value="IsLiteral=1;volatile=0;"/>
+			<Extension Object_ID="{D958CEB9-9D24-4395-995D-1288D01F068B}"/>
+		</Row>
+		<Row>
+			<Column name="Object_ID" value="19012"/>
+			<Column name="Name" value="Neoverený"/>
+			<Column name="Scope" value="Public"/>
+			<Column name="Stereotype" value="enum"/>
+			<Column name="Containment" value="Not Specified"/>
+			<Column name="IsStatic" value="0"/>
+			<Column name="IsCollection" value="0"/>
+			<Column name="IsOrdered" value="0"/>
+			<Column name="AllowDuplicates" value="0"/>
+			<Column name="LowerBound" value="1"/>
+			<Column name="UpperBound" value="1"/>
+			<Column name="Notes" value="0"/>
+			<Column name="Derived" value="0"/>
+			<Column name="ID" value="12189"/>
+			<Column name="Pos" value="0"/>
+			<Column name="Length" value="0"/>
+			<Column name="Const" value="0"/>
+			<Column name="Classifier" value="0"/>
+			<Column name="ea_guid" value="{C1C9AFD7-D8BB-4b74-9C95-9410F1C165C9}"/>
+			<Column name="StyleEx" value="IsLiteral=1;volatile=0;union=0;"/>
+			<Extension Object_ID="{BDC1A1C1-6D8C-4fc7-BF15-5474B782DB55}"/>
+		</Row>
+		<Row>
+			<Column name="Object_ID" value="19012"/>
+			<Column name="Name" value="Neplatný"/>
+			<Column name="Scope" value="Public"/>
+			<Column name="Stereotype" value="enum"/>
+			<Column name="Containment" value="Not Specified"/>
+			<Column name="IsStatic" value="0"/>
+			<Column name="IsCollection" value="0"/>
+			<Column name="IsOrdered" value="0"/>
+			<Column name="AllowDuplicates" value="0"/>
+			<Column name="LowerBound" value="1"/>
+			<Column name="UpperBound" value="1"/>
+			<Column name="Notes" value="2"/>
+			<Column name="Derived" value="0"/>
+			<Column name="ID" value="12191"/>
+			<Column name="Pos" value="2"/>
+			<Column name="Length" value="0"/>
+			<Column name="Const" value="0"/>
+			<Column name="Classifier" value="0"/>
+			<Column name="ea_guid" value="{C881FC2A-6729-4b30-B9A7-348AA721C020}"/>
+			<Column name="StyleEx" value="IsLiteral=1;volatile=0;union=0;"/>
+			<Extension Object_ID="{BDC1A1C1-6D8C-4fc7-BF15-5474B782DB55}"/>
+		</Row>
+		<Row>
+			<Column name="Object_ID" value="10335"/>
+			<Column name="Name" value="Podpis držite&#x13E;a preukazu"/>
+			<Column name="Scope" value="Public"/>
+			<Column name="Stereotype" value="enum"/>
+			<Column name="Containment" value="Not Specified"/>
+			<Column name="IsStatic" value="0"/>
+			<Column name="IsCollection" value="0"/>
+			<Column name="IsOrdered" value="0"/>
+			<Column name="AllowDuplicates" value="0"/>
+			<Column name="LowerBound" value="1"/>
+			<Column name="UpperBound" value="1"/>
+			<Column name="ID" value="4206"/>
+			<Column name="Pos" value="5"/>
+			<Column name="Style" value="JPG"/>
+			<Column name="ea_guid" value="{CDEE296D-FBBF-427a-AB6E-82FB272B6706}"/>
+			<Column name="StyleEx" value="IsLiteral=1;volatile=0;"/>
+			<Extension Object_ID="{D958CEB9-9D24-4395-995D-1288D01F068B}"/>
+		</Row>
+		<Row>
+			<Column name="Object_ID" value="10335"/>
+			<Column name="Name" value="Osved&#x10D;enie"/>
+			<Column name="Scope" value="Public"/>
+			<Column name="Stereotype" value="enum"/>
+			<Column name="Containment" value="Not Specified"/>
+			<Column name="IsStatic" value="0"/>
+			<Column name="IsCollection" value="0"/>
+			<Column name="IsOrdered" value="0"/>
+			<Column name="AllowDuplicates" value="0"/>
+			<Column name="LowerBound" value="1"/>
+			<Column name="UpperBound" value="1"/>
+			<Column name="ID" value="15028"/>
+			<Column name="Pos" value="9"/>
+			<Column name="Style" value="PDF"/>
+			<Column name="ea_guid" value="{DC5E08C8-985F-48a1-B9CF-45BDAB413F36}"/>
+			<Column name="StyleEx" value="IsLiteral=1;volatile=0;"/>
+			<Extension Object_ID="{D958CEB9-9D24-4395-995D-1288D01F068B}"/>
+		</Row>
+		<Row>
+			<Column name="Object_ID" value="10335"/>
+			<Column name="Name" value="Prezen&#x10D;ná listina"/>
+			<Column name="Scope" value="Public"/>
+			<Column name="Stereotype" value="enum"/>
+			<Column name="Containment" value="Not Specified"/>
+			<Column name="IsStatic" value="0"/>
+			<Column name="IsCollection" value="0"/>
+			<Column name="IsOrdered" value="0"/>
+			<Column name="AllowDuplicates" value="0"/>
+			<Column name="LowerBound" value="1"/>
+			<Column name="UpperBound" value="1"/>
+			<Column name="ID" value="3632"/>
+			<Column name="Pos" value="2"/>
+			<Column name="Style" value="Word, PDF"/>
+			<Column name="ea_guid" value="{DDF1F309-41E6-400e-9AAB-B1FA06A57A2C}"/>
+			<Column name="StyleEx" value="IsLiteral=1;volatile=0;"/>
+			<Extension Object_ID="{D958CEB9-9D24-4395-995D-1288D01F068B}"/>
+		</Row>
+		<Row>
+			<Column name="Object_ID" value="10334"/>
+			<Column name="Name" value="Názov dokumentu"/>
+			<Column name="Scope" value="Private"/>
+			<Column name="Containment" value="Not Specified"/>
+			<Column name="IsStatic" value="0"/>
+			<Column name="IsCollection" value="0"/>
+			<Column name="IsOrdered" value="0"/>
+			<Column name="AllowDuplicates" value="0"/>
+			<Column name="LowerBound" value="1"/>
+			<Column name="UpperBound" value="1"/>
+			<Column name="ID" value="3003"/>
+			<Column name="Pos" value="0"/>
+			<Column name="Style" value="DocumentName"/>
+			<Column name="Classifier" value="0"/>
+			<Column name="Type" value="string"/>
+			<Column name="ea_guid" value="{ED127E1A-F8CD-488f-B013-DD780A64A9A2}"/>
+			<Column name="StyleEx" value="volatile=0;"/>
+			<Extension Object_ID="{7FA0D346-92B8-4423-BAE6-DA965C7B4975}"/>
+		</Row>
+	</Table>
+	<Table name="t_connector">
+		<Row>
+			<Column name="Connector_ID" value="10136"/>
+			<Column name="Name" value="Predpis na úhradu"/>
+			<Column name="Direction" value="Unspecified"/>
+			<Column name="Connector_Type" value="Association"/>
+			<Column name="SourceAccess" value="Public"/>
+			<Column name="DestAccess" value="Public"/>
+			<Column name="SourceContainment" value="Unspecified"/>
+			<Column name="SourceIsAggregate" value="0"/>
+			<Column name="SourceIsOrdered" value="0"/>
+			<Column name="DestContainment" value="Unspecified"/>
+			<Column name="DestIsAggregate" value="0"/>
+			<Column name="DestIsOrdered" value="0"/>
+			<Column name="Start_Object_ID" value="10323"/>
+			<Column name="End_Object_ID" value="10334"/>
+			<Column name="Top_Mid_Label" value="Predpis na úhradu"/>
+			<Column name="Start_Edge" value="1"/>
+			<Column name="End_Edge" value="3"/>
+			<Column name="PtStartX" value="518"/>
+			<Column name="PtStartY" value="-192"/>
+			<Column name="PtEndX" value="637"/>
+			<Column name="PtEndY" value="-93"/>
+			<Column name="SeqNo" value="0"/>
+			<Column name="HeadStyle" value="0"/>
+			<Column name="LineStyle" value="0"/>
+			<Column name="RouteStyle" value="3"/>
+			<Column name="IsBold" value="0"/>
+			<Column name="LineColor" value="-1"/>
+			<Column name="VirtualInheritance" value="0"/>
+			<Column name="PDATA5" value="SX=0;SY=0;EX=0;EY=0;EDGE=1;"/>
+			<Column name="DiagramID" value="0"/>
+			<Column name="ea_guid" value="{01D4C770-6C6B-45f6-87FA-3E4F027D4EB0}"/>
+			<Column name="SourceIsNavigable" value="0"/>
+			<Column name="DestIsNavigable" value="0"/>
+			<Column name="IsRoot" value="0"/>
+			<Column name="IsLeaf" value="0"/>
+			<Column name="IsSpec" value="0"/>
+			<Column name="SourceChangeable" value="none"/>
+			<Column name="DestChangeable" value="none"/>
+			<Column name="SourceTS" value="instance"/>
+			<Column name="DestTS" value="instance"/>
+			<Column name="IsSignal" value="0"/>
+			<Column name="IsStimulus" value="0"/>
+			<Column name="Target2" value="0"/>
+			<Column name="StyleEx" value="alias=PaymentOrderDocument;"/>
+			<Column name="SourceStyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+			<Column name="DestStyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+			<Extension Start_Object_ID="{F4EDCCBB-3719-4ba2-9C9C-E8619410C483}" End_Object_ID="{7FA0D346-92B8-4423-BAE6-DA965C7B4975}"/>
+		</Row>
+		<Row>
+			<Column name="Connector_ID" value="10860"/>
+			<Column name="Name" value="Príloha"/>
+			<Column name="Direction" value="Unspecified"/>
+			<Column name="Connector_Type" value="Association"/>
+			<Column name="SourceCard" value="1"/>
+			<Column name="SourceAccess" value="Public"/>
+			<Column name="DestCard" value="0..*"/>
+			<Column name="DestAccess" value="Public"/>
+			<Column name="SourceContainment" value="Unspecified"/>
+			<Column name="SourceIsAggregate" value="0"/>
+			<Column name="SourceIsOrdered" value="0"/>
+			<Column name="DestContainment" value="Unspecified"/>
+			<Column name="DestIsAggregate" value="0"/>
+			<Column name="DestIsOrdered" value="0"/>
+			<Column name="Start_Object_ID" value="10638"/>
+			<Column name="End_Object_ID" value="10334"/>
+			<Column name="Start_Edge" value="1"/>
+			<Column name="End_Edge" value="1"/>
+			<Column name="PtStartX" value="813"/>
+			<Column name="PtStartY" value="-803"/>
+			<Column name="PtEndX" value="274"/>
+			<Column name="PtEndY" value="-795"/>
+			<Column name="SeqNo" value="0"/>
+			<Column name="HeadStyle" value="0"/>
+			<Column name="LineStyle" value="0"/>
+			<Column name="RouteStyle" value="3"/>
+			<Column name="IsBold" value="0"/>
+			<Column name="LineColor" value="-1"/>
+			<Column name="VirtualInheritance" value="0"/>
+			<Column name="PDATA5" value="SX=-64;SY=-2;EX=0;EY=0;"/>
+			<Column name="DiagramID" value="0"/>
+			<Column name="ea_guid" value="{040855EB-4B05-4716-8840-893A61BAAF38}"/>
+			<Column name="SourceIsNavigable" value="0"/>
+			<Column name="DestIsNavigable" value="0"/>
+			<Column name="IsRoot" value="0"/>
+			<Column name="IsLeaf" value="0"/>
+			<Column name="IsSpec" value="0"/>
+			<Column name="SourceChangeable" value="none"/>
+			<Column name="DestChangeable" value="none"/>
+			<Column name="SourceTS" value="instance"/>
+			<Column name="DestTS" value="instance"/>
+			<Column name="IsSignal" value="0"/>
+			<Column name="IsStimulus" value="0"/>
+			<Column name="Target2" value="0"/>
+			<Column name="SourceStyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+			<Column name="DestStyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+			<Extension Start_Object_ID="{A8B13C54-9DDF-4f7f-A69B-DDCA1ECF18E0}" End_Object_ID="{7FA0D346-92B8-4423-BAE6-DA965C7B4975}"/>
+		</Row>
+		<Row>
+			<Column name="Connector_ID" value="29336"/>
+			<Column name="Direction" value="Unspecified"/>
+			<Column name="Connector_Type" value="Association"/>
+			<Column name="SourceCard" value="0..*"/>
+			<Column name="SourceAccess" value="Public"/>
+			<Column name="DestCard" value="1..*"/>
+			<Column name="DestAccess" value="Public"/>
+			<Column name="SourceContainment" value="Unspecified"/>
+			<Column name="SourceIsAggregate" value="0"/>
+			<Column name="SourceIsOrdered" value="0"/>
+			<Column name="DestContainment" value="Unspecified"/>
+			<Column name="DestIsAggregate" value="0"/>
+			<Column name="DestIsOrdered" value="0"/>
+			<Column name="Start_Object_ID" value="12103"/>
+			<Column name="End_Object_ID" value="10334"/>
+			<Column name="Start_Edge" value="0"/>
+			<Column name="End_Edge" value="0"/>
+			<Column name="PtStartX" value="0"/>
+			<Column name="PtStartY" value="0"/>
+			<Column name="PtEndX" value="0"/>
+			<Column name="PtEndY" value="0"/>
+			<Column name="SeqNo" value="0"/>
+			<Column name="HeadStyle" value="0"/>
+			<Column name="LineStyle" value="0"/>
+			<Column name="RouteStyle" value="3"/>
+			<Column name="IsBold" value="0"/>
+			<Column name="LineColor" value="-1"/>
+			<Column name="VirtualInheritance" value="0"/>
+			<Column name="PDATA5" value="SX=0;SY=0;EX=0;EY=0;"/>
+			<Column name="DiagramID" value="0"/>
+			<Column name="ea_guid" value="{04221625-01ED-4fd5-9441-B65F07EEACB1}"/>
+			<Column name="SourceIsNavigable" value="0"/>
+			<Column name="DestIsNavigable" value="0"/>
+			<Column name="IsRoot" value="0"/>
+			<Column name="IsLeaf" value="0"/>
+			<Column name="IsSpec" value="0"/>
+			<Column name="SourceChangeable" value="none"/>
+			<Column name="DestChangeable" value="none"/>
+			<Column name="SourceTS" value="instance"/>
+			<Column name="DestTS" value="instance"/>
+			<Column name="IsSignal" value="0"/>
+			<Column name="IsStimulus" value="0"/>
+			<Column name="Target2" value="491822848"/>
+			<Column name="SourceStyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+			<Column name="DestStyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+			<Extension Start_Object_ID="{2D6ACE05-DF37-49d7-AB99-0D9BE8B06F16}" End_Object_ID="{7FA0D346-92B8-4423-BAE6-DA965C7B4975}"/>
+		</Row>
+		<Row>
+			<Column name="Connector_ID" value="10861"/>
+			<Column name="Name" value="Príloha"/>
+			<Column name="Direction" value="Unspecified"/>
+			<Column name="Connector_Type" value="Association"/>
+			<Column name="SourceCard" value="1"/>
+			<Column name="SourceAccess" value="Public"/>
+			<Column name="DestCard" value="0..*"/>
+			<Column name="DestAccess" value="Public"/>
+			<Column name="SourceContainment" value="Unspecified"/>
+			<Column name="SourceIsAggregate" value="0"/>
+			<Column name="SourceIsOrdered" value="0"/>
+			<Column name="DestContainment" value="Unspecified"/>
+			<Column name="DestIsAggregate" value="0"/>
+			<Column name="DestIsOrdered" value="0"/>
+			<Column name="Start_Object_ID" value="10552"/>
+			<Column name="End_Object_ID" value="10334"/>
+			<Column name="Start_Edge" value="4"/>
+			<Column name="End_Edge" value="3"/>
+			<Column name="PtStartX" value="492"/>
+			<Column name="PtStartY" value="-965"/>
+			<Column name="PtEndX" value="339"/>
+			<Column name="PtEndY" value="-883"/>
+			<Column name="SeqNo" value="0"/>
+			<Column name="HeadStyle" value="0"/>
+			<Column name="LineStyle" value="0"/>
+			<Column name="RouteStyle" value="3"/>
+			<Column name="IsBold" value="0"/>
+			<Column name="LineColor" value="-1"/>
+			<Column name="VirtualInheritance" value="0"/>
+			<Column name="PDATA5" value="SX=0;SY=0;EX=63;EY=-43;"/>
+			<Column name="DiagramID" value="0"/>
+			<Column name="ea_guid" value="{062B420B-69C4-425a-8465-2CDE031DD3DA}"/>
+			<Column name="SourceIsNavigable" value="0"/>
+			<Column name="DestIsNavigable" value="0"/>
+			<Column name="IsRoot" value="0"/>
+			<Column name="IsLeaf" value="0"/>
+			<Column name="IsSpec" value="0"/>
+			<Column name="SourceChangeable" value="none"/>
+			<Column name="DestChangeable" value="none"/>
+			<Column name="SourceTS" value="instance"/>
+			<Column name="DestTS" value="instance"/>
+			<Column name="IsSignal" value="0"/>
+			<Column name="IsStimulus" value="0"/>
+			<Column name="Target2" value="0"/>
+			<Column name="SourceStyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+			<Column name="DestStyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+			<Extension Start_Object_ID="{8F8B1258-B10D-4384-9621-D17C8F618FED}" End_Object_ID="{7FA0D346-92B8-4423-BAE6-DA965C7B4975}"/>
+		</Row>
+		<Row>
+			<Column name="Connector_ID" value="22792"/>
+			<Column name="Name" value="Prílohy"/>
+			<Column name="Direction" value="Unspecified"/>
+			<Column name="Notes" value="Pr&amp;#237;lohy z&amp;#225;znamu o v&amp;#253;cviku/sk&amp;#250;ške. Prim&amp;#225;rne je prikladan&amp;#233; Osved&#x10D;enie o absolvovan&amp;#237; v&amp;#253;cviku/sk&amp;#250;šky."/>
+			<Column name="Connector_Type" value="Association"/>
+			<Column name="SourceCard" value="0..1"/>
+			<Column name="SourceAccess" value="Public"/>
+			<Column name="DestCard" value="0..*"/>
+			<Column name="DestAccess" value="Public"/>
+			<Column name="SourceContainment" value="Unspecified"/>
+			<Column name="SourceIsAggregate" value="0"/>
+			<Column name="SourceIsOrdered" value="0"/>
+			<Column name="DestContainment" value="Unspecified"/>
+			<Column name="DestIsAggregate" value="0"/>
+			<Column name="DestIsOrdered" value="0"/>
+			<Column name="Start_Object_ID" value="12080"/>
+			<Column name="End_Object_ID" value="10334"/>
+			<Column name="Top_Mid_Label" value="Prílohy"/>
+			<Column name="Btm_Start_Label" value="0..1"/>
+			<Column name="Btm_End_Label" value="0..*"/>
+			<Column name="Start_Edge" value="3"/>
+			<Column name="End_Edge" value="4"/>
+			<Column name="PtStartX" value="723"/>
+			<Column name="PtStartY" value="-737"/>
+			<Column name="PtEndX" value="1261"/>
+			<Column name="PtEndY" value="-878"/>
+			<Column name="SeqNo" value="0"/>
+			<Column name="HeadStyle" value="0"/>
+			<Column name="LineStyle" value="0"/>
+			<Column name="RouteStyle" value="3"/>
+			<Column name="IsBold" value="0"/>
+			<Column name="LineColor" value="-1"/>
+			<Column name="VirtualInheritance" value="0"/>
+			<Column name="PDATA5" value="SX=80;SY=2;EX=0;EY=0;EDGE=3;"/>
+			<Column name="DiagramID" value="0"/>
+			<Column name="ea_guid" value="{1FFC1347-8195-452a-A5D0-E4467E6A90C1}"/>
+			<Column name="SourceIsNavigable" value="0"/>
+			<Column name="DestIsNavigable" value="0"/>
+			<Column name="IsRoot" value="0"/>
+			<Column name="IsLeaf" value="0"/>
+			<Column name="IsSpec" value="0"/>
+			<Column name="SourceChangeable" value="none"/>
+			<Column name="DestChangeable" value="none"/>
+			<Column name="SourceTS" value="instance"/>
+			<Column name="DestTS" value="instance"/>
+			<Column name="IsSignal" value="0"/>
+			<Column name="IsStimulus" value="0"/>
+			<Column name="Target2" value="0"/>
+			<Column name="StyleEx" value="alias=Attachments;"/>
+			<Column name="SourceStyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+			<Column name="DestStyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+			<Extension Start_Object_ID="{EB3A96BB-F320-4621-96B0-890526AF57B8}" End_Object_ID="{7FA0D346-92B8-4423-BAE6-DA965C7B4975}"/>
+		</Row>
+		<Row>
+			<Column name="Connector_ID" value="21713"/>
+			<Column name="Direction" value="Source -&gt; Destination"/>
+			<Column name="Connector_Type" value="NoteLink"/>
+			<Column name="SourceAccess" value="Public"/>
+			<Column name="DestAccess" value="Public"/>
+			<Column name="SourceContainment" value="Unspecified"/>
+			<Column name="SourceIsAggregate" value="0"/>
+			<Column name="SourceIsOrdered" value="0"/>
+			<Column name="DestContainment" value="Unspecified"/>
+			<Column name="DestIsAggregate" value="0"/>
+			<Column name="DestIsOrdered" value="0"/>
+			<Column name="Start_Object_ID" value="19656"/>
+			<Column name="End_Object_ID" value="10334"/>
+			<Column name="Start_Edge" value="3"/>
+			<Column name="End_Edge" value="1"/>
+			<Column name="PtStartX" value="3101"/>
+			<Column name="PtStartY" value="-1698"/>
+			<Column name="PtEndX" value="3103"/>
+			<Column name="PtEndY" value="-1687"/>
+			<Column name="SeqNo" value="0"/>
+			<Column name="HeadStyle" value="0"/>
+			<Column name="LineStyle" value="0"/>
+			<Column name="RouteStyle" value="3"/>
+			<Column name="IsBold" value="0"/>
+			<Column name="LineColor" value="-1"/>
+			<Column name="VirtualInheritance" value="0"/>
+			<Column name="PDATA5" value="EDGE=1;EX=0;EY=0;"/>
+			<Column name="DiagramID" value="0"/>
+			<Column name="ea_guid" value="{20723F83-B37B-4008-B4AD-339BD9861F32}"/>
+			<Column name="SourceIsNavigable" value="0"/>
+			<Column name="DestIsNavigable" value="1"/>
+			<Column name="IsRoot" value="0"/>
+			<Column name="IsLeaf" value="0"/>
+			<Column name="IsSpec" value="0"/>
+			<Column name="SourceChangeable" value="none"/>
+			<Column name="DestChangeable" value="none"/>
+			<Column name="SourceTS" value="instance"/>
+			<Column name="DestTS" value="instance"/>
+			<Column name="IsSignal" value="0"/>
+			<Column name="IsStimulus" value="0"/>
+			<Column name="Target2" value="0"/>
+			<Column name="SourceStyle" value="Union=0;Derived=0;AllowDuplicates=0;"/>
+			<Column name="DestStyle" value="Union=0;Derived=0;AllowDuplicates=0;"/>
+			<Extension Start_Object_ID="{E77395CA-2C62-42c8-9D7B-4224BF9D0F38}" End_Object_ID="{7FA0D346-92B8-4423-BAE6-DA965C7B4975}"/>
+		</Row>
+		<Row>
+			<Column name="Connector_ID" value="10138"/>
+			<Column name="Direction" value="Source -&gt; Destination"/>
+			<Column name="Connector_Type" value="Dependency"/>
+			<Column name="SourceAccess" value="Public"/>
+			<Column name="DestAccess" value="Public"/>
+			<Column name="SourceContainment" value="Unspecified"/>
+			<Column name="SourceIsAggregate" value="0"/>
+			<Column name="SourceIsOrdered" value="0"/>
+			<Column name="DestContainment" value="Unspecified"/>
+			<Column name="DestIsAggregate" value="0"/>
+			<Column name="DestIsOrdered" value="0"/>
+			<Column name="Start_Object_ID" value="10336"/>
+			<Column name="End_Object_ID" value="10334"/>
+			<Column name="Start_Edge" value="0"/>
+			<Column name="End_Edge" value="0"/>
+			<Column name="PtStartX" value="0"/>
+			<Column name="PtStartY" value="0"/>
+			<Column name="PtEndX" value="0"/>
+			<Column name="PtEndY" value="0"/>
+			<Column name="SeqNo" value="0"/>
+			<Column name="HeadStyle" value="0"/>
+			<Column name="LineStyle" value="0"/>
+			<Column name="RouteStyle" value="3"/>
+			<Column name="IsBold" value="0"/>
+			<Column name="LineColor" value="-1"/>
+			<Column name="VirtualInheritance" value="0"/>
+			<Column name="PDATA5" value="SX=0;SY=0;EX=0;EY=0;"/>
+			<Column name="DiagramID" value="0"/>
+			<Column name="ea_guid" value="{2CDA1F6B-94AC-4631-A1B8-593029DC2E40}"/>
+			<Column name="SourceIsNavigable" value="0"/>
+			<Column name="DestIsNavigable" value="1"/>
+			<Column name="IsRoot" value="0"/>
+			<Column name="IsLeaf" value="0"/>
+			<Column name="IsSpec" value="0"/>
+			<Column name="SourceChangeable" value="none"/>
+			<Column name="DestChangeable" value="none"/>
+			<Column name="SourceTS" value="instance"/>
+			<Column name="DestTS" value="instance"/>
+			<Column name="IsSignal" value="0"/>
+			<Column name="IsStimulus" value="0"/>
+			<Column name="Target2" value="6357103"/>
+			<Column name="SourceStyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+			<Column name="DestStyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+			<Extension Start_Object_ID="{6A739E36-D3BB-41c6-9D73-3B50F6A88CB7}" End_Object_ID="{7FA0D346-92B8-4423-BAE6-DA965C7B4975}"/>
+		</Row>
+		<Row>
+			<Column name="Connector_ID" value="20772"/>
+			<Column name="Name" value="Obsah prílohy"/>
+			<Column name="Direction" value="Unspecified"/>
+			<Column name="Connector_Type" value="Association"/>
+			<Column name="SourceCard" value="1"/>
+			<Column name="SourceAccess" value="Public"/>
+			<Column name="DestCard" value="1"/>
+			<Column name="DestAccess" value="Public"/>
+			<Column name="SourceContainment" value="Unspecified"/>
+			<Column name="SourceIsAggregate" value="0"/>
+			<Column name="SourceIsOrdered" value="0"/>
+			<Column name="DestContainment" value="Unspecified"/>
+			<Column name="DestIsAggregate" value="0"/>
+			<Column name="DestIsOrdered" value="0"/>
+			<Column name="Start_Object_ID" value="19013"/>
+			<Column name="End_Object_ID" value="10334"/>
+			<Column name="Top_Mid_Label" value="Obsah prílohy"/>
+			<Column name="Start_Edge" value="4"/>
+			<Column name="End_Edge" value="2"/>
+			<Column name="PtStartX" value="528"/>
+			<Column name="PtStartY" value="-216"/>
+			<Column name="PtEndX" value="445"/>
+			<Column name="PtEndY" value="-223"/>
+			<Column name="SeqNo" value="0"/>
+			<Column name="HeadStyle" value="0"/>
+			<Column name="LineStyle" value="0"/>
+			<Column name="RouteStyle" value="3"/>
+			<Column name="IsBold" value="0"/>
+			<Column name="LineColor" value="-1"/>
+			<Column name="VirtualInheritance" value="0"/>
+			<Column name="PDATA5" value="SX=0;SY=0;EX=0;EY=0;"/>
+			<Column name="DiagramID" value="0"/>
+			<Column name="ea_guid" value="{314EBF33-71F2-4301-8303-4ECB3E841F0E}"/>
+			<Column name="SourceIsNavigable" value="0"/>
+			<Column name="DestIsNavigable" value="0"/>
+			<Column name="IsRoot" value="0"/>
+			<Column name="IsLeaf" value="0"/>
+			<Column name="IsSpec" value="0"/>
+			<Column name="SourceChangeable" value="none"/>
+			<Column name="DestChangeable" value="none"/>
+			<Column name="SourceTS" value="instance"/>
+			<Column name="DestTS" value="instance"/>
+			<Column name="IsSignal" value="0"/>
+			<Column name="IsStimulus" value="0"/>
+			<Column name="Target2" value="0"/>
+			<Column name="StyleEx" value="alias=AttachmentContent;"/>
+			<Column name="SourceStyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+			<Column name="DestStyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+			<Extension Start_Object_ID="{A1401319-C55F-427a-913C-D850295B7BD2}" End_Object_ID="{7FA0D346-92B8-4423-BAE6-DA965C7B4975}"/>
+		</Row>
+		<Row>
+			<Column name="Connector_ID" value="21169"/>
+			<Column name="Direction" value="Unspecified"/>
+			<Column name="Connector_Type" value="Association"/>
+			<Column name="SourceCard" value="1"/>
+			<Column name="SourceAccess" value="Public"/>
+			<Column name="DestCard" value="1"/>
+			<Column name="DestAccess" value="Public"/>
+			<Column name="SourceContainment" value="Unspecified"/>
+			<Column name="SourceIsAggregate" value="0"/>
+			<Column name="SourceIsOrdered" value="0"/>
+			<Column name="DestContainment" value="Unspecified"/>
+			<Column name="DestIsAggregate" value="0"/>
+			<Column name="DestIsOrdered" value="0"/>
+			<Column name="Start_Object_ID" value="19306"/>
+			<Column name="End_Object_ID" value="10334"/>
+			<Column name="Start_Edge" value="2"/>
+			<Column name="End_Edge" value="3"/>
+			<Column name="PtStartX" value="1225"/>
+			<Column name="PtStartY" value="-613"/>
+			<Column name="PtEndX" value="1380"/>
+			<Column name="PtEndY" value="-513"/>
+			<Column name="SeqNo" value="0"/>
+			<Column name="HeadStyle" value="0"/>
+			<Column name="LineStyle" value="0"/>
+			<Column name="RouteStyle" value="3"/>
+			<Column name="IsBold" value="0"/>
+			<Column name="LineColor" value="-1"/>
+			<Column name="VirtualInheritance" value="0"/>
+			<Column name="PDATA5" value="SX=0;SY=0;EX=0;EY=0;"/>
+			<Column name="DiagramID" value="0"/>
+			<Column name="ea_guid" value="{385D5E34-5914-4287-8BBB-60D41F48DDD4}"/>
+			<Column name="SourceIsNavigable" value="0"/>
+			<Column name="DestIsNavigable" value="0"/>
+			<Column name="IsRoot" value="0"/>
+			<Column name="IsLeaf" value="0"/>
+			<Column name="IsSpec" value="0"/>
+			<Column name="SourceChangeable" value="none"/>
+			<Column name="DestChangeable" value="none"/>
+			<Column name="SourceTS" value="instance"/>
+			<Column name="DestTS" value="instance"/>
+			<Column name="IsSignal" value="0"/>
+			<Column name="IsStimulus" value="0"/>
+			<Column name="Target2" value="0"/>
+			<Column name="StyleEx" value="alias=AttachmentContent;"/>
+			<Column name="SourceStyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+			<Column name="DestStyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+			<Extension Start_Object_ID="{ECADFC7F-F4B6-424e-B188-AEBB8C6BCA5F}" End_Object_ID="{7FA0D346-92B8-4423-BAE6-DA965C7B4975}"/>
+		</Row>
+		<Row>
+			<Column name="Connector_ID" value="20770"/>
+			<Column name="Name" value="Prílohy podania"/>
+			<Column name="Direction" value="Unspecified"/>
+			<Column name="Connector_Type" value="Association"/>
+			<Column name="SourceCard" value="1"/>
+			<Column name="SourceAccess" value="Public"/>
+			<Column name="DestCard" value="0..*"/>
+			<Column name="DestAccess" value="Public"/>
+			<Column name="SourceContainment" value="Unspecified"/>
+			<Column name="SourceIsAggregate" value="0"/>
+			<Column name="SourceIsOrdered" value="0"/>
+			<Column name="DestContainment" value="Unspecified"/>
+			<Column name="DestIsAggregate" value="0"/>
+			<Column name="DestIsOrdered" value="0"/>
+			<Column name="Start_Object_ID" value="8871"/>
+			<Column name="End_Object_ID" value="10334"/>
+			<Column name="Top_Mid_Label" value="Prílohy"/>
+			<Column name="Btm_Start_Label" value="1"/>
+			<Column name="Btm_End_Label" value="0..*"/>
+			<Column name="Start_Edge" value="1"/>
+			<Column name="End_Edge" value="2"/>
+			<Column name="PtStartX" value="743"/>
+			<Column name="PtStartY" value="-445"/>
+			<Column name="PtEndX" value="445"/>
+			<Column name="PtEndY" value="-274"/>
+			<Column name="SeqNo" value="0"/>
+			<Column name="HeadStyle" value="0"/>
+			<Column name="LineStyle" value="0"/>
+			<Column name="RouteStyle" value="3"/>
+			<Column name="IsBold" value="0"/>
+			<Column name="LineColor" value="-1"/>
+			<Column name="VirtualInheritance" value="0"/>
+			<Column name="PDATA5" value="SX=-1;SY=14;EX=96;EY=-25;EDGE=1;"/>
+			<Column name="DiagramID" value="0"/>
+			<Column name="ea_guid" value="{3EBF743B-89FD-4449-BA72-9526A32FDBAF}"/>
+			<Column name="SourceIsNavigable" value="0"/>
+			<Column name="DestIsNavigable" value="0"/>
+			<Column name="IsRoot" value="0"/>
+			<Column name="IsLeaf" value="0"/>
+			<Column name="IsSpec" value="0"/>
+			<Column name="SourceChangeable" value="none"/>
+			<Column name="DestChangeable" value="none"/>
+			<Column name="SourceTS" value="instance"/>
+			<Column name="DestTS" value="instance"/>
+			<Column name="IsSignal" value="0"/>
+			<Column name="IsStimulus" value="0"/>
+			<Column name="Target2" value="0"/>
+			<Column name="StyleEx" value="alias=Attachments;"/>
+			<Column name="SourceStyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+			<Column name="DestStyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+			<Extension Start_Object_ID="{00D5C3A0-E7F4-4eff-842E-DB416E6DD374}" End_Object_ID="{7FA0D346-92B8-4423-BAE6-DA965C7B4975}"/>
+		</Row>
+		<Row>
+			<Column name="Connector_ID" value="20731"/>
+			<Column name="Name" value="Zaradené v oblasti"/>
+			<Column name="Direction" value="Unspecified"/>
+			<Column name="Connector_Type" value="Association"/>
+			<Column name="SourceCard" value="1..*"/>
+			<Column name="SourceAccess" value="Public"/>
+			<Column name="DestCard" value="0..1"/>
+			<Column name="DestAccess" value="Public"/>
+			<Column name="SourceContainment" value="Unspecified"/>
+			<Column name="SourceIsAggregate" value="0"/>
+			<Column name="SourceIsOrdered" value="0"/>
+			<Column name="DestContainment" value="Unspecified"/>
+			<Column name="DestIsAggregate" value="0"/>
+			<Column name="DestIsOrdered" value="0"/>
+			<Column name="Start_Object_ID" value="10334"/>
+			<Column name="End_Object_ID" value="19002"/>
+			<Column name="Top_Mid_Label" value="Zaradené v oblasti"/>
+			<Column name="Start_Edge" value="1"/>
+			<Column name="End_Edge" value="3"/>
+			<Column name="PtStartX" value="360"/>
+			<Column name="PtStartY" value="-218"/>
+			<Column name="PtEndX" value="358"/>
+			<Column name="PtEndY" value="-120"/>
+			<Column name="SeqNo" value="0"/>
+			<Column name="HeadStyle" value="0"/>
+			<Column name="LineStyle" value="0"/>
+			<Column name="RouteStyle" value="3"/>
+			<Column name="IsBold" value="0"/>
+			<Column name="LineColor" value="-1"/>
+			<Column name="VirtualInheritance" value="0"/>
+			<Column name="PDATA5" value="SX=0;SY=0;EX=0;EY=0;"/>
+			<Column name="DiagramID" value="0"/>
+			<Column name="ea_guid" value="{5B45C0C3-7E17-4943-A09A-038D9ADF3481}"/>
+			<Column name="SourceIsNavigable" value="0"/>
+			<Column name="DestIsNavigable" value="0"/>
+			<Column name="IsRoot" value="0"/>
+			<Column name="IsLeaf" value="0"/>
+			<Column name="IsSpec" value="0"/>
+			<Column name="SourceChangeable" value="none"/>
+			<Column name="DestChangeable" value="none"/>
+			<Column name="SourceTS" value="instance"/>
+			<Column name="DestTS" value="instance"/>
+			<Column name="IsSignal" value="0"/>
+			<Column name="IsStimulus" value="0"/>
+			<Column name="Target2" value="0"/>
+			<Column name="StyleEx" value="alias=IncludedInArea;"/>
+			<Column name="SourceStyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+			<Column name="DestStyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+			<Extension Start_Object_ID="{7FA0D346-92B8-4423-BAE6-DA965C7B4975}" End_Object_ID="{24F409E4-E72A-4a05-B7C6-A6DB98CCBE32}"/>
+		</Row>
+		<Row>
+			<Column name="Connector_ID" value="20728"/>
+			<Column name="Name" value="Vytvoril"/>
+			<Column name="Direction" value="Unspecified"/>
+			<Column name="Connector_Type" value="Association"/>
+			<Column name="SourceCard" value="0..*"/>
+			<Column name="SourceAccess" value="Public"/>
+			<Column name="DestCard" value="1"/>
+			<Column name="DestAccess" value="Public"/>
+			<Column name="SourceContainment" value="Unspecified"/>
+			<Column name="SourceIsAggregate" value="0"/>
+			<Column name="SourceIsOrdered" value="0"/>
+			<Column name="DestContainment" value="Unspecified"/>
+			<Column name="DestIsAggregate" value="0"/>
+			<Column name="DestIsOrdered" value="0"/>
+			<Column name="Start_Object_ID" value="10334"/>
+			<Column name="End_Object_ID" value="8849"/>
+			<Column name="Top_Mid_Label" value="Vytvoril"/>
+			<Column name="Start_Edge" value="3"/>
+			<Column name="End_Edge" value="1"/>
+			<Column name="PtStartX" value="194"/>
+			<Column name="PtStartY" value="-208"/>
+			<Column name="PtEndX" value="188"/>
+			<Column name="PtEndY" value="-303"/>
+			<Column name="SeqNo" value="0"/>
+			<Column name="HeadStyle" value="0"/>
+			<Column name="LineStyle" value="0"/>
+			<Column name="RouteStyle" value="3"/>
+			<Column name="IsBold" value="0"/>
+			<Column name="LineColor" value="-1"/>
+			<Column name="VirtualInheritance" value="0"/>
+			<Column name="PDATA5" value="SX=0;SY=0;EX=0;EY=0;"/>
+			<Column name="DiagramID" value="0"/>
+			<Column name="ea_guid" value="{5CD9F5FF-DFE0-4d29-BCB7-7E6666A9EAAB}"/>
+			<Column name="SourceIsNavigable" value="0"/>
+			<Column name="DestIsNavigable" value="0"/>
+			<Column name="IsRoot" value="0"/>
+			<Column name="IsLeaf" value="0"/>
+			<Column name="IsSpec" value="0"/>
+			<Column name="SourceChangeable" value="none"/>
+			<Column name="DestChangeable" value="none"/>
+			<Column name="SourceTS" value="instance"/>
+			<Column name="DestTS" value="instance"/>
+			<Column name="IsSignal" value="0"/>
+			<Column name="IsStimulus" value="0"/>
+			<Column name="Target2" value="0"/>
+			<Column name="StyleEx" value="alias=CreatedBy;"/>
+			<Column name="SourceStyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+			<Column name="DestStyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+			<Extension Start_Object_ID="{7FA0D346-92B8-4423-BAE6-DA965C7B4975}" End_Object_ID="{0971865F-5783-4311-931A-8293BDCBC153}"/>
+		</Row>
+		<Row>
+			<Column name="Connector_ID" value="20769"/>
+			<Column name="Name" value="Elektronické podpisy"/>
+			<Column name="Direction" value="Unspecified"/>
+			<Column name="Connector_Type" value="Association"/>
+			<Column name="SourceCard" value="1"/>
+			<Column name="SourceAccess" value="Public"/>
+			<Column name="DestCard" value="0..*"/>
+			<Column name="DestAccess" value="Public"/>
+			<Column name="SourceContainment" value="Unspecified"/>
+			<Column name="SourceIsAggregate" value="0"/>
+			<Column name="SourceIsOrdered" value="0"/>
+			<Column name="DestContainment" value="Unspecified"/>
+			<Column name="DestIsAggregate" value="0"/>
+			<Column name="DestIsOrdered" value="0"/>
+			<Column name="Start_Object_ID" value="10334"/>
+			<Column name="End_Object_ID" value="19011"/>
+			<Column name="Top_Mid_Label" value="Elektronické podpisy"/>
+			<Column name="Start_Edge" value="4"/>
+			<Column name="End_Edge" value="2"/>
+			<Column name="PtStartX" value="411"/>
+			<Column name="PtStartY" value="-266"/>
+			<Column name="PtEndX" value="255"/>
+			<Column name="PtEndY" value="-269"/>
+			<Column name="SeqNo" value="0"/>
+			<Column name="HeadStyle" value="0"/>
+			<Column name="LineStyle" value="0"/>
+			<Column name="RouteStyle" value="3"/>
+			<Column name="IsBold" value="0"/>
+			<Column name="LineColor" value="-1"/>
+			<Column name="VirtualInheritance" value="0"/>
+			<Column name="PDATA5" value="SX=0;SY=0;EX=0;EY=0;"/>
+			<Column name="DiagramID" value="0"/>
+			<Column name="ea_guid" value="{7115E64F-0B3B-4bc8-AE7C-6B9E883DED5B}"/>
+			<Column name="SourceIsNavigable" value="0"/>
+			<Column name="DestIsNavigable" value="0"/>
+			<Column name="IsRoot" value="0"/>
+			<Column name="IsLeaf" value="0"/>
+			<Column name="IsSpec" value="0"/>
+			<Column name="SourceChangeable" value="none"/>
+			<Column name="DestChangeable" value="none"/>
+			<Column name="SourceTS" value="instance"/>
+			<Column name="DestTS" value="instance"/>
+			<Column name="IsSignal" value="0"/>
+			<Column name="IsStimulus" value="0"/>
+			<Column name="Target2" value="0"/>
+			<Column name="StyleEx" value="alias=ElectronicSignatures;"/>
+			<Column name="SourceStyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+			<Column name="DestStyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+			<Extension Start_Object_ID="{7FA0D346-92B8-4423-BAE6-DA965C7B4975}" End_Object_ID="{D5C3ABB5-B431-4273-BBD1-640E066B6B33}"/>
+		</Row>
+		<Row>
+			<Column name="Connector_ID" value="10135"/>
+			<Column name="Direction" value="Source -&gt; Destination"/>
+			<Column name="Connector_Type" value="Aggregation"/>
+			<Column name="SubType" value="Strong"/>
+			<Column name="SourceAccess" value="Public"/>
+			<Column name="DestAccess" value="Public"/>
+			<Column name="SourceContainment" value="Unspecified"/>
+			<Column name="SourceIsAggregate" value="0"/>
+			<Column name="SourceIsOrdered" value="0"/>
+			<Column name="DestContainment" value="Unspecified"/>
+			<Column name="DestIsAggregate" value="2"/>
+			<Column name="DestIsOrdered" value="0"/>
+			<Column name="Start_Object_ID" value="10335"/>
+			<Column name="End_Object_ID" value="10334"/>
+			<Column name="Start_Edge" value="0"/>
+			<Column name="End_Edge" value="0"/>
+			<Column name="PtStartX" value="0"/>
+			<Column name="PtStartY" value="0"/>
+			<Column name="PtEndX" value="0"/>
+			<Column name="PtEndY" value="0"/>
+			<Column name="SeqNo" value="0"/>
+			<Column name="HeadStyle" value="0"/>
+			<Column name="LineStyle" value="0"/>
+			<Column name="RouteStyle" value="3"/>
+			<Column name="IsBold" value="0"/>
+			<Column name="LineColor" value="-1"/>
+			<Column name="VirtualInheritance" value="0"/>
+			<Column name="PDATA5" value="SX=0;SY=0;EX=0;EY=0;"/>
+			<Column name="DiagramID" value="0"/>
+			<Column name="ea_guid" value="{875C699C-B4F6-4e32-95D7-0A86BECD09EA}"/>
+			<Column name="SourceIsNavigable" value="0"/>
+			<Column name="DestIsNavigable" value="1"/>
+			<Column name="IsRoot" value="0"/>
+			<Column name="IsLeaf" value="0"/>
+			<Column name="IsSpec" value="0"/>
+			<Column name="SourceChangeable" value="none"/>
+			<Column name="DestChangeable" value="none"/>
+			<Column name="SourceTS" value="instance"/>
+			<Column name="DestTS" value="instance"/>
+			<Column name="IsSignal" value="0"/>
+			<Column name="IsStimulus" value="0"/>
+			<Column name="Target2" value="0"/>
+			<Column name="SourceStyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+			<Column name="DestStyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+			<Extension Start_Object_ID="{D958CEB9-9D24-4395-995D-1288D01F068B}" End_Object_ID="{7FA0D346-92B8-4423-BAE6-DA965C7B4975}"/>
+		</Row>
+		<Row>
+			<Column name="Connector_ID" value="22954"/>
+			<Column name="Direction" value="Unspecified"/>
+			<Column name="Connector_Type" value="Association"/>
+			<Column name="SourceCard" value="1"/>
+			<Column name="SourceAccess" value="Public"/>
+			<Column name="DestCard" value="0..1"/>
+			<Column name="DestAccess" value="Public"/>
+			<Column name="SourceContainment" value="Unspecified"/>
+			<Column name="SourceIsAggregate" value="0"/>
+			<Column name="SourceIsOrdered" value="0"/>
+			<Column name="DestContainment" value="Unspecified"/>
+			<Column name="DestIsAggregate" value="0"/>
+			<Column name="DestIsOrdered" value="0"/>
+			<Column name="Start_Object_ID" value="10334"/>
+			<Column name="End_Object_ID" value="20167"/>
+			<Column name="Btm_Start_Label" value="1"/>
+			<Column name="Btm_End_Label" value="0..1"/>
+			<Column name="Start_Edge" value="2"/>
+			<Column name="End_Edge" value="3"/>
+			<Column name="PtStartX" value="1383"/>
+			<Column name="PtStartY" value="-882"/>
+			<Column name="PtEndX" value="1950"/>
+			<Column name="PtEndY" value="-553"/>
+			<Column name="SeqNo" value="0"/>
+			<Column name="HeadStyle" value="0"/>
+			<Column name="LineStyle" value="0"/>
+			<Column name="RouteStyle" value="3"/>
+			<Column name="IsBold" value="0"/>
+			<Column name="LineColor" value="-1"/>
+			<Column name="VirtualInheritance" value="0"/>
+			<Column name="PDATA5" value="SX=0;SY=0;EX=-171;EY=-127;EDGE=2;"/>
+			<Column name="DiagramID" value="0"/>
+			<Column name="ea_guid" value="{92B58496-FDB6-4857-9F37-5B71FF7C00E0}"/>
+			<Column name="SourceIsNavigable" value="0"/>
+			<Column name="DestIsNavigable" value="0"/>
+			<Column name="IsRoot" value="0"/>
+			<Column name="IsLeaf" value="0"/>
+			<Column name="IsSpec" value="0"/>
+			<Column name="SourceChangeable" value="none"/>
+			<Column name="DestChangeable" value="none"/>
+			<Column name="SourceTS" value="instance"/>
+			<Column name="DestTS" value="instance"/>
+			<Column name="IsSignal" value="0"/>
+			<Column name="IsStimulus" value="0"/>
+			<Column name="Target2" value="0"/>
+			<Column name="SourceStyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+			<Column name="DestStyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+			<Extension Start_Object_ID="{7FA0D346-92B8-4423-BAE6-DA965C7B4975}" End_Object_ID="{0A05E1EB-D7F1-4306-87E5-1739EA54E37A}"/>
+		</Row>
+		<Row>
+			<Column name="Connector_ID" value="22773"/>
+			<Column name="Name" value="u&#x10D;ebná osnova"/>
+			<Column name="Direction" value="Unspecified"/>
+			<Column name="Connector_Type" value="Association"/>
+			<Column name="SourceCard" value="1..*"/>
+			<Column name="SourceAccess" value="Public"/>
+			<Column name="DestCard" value="0..1"/>
+			<Column name="DestAccess" value="Public"/>
+			<Column name="SourceContainment" value="Unspecified"/>
+			<Column name="SourceIsAggregate" value="0"/>
+			<Column name="SourceIsOrdered" value="0"/>
+			<Column name="DestContainment" value="Unspecified"/>
+			<Column name="DestIsAggregate" value="0"/>
+			<Column name="DestIsOrdered" value="0"/>
+			<Column name="Start_Object_ID" value="10334"/>
+			<Column name="End_Object_ID" value="9154"/>
+			<Column name="Top_Mid_Label" value="u&#x10D;ebná osnova"/>
+			<Column name="Btm_Start_Label" value="1..*"/>
+			<Column name="Btm_End_Label" value="0..1"/>
+			<Column name="Start_Edge" value="2"/>
+			<Column name="End_Edge" value="4"/>
+			<Column name="PtStartX" value="3277"/>
+			<Column name="PtStartY" value="-2367"/>
+			<Column name="PtEndX" value="3349"/>
+			<Column name="PtEndY" value="-2338"/>
+			<Column name="SeqNo" value="0"/>
+			<Column name="HeadStyle" value="0"/>
+			<Column name="LineStyle" value="0"/>
+			<Column name="RouteStyle" value="3"/>
+			<Column name="IsBold" value="0"/>
+			<Column name="LineColor" value="-1"/>
+			<Column name="VirtualInheritance" value="0"/>
+			<Column name="PDATA5" value="SX=0;SY=0;EX=0;EY=0;EDGE=1;"/>
+			<Column name="DiagramID" value="0"/>
+			<Column name="ea_guid" value="{B3285E23-C56E-4d6c-BC53-FE5E2933D066}"/>
+			<Column name="SourceIsNavigable" value="0"/>
+			<Column name="DestIsNavigable" value="0"/>
+			<Column name="IsRoot" value="0"/>
+			<Column name="IsLeaf" value="0"/>
+			<Column name="IsSpec" value="0"/>
+			<Column name="SourceChangeable" value="none"/>
+			<Column name="DestChangeable" value="none"/>
+			<Column name="SourceTS" value="instance"/>
+			<Column name="DestTS" value="instance"/>
+			<Column name="IsSignal" value="0"/>
+			<Column name="IsStimulus" value="0"/>
+			<Column name="Target2" value="0"/>
+			<Column name="StyleEx" value="alias=Curriculum;"/>
+			<Column name="SourceStyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+			<Column name="DestStyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+			<Extension Start_Object_ID="{7FA0D346-92B8-4423-BAE6-DA965C7B4975}" End_Object_ID="{8425FFD3-DCD1-41e7-82CF-D03120E39FF4}"/>
+		</Row>
+		<Row>
+			<Column name="Connector_ID" value="10137"/>
+			<Column name="Direction" value="Source -&gt; Destination"/>
+			<Column name="Connector_Type" value="Dependency"/>
+			<Column name="SourceAccess" value="Public"/>
+			<Column name="DestAccess" value="Public"/>
+			<Column name="SourceContainment" value="Unspecified"/>
+			<Column name="SourceIsAggregate" value="0"/>
+			<Column name="SourceIsOrdered" value="0"/>
+			<Column name="DestContainment" value="Unspecified"/>
+			<Column name="DestIsAggregate" value="0"/>
+			<Column name="DestIsOrdered" value="0"/>
+			<Column name="Start_Object_ID" value="10336"/>
+			<Column name="End_Object_ID" value="10335"/>
+			<Column name="Start_Edge" value="0"/>
+			<Column name="End_Edge" value="0"/>
+			<Column name="PtStartX" value="0"/>
+			<Column name="PtStartY" value="0"/>
+			<Column name="PtEndX" value="0"/>
+			<Column name="PtEndY" value="0"/>
+			<Column name="SeqNo" value="0"/>
+			<Column name="HeadStyle" value="0"/>
+			<Column name="LineStyle" value="0"/>
+			<Column name="RouteStyle" value="3"/>
+			<Column name="IsBold" value="0"/>
+			<Column name="LineColor" value="-1"/>
+			<Column name="VirtualInheritance" value="0"/>
+			<Column name="PDATA5" value="SX=0;SY=0;EX=0;EY=0;"/>
+			<Column name="DiagramID" value="0"/>
+			<Column name="ea_guid" value="{BD671C83-6B6A-416b-AB4F-CD12F7797A3F}"/>
+			<Column name="SourceIsNavigable" value="0"/>
+			<Column name="DestIsNavigable" value="1"/>
+			<Column name="IsRoot" value="0"/>
+			<Column name="IsLeaf" value="0"/>
+			<Column name="IsSpec" value="0"/>
+			<Column name="SourceChangeable" value="none"/>
+			<Column name="DestChangeable" value="none"/>
+			<Column name="SourceTS" value="instance"/>
+			<Column name="DestTS" value="instance"/>
+			<Column name="IsSignal" value="0"/>
+			<Column name="IsStimulus" value="0"/>
+			<Column name="Target2" value="0"/>
+			<Column name="SourceStyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+			<Column name="DestStyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+			<Extension Start_Object_ID="{6A739E36-D3BB-41c6-9D73-3B50F6A88CB7}" End_Object_ID="{D958CEB9-9D24-4395-995D-1288D01F068B}"/>
+		</Row>
+		<Row>
+			<Column name="Connector_ID" value="22891"/>
+			<Column name="Direction" value="Unspecified"/>
+			<Column name="Connector_Type" value="Association"/>
+			<Column name="SourceCard" value="0..1"/>
+			<Column name="SourceAccess" value="Public"/>
+			<Column name="DestCard" value="0..*"/>
+			<Column name="DestAccess" value="Public"/>
+			<Column name="SourceContainment" value="Unspecified"/>
+			<Column name="SourceIsAggregate" value="0"/>
+			<Column name="SourceIsOrdered" value="0"/>
+			<Column name="DestContainment" value="Unspecified"/>
+			<Column name="DestIsAggregate" value="0"/>
+			<Column name="DestIsOrdered" value="0"/>
+			<Column name="Start_Object_ID" value="9696"/>
+			<Column name="End_Object_ID" value="10334"/>
+			<Column name="Start_Edge" value="0"/>
+			<Column name="End_Edge" value="0"/>
+			<Column name="PtStartX" value="0"/>
+			<Column name="PtStartY" value="0"/>
+			<Column name="PtEndX" value="0"/>
+			<Column name="PtEndY" value="0"/>
+			<Column name="SeqNo" value="0"/>
+			<Column name="HeadStyle" value="0"/>
+			<Column name="LineStyle" value="0"/>
+			<Column name="RouteStyle" value="3"/>
+			<Column name="IsBold" value="0"/>
+			<Column name="LineColor" value="-1"/>
+			<Column name="VirtualInheritance" value="0"/>
+			<Column name="PDATA5" value="SX=0;SY=0;EX=0;EY=0;"/>
+			<Column name="DiagramID" value="0"/>
+			<Column name="ea_guid" value="{BE9C70BA-ED92-43d6-A603-9E16ECE271F6}"/>
+			<Column name="SourceIsNavigable" value="0"/>
+			<Column name="DestIsNavigable" value="0"/>
+			<Column name="IsRoot" value="0"/>
+			<Column name="IsLeaf" value="0"/>
+			<Column name="IsSpec" value="0"/>
+			<Column name="SourceChangeable" value="none"/>
+			<Column name="DestChangeable" value="none"/>
+			<Column name="SourceTS" value="instance"/>
+			<Column name="DestTS" value="instance"/>
+			<Column name="IsSignal" value="0"/>
+			<Column name="IsStimulus" value="0"/>
+			<Column name="Target2" value="22"/>
+			<Column name="SourceStyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+			<Column name="DestStyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+			<Extension Start_Object_ID="{4EA42053-21F2-4084-B043-D94EC40FD350}" End_Object_ID="{7FA0D346-92B8-4423-BAE6-DA965C7B4975}"/>
+		</Row>
+		<Row>
+			<Column name="Connector_ID" value="17261"/>
+			<Column name="Name" value="Prílohy výstupu"/>
+			<Column name="Direction" value="Unspecified"/>
+			<Column name="Notes" value="Dokumenty je možn&amp;#233; posla&#x165; ako v&amp;#253;stup, alebo ako pr&amp;#237;lohu k hlavn&amp;#233;mu v&amp;#253;stupu"/>
+			<Column name="Connector_Type" value="Association"/>
+			<Column name="SourceCard" value="0..*"/>
+			<Column name="SourceAccess" value="Public"/>
+			<Column name="DestCard" value="1"/>
+			<Column name="DestAccess" value="Public"/>
+			<Column name="SourceContainment" value="Unspecified"/>
+			<Column name="SourceIsAggregate" value="0"/>
+			<Column name="SourceIsOrdered" value="0"/>
+			<Column name="DestContainment" value="Unspecified"/>
+			<Column name="DestIsAggregate" value="0"/>
+			<Column name="DestIsOrdered" value="0"/>
+			<Column name="Start_Object_ID" value="10334"/>
+			<Column name="End_Object_ID" value="8622"/>
+			<Column name="Top_Mid_Label" value="Prílohy výstupu"/>
+			<Column name="Btm_Start_Label" value="0..*"/>
+			<Column name="Btm_End_Label" value="1"/>
+			<Column name="Start_Edge" value="1"/>
+			<Column name="End_Edge" value="3"/>
+			<Column name="PtStartX" value="423"/>
+			<Column name="PtStartY" value="-872"/>
+			<Column name="PtEndX" value="404"/>
+			<Column name="PtEndY" value="-515"/>
+			<Column name="SeqNo" value="0"/>
+			<Column name="HeadStyle" value="0"/>
+			<Column name="LineStyle" value="0"/>
+			<Column name="RouteStyle" value="3"/>
+			<Column name="IsBold" value="0"/>
+			<Column name="LineColor" value="-1"/>
+			<Column name="VirtualInheritance" value="0"/>
+			<Column name="DiagramID" value="0"/>
+			<Column name="ea_guid" value="{C25DE7CC-7190-4308-9E5C-BCF7C92882C0}"/>
+			<Column name="SourceIsNavigable" value="0"/>
+			<Column name="DestIsNavigable" value="0"/>
+			<Column name="IsRoot" value="0"/>
+			<Column name="IsLeaf" value="0"/>
+			<Column name="IsSpec" value="0"/>
+			<Column name="SourceChangeable" value="none"/>
+			<Column name="DestChangeable" value="none"/>
+			<Column name="SourceTS" value="instance"/>
+			<Column name="DestTS" value="instance"/>
+			<Column name="IsSignal" value="0"/>
+			<Column name="IsStimulus" value="0"/>
+			<Column name="Target2" value="51550796"/>
+			<Column name="StyleEx" value="alias=OutputAttachments;"/>
+			<Column name="SourceStyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+			<Column name="DestStyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+			<Extension Start_Object_ID="{7FA0D346-92B8-4423-BAE6-DA965C7B4975}" End_Object_ID="{9822D166-4114-4a97-89C9-02CB5697A756}"/>
+		</Row>
+		<Row>
+			<Column name="Connector_ID" value="11648"/>
+			<Column name="Name" value="Prílohy"/>
+			<Column name="Direction" value="Unspecified"/>
+			<Column name="Connector_Type" value="Association"/>
+			<Column name="SourceCard" value="0..*"/>
+			<Column name="SourceAccess" value="Public"/>
+			<Column name="DestCard" value="0..*"/>
+			<Column name="DestAccess" value="Public"/>
+			<Column name="SourceContainment" value="Unspecified"/>
+			<Column name="SourceIsAggregate" value="0"/>
+			<Column name="SourceIsOrdered" value="0"/>
+			<Column name="DestContainment" value="Unspecified"/>
+			<Column name="DestIsAggregate" value="0"/>
+			<Column name="DestIsOrdered" value="0"/>
+			<Column name="Start_Object_ID" value="9328"/>
+			<Column name="End_Object_ID" value="10334"/>
+			<Column name="Top_Mid_Label" value="Prílohy"/>
+			<Column name="Btm_Start_Label" value="0..*"/>
+			<Column name="Btm_End_Label" value="0..*"/>
+			<Column name="Start_Edge" value="3"/>
+			<Column name="End_Edge" value="1"/>
+			<Column name="PtStartX" value="1365"/>
+			<Column name="PtStartY" value="-764"/>
+			<Column name="PtEndX" value="1364"/>
+			<Column name="PtEndY" value="-822"/>
+			<Column name="SeqNo" value="0"/>
+			<Column name="HeadStyle" value="0"/>
+			<Column name="LineStyle" value="0"/>
+			<Column name="RouteStyle" value="3"/>
+			<Column name="IsBold" value="0"/>
+			<Column name="LineColor" value="-1"/>
+			<Column name="VirtualInheritance" value="0"/>
+			<Column name="PDATA5" value="SX=7;SY=-42;EX=-21;EY=43;EDGE=3;"/>
+			<Column name="DiagramID" value="0"/>
+			<Column name="ea_guid" value="{CF2D1E64-6AB1-46d2-A100-4DEAC5CB7108}"/>
+			<Column name="SourceIsNavigable" value="0"/>
+			<Column name="DestIsNavigable" value="0"/>
+			<Column name="IsRoot" value="0"/>
+			<Column name="IsLeaf" value="0"/>
+			<Column name="IsSpec" value="0"/>
+			<Column name="SourceChangeable" value="none"/>
+			<Column name="DestChangeable" value="none"/>
+			<Column name="SourceTS" value="instance"/>
+			<Column name="DestTS" value="instance"/>
+			<Column name="IsSignal" value="0"/>
+			<Column name="IsStimulus" value="0"/>
+			<Column name="Target2" value="541659056"/>
+			<Column name="StyleEx" value="alias=Attachments;"/>
+			<Column name="SourceStyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+			<Column name="DestStyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+			<Extension Start_Object_ID="{611D9BE6-A544-48ca-87F5-9D2766A2A0AD}" End_Object_ID="{7FA0D346-92B8-4423-BAE6-DA965C7B4975}"/>
+		</Row>
+		<Row>
+			<Column name="Connector_ID" value="20768"/>
+			<Column name="Direction" value="Source -&gt; Destination"/>
+			<Column name="Connector_Type" value="Aggregation"/>
+			<Column name="SubType" value="Strong"/>
+			<Column name="SourceAccess" value="Public"/>
+			<Column name="DestAccess" value="Public"/>
+			<Column name="SourceContainment" value="Unspecified"/>
+			<Column name="SourceIsAggregate" value="0"/>
+			<Column name="SourceIsOrdered" value="0"/>
+			<Column name="DestContainment" value="Unspecified"/>
+			<Column name="DestIsAggregate" value="2"/>
+			<Column name="DestIsOrdered" value="0"/>
+			<Column name="Start_Object_ID" value="19012"/>
+			<Column name="End_Object_ID" value="19011"/>
+			<Column name="Start_Edge" value="0"/>
+			<Column name="End_Edge" value="0"/>
+			<Column name="PtStartX" value="0"/>
+			<Column name="PtStartY" value="0"/>
+			<Column name="PtEndX" value="0"/>
+			<Column name="PtEndY" value="0"/>
+			<Column name="SeqNo" value="0"/>
+			<Column name="HeadStyle" value="0"/>
+			<Column name="LineStyle" value="0"/>
+			<Column name="RouteStyle" value="3"/>
+			<Column name="IsBold" value="0"/>
+			<Column name="LineColor" value="-1"/>
+			<Column name="VirtualInheritance" value="0"/>
+			<Column name="PDATA5" value="SX=0;SY=0;EX=0;EY=0;"/>
+			<Column name="DiagramID" value="0"/>
+			<Column name="ea_guid" value="{D27EA765-5A27-4361-8F60-BACE151ED2E9}"/>
+			<Column name="SourceIsNavigable" value="0"/>
+			<Column name="DestIsNavigable" value="1"/>
+			<Column name="IsRoot" value="0"/>
+			<Column name="IsLeaf" value="0"/>
+			<Column name="IsSpec" value="0"/>
+			<Column name="SourceChangeable" value="none"/>
+			<Column name="DestChangeable" value="none"/>
+			<Column name="SourceTS" value="instance"/>
+			<Column name="DestTS" value="instance"/>
+			<Column name="IsSignal" value="0"/>
+			<Column name="IsStimulus" value="0"/>
+			<Column name="Target2" value="0"/>
+			<Column name="SourceStyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+			<Column name="DestStyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+			<Extension Start_Object_ID="{BDC1A1C1-6D8C-4fc7-BF15-5474B782DB55}" End_Object_ID="{D5C3ABB5-B431-4273-BBD1-640E066B6B33}"/>
+		</Row>
+		<Row>
+			<Column name="Connector_ID" value="21893"/>
+			<Column name="Direction" value="Unspecified"/>
+			<Column name="Connector_Type" value="Association"/>
+			<Column name="SourceCard" value="0..1"/>
+			<Column name="SourceAccess" value="Public"/>
+			<Column name="DestCard" value="1"/>
+			<Column name="DestAccess" value="Public"/>
+			<Column name="SourceContainment" value="Unspecified"/>
+			<Column name="SourceIsAggregate" value="0"/>
+			<Column name="SourceIsOrdered" value="0"/>
+			<Column name="DestContainment" value="Unspecified"/>
+			<Column name="DestIsAggregate" value="0"/>
+			<Column name="DestIsOrdered" value="0"/>
+			<Column name="Start_Object_ID" value="8626"/>
+			<Column name="End_Object_ID" value="10334"/>
+			<Column name="Start_Edge" value="0"/>
+			<Column name="End_Edge" value="0"/>
+			<Column name="PtStartX" value="0"/>
+			<Column name="PtStartY" value="0"/>
+			<Column name="PtEndX" value="0"/>
+			<Column name="PtEndY" value="0"/>
+			<Column name="SeqNo" value="0"/>
+			<Column name="HeadStyle" value="0"/>
+			<Column name="LineStyle" value="0"/>
+			<Column name="RouteStyle" value="3"/>
+			<Column name="IsBold" value="0"/>
+			<Column name="LineColor" value="-1"/>
+			<Column name="VirtualInheritance" value="0"/>
+			<Column name="PDATA5" value="SX=0;SY=0;EX=0;EY=0;"/>
+			<Column name="DiagramID" value="0"/>
+			<Column name="ea_guid" value="{D4845B64-6FF2-4849-BC45-62FDE75D42E4}"/>
+			<Column name="SourceIsNavigable" value="0"/>
+			<Column name="DestIsNavigable" value="0"/>
+			<Column name="IsRoot" value="0"/>
+			<Column name="IsLeaf" value="0"/>
+			<Column name="IsSpec" value="0"/>
+			<Column name="SourceChangeable" value="none"/>
+			<Column name="DestChangeable" value="none"/>
+			<Column name="SourceTS" value="instance"/>
+			<Column name="DestTS" value="instance"/>
+			<Column name="IsSignal" value="0"/>
+			<Column name="IsStimulus" value="0"/>
+			<Column name="Target2" value="0"/>
+			<Column name="SourceStyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+			<Column name="DestStyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+			<Extension Start_Object_ID="{EA87C794-7379-4a7a-AAA9-A3D73B29425A}" End_Object_ID="{7FA0D346-92B8-4423-BAE6-DA965C7B4975}"/>
+		</Row>
+		<Row>
+			<Column name="Connector_ID" value="20766"/>
+			<Column name="Name" value="Hlavný obsah podania"/>
+			<Column name="Direction" value="Unspecified"/>
+			<Column name="Notes" value="Hlavn&amp;#253; obsah Podania, pri Žiadosti ide dokument so samotnou žiados&#x165;ou. V pr&amp;#237;pade fyzickej ide o sken žiadosti, v pr&amp;#237;pade elektronickej o xml dokument."/>
+			<Column name="Connector_Type" value="Association"/>
+			<Column name="SourceCard" value="1"/>
+			<Column name="SourceAccess" value="Public"/>
+			<Column name="DestCard" value="0..1"/>
+			<Column name="DestAccess" value="Public"/>
+			<Column name="SourceContainment" value="Unspecified"/>
+			<Column name="SourceIsAggregate" value="0"/>
+			<Column name="SourceIsOrdered" value="0"/>
+			<Column name="DestContainment" value="Unspecified"/>
+			<Column name="DestIsAggregate" value="0"/>
+			<Column name="DestIsOrdered" value="0"/>
+			<Column name="Start_Object_ID" value="8871"/>
+			<Column name="End_Object_ID" value="10334"/>
+			<Column name="Top_Mid_Label" value="Hlavný obsah podania"/>
+			<Column name="Btm_Start_Label" value="1"/>
+			<Column name="Btm_End_Label" value="0..*"/>
+			<Column name="Start_Edge" value="1"/>
+			<Column name="End_Edge" value="3"/>
+			<Column name="PtStartX" value="603"/>
+			<Column name="PtStartY" value="-409"/>
+			<Column name="PtEndX" value="273"/>
+			<Column name="PtEndY" value="-236"/>
+			<Column name="SeqNo" value="0"/>
+			<Column name="HeadStyle" value="0"/>
+			<Column name="LineStyle" value="0"/>
+			<Column name="RouteStyle" value="3"/>
+			<Column name="IsBold" value="0"/>
+			<Column name="LineColor" value="-1"/>
+			<Column name="VirtualInheritance" value="0"/>
+			<Column name="PDATA5" value="SX=0;SY=0;EX=0;EY=0;"/>
+			<Column name="DiagramID" value="0"/>
+			<Column name="ea_guid" value="{E64EDFB8-0282-44ae-872B-6066D9D61677}"/>
+			<Column name="SourceIsNavigable" value="0"/>
+			<Column name="DestIsNavigable" value="0"/>
+			<Column name="IsRoot" value="0"/>
+			<Column name="IsLeaf" value="0"/>
+			<Column name="IsSpec" value="0"/>
+			<Column name="SourceChangeable" value="none"/>
+			<Column name="DestChangeable" value="none"/>
+			<Column name="SourceTS" value="instance"/>
+			<Column name="DestTS" value="instance"/>
+			<Column name="IsSignal" value="0"/>
+			<Column name="IsStimulus" value="0"/>
+			<Column name="Target2" value="0"/>
+			<Column name="StyleEx" value="alias=MainContent;"/>
+			<Column name="SourceStyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+			<Column name="DestStyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+			<Extension Start_Object_ID="{00D5C3A0-E7F4-4eff-842E-DB416E6DD374}" End_Object_ID="{7FA0D346-92B8-4423-BAE6-DA965C7B4975}"/>
+		</Row>
+		<Row>
+			<Column name="Connector_ID" value="21854"/>
+			<Column name="Direction" value="Source -&gt; Destination"/>
+			<Column name="Connector_Type" value="Dependency"/>
+			<Column name="SourceAccess" value="Public"/>
+			<Column name="DestAccess" value="Public"/>
+			<Column name="SourceContainment" value="Unspecified"/>
+			<Column name="SourceIsAggregate" value="0"/>
+			<Column name="SourceIsOrdered" value="0"/>
+			<Column name="DestContainment" value="Unspecified"/>
+			<Column name="DestIsAggregate" value="0"/>
+			<Column name="DestIsOrdered" value="0"/>
+			<Column name="Start_Object_ID" value="19737"/>
+			<Column name="End_Object_ID" value="19002"/>
+			<Column name="Btm_Mid_Label" value="«trace»"/>
+			<Column name="Start_Edge" value="0"/>
+			<Column name="End_Edge" value="0"/>
+			<Column name="PtStartX" value="0"/>
+			<Column name="PtStartY" value="0"/>
+			<Column name="PtEndX" value="0"/>
+			<Column name="PtEndY" value="0"/>
+			<Column name="SeqNo" value="0"/>
+			<Column name="HeadStyle" value="0"/>
+			<Column name="LineStyle" value="0"/>
+			<Column name="RouteStyle" value="3"/>
+			<Column name="IsBold" value="0"/>
+			<Column name="LineColor" value="-1"/>
+			<Column name="Stereotype" value="trace"/>
+			<Column name="VirtualInheritance" value="0"/>
+			<Column name="PDATA5" value="SX=0;SY=0;EX=0;EY=0;"/>
+			<Column name="DiagramID" value="0"/>
+			<Column name="ea_guid" value="{ECF79936-94C3-4975-8A57-B633322E86BB}"/>
+			<Column name="SourceIsNavigable" value="0"/>
+			<Column name="DestIsNavigable" value="1"/>
+			<Column name="IsRoot" value="0"/>
+			<Column name="IsLeaf" value="0"/>
+			<Column name="IsSpec" value="0"/>
+			<Column name="SourceChangeable" value="none"/>
+			<Column name="DestChangeable" value="none"/>
+			<Column name="SourceTS" value="instance"/>
+			<Column name="DestTS" value="instance"/>
+			<Column name="IsSignal" value="0"/>
+			<Column name="IsStimulus" value="0"/>
+			<Column name="Target2" value="0"/>
+			<Column name="SourceStyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+			<Column name="DestStyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+			<Extension Start_Object_ID="{9A6EB7C3-7CBC-4624-A0C3-DB5CC93464CF}" End_Object_ID="{24F409E4-E72A-4a05-B7C6-A6DB98CCBE32}"/>
+		</Row>
+		<Row>
+			<Column name="Connector_ID" value="22493"/>
+			<Column name="Name" value="Hlavný dokument výstupu"/>
+			<Column name="Direction" value="Unspecified"/>
+			<Column name="Connector_Type" value="Association"/>
+			<Column name="SourceCard" value="1"/>
+			<Column name="SourceAccess" value="Public"/>
+			<Column name="DestCard" value="0..1"/>
+			<Column name="DestAccess" value="Public"/>
+			<Column name="SourceContainment" value="Unspecified"/>
+			<Column name="SourceIsAggregate" value="0"/>
+			<Column name="SourceIsOrdered" value="0"/>
+			<Column name="DestContainment" value="Unspecified"/>
+			<Column name="DestIsAggregate" value="0"/>
+			<Column name="DestIsOrdered" value="0"/>
+			<Column name="Start_Object_ID" value="8622"/>
+			<Column name="End_Object_ID" value="10334"/>
+			<Column name="Top_Mid_Label" value="Hlavný dokument výstupu"/>
+			<Column name="Start_Edge" value="2"/>
+			<Column name="End_Edge" value="4"/>
+			<Column name="PtStartX" value="1048"/>
+			<Column name="PtStartY" value="-481"/>
+			<Column name="PtEndX" value="1384"/>
+			<Column name="PtEndY" value="-462"/>
+			<Column name="SeqNo" value="0"/>
+			<Column name="HeadStyle" value="0"/>
+			<Column name="LineStyle" value="0"/>
+			<Column name="RouteStyle" value="3"/>
+			<Column name="IsBold" value="0"/>
+			<Column name="LineColor" value="-1"/>
+			<Column name="VirtualInheritance" value="0"/>
+			<Column name="PDATA5" value="SX=0;SY=0;EX=0;EY=0;"/>
+			<Column name="DiagramID" value="0"/>
+			<Column name="ea_guid" value="{ED6951ED-DF7C-4ee0-AEDE-FA3E9727C103}"/>
+			<Column name="SourceIsNavigable" value="0"/>
+			<Column name="DestIsNavigable" value="0"/>
+			<Column name="IsRoot" value="0"/>
+			<Column name="IsLeaf" value="0"/>
+			<Column name="IsSpec" value="0"/>
+			<Column name="SourceChangeable" value="none"/>
+			<Column name="DestChangeable" value="none"/>
+			<Column name="SourceTS" value="instance"/>
+			<Column name="DestTS" value="instance"/>
+			<Column name="IsSignal" value="0"/>
+			<Column name="IsStimulus" value="0"/>
+			<Column name="Target2" value="0"/>
+			<Column name="StyleEx" value="alias=OutputMainContent;"/>
+			<Column name="SourceStyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+			<Column name="DestStyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+			<Extension Start_Object_ID="{9822D166-4114-4a97-89C9-02CB5697A756}" End_Object_ID="{7FA0D346-92B8-4423-BAE6-DA965C7B4975}"/>
+		</Row>
+	</Table>
+	<Table name="t_diagram">
+		<Row>
+			<Column name="Diagram_ID" value="1034"/>
+			<Column name="Package_ID" value="957"/>
+			<Column name="ParentID" value="0"/>
+			<Column name="Diagram_Type" value="Logical"/>
+			<Column name="Name" value="Dokument"/>
+			<Column name="Version" value="1.0"/>
+			<Column name="Author" value="TS"/>
+			<Column name="ShowDetails" value="0"/>
+			<Column name="AttPub" value="1"/>
+			<Column name="AttPri" value="1"/>
+			<Column name="AttPro" value="1"/>
+			<Column name="Orientation" value="P"/>
+			<Column name="cx" value="826"/>
+			<Column name="cy" value="1169"/>
+			<Column name="Scale" value="100"/>
+			<Column name="CreatedDate" value="2023-05-15 00:00:00"/>
+			<Column name="ModifiedDate" value="2023-12-05 22:56:37"/>
+			<Column name="ShowForeign" value="1"/>
+			<Column name="ShowBorder" value="1"/>
+			<Column name="ShowPackageContents" value="1"/>
+			<Column name="PDATA" value="HideRel=0;ShowTags=0;ShowReqs=0;ShowCons=0;OpParams=1;ShowSN=0;ScalePI=0;PPgs.cx=2;PPgs.cy=1;PSize=9;ShowIcons=1;SuppCN=0;HideProps=0;HideParents=0;UseAlias=1;HideAtts=0;HideOps=0;HideStereo=0;HideEStereo=0;ShowRec=1;ShowRes=0;ShowShape=1;FormName=;"/>
+			<Column name="Locked" value="0"/>
+			<Column name="ea_guid" value="{C4B618F7-56F1-4afa-9DA7-7631C7E4F421}"/>
+			<Column name="Swimlanes" value="locked=false;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;"/>
+			<Column name="StyleEx" value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;SPT=1;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;Theme=:119;SaveTag=D9F5C130;"/>
+			<Extension Package_ID="{1F334B43-C45B-4d5e-A50B-7A8A5A4CA04A}"/>
+		</Row>
+	</Table>
+	<Table name="t_diagramobjects">
+		<Row>
+			<Column name="Diagram_ID" value="1034"/>
+			<Column name="Object_ID" value="8849"/>
+			<Column name="RectTop" value="-403"/>
+			<Column name="RectLeft" value="459"/>
+			<Column name="RectRight" value="610"/>
+			<Column name="RectBottom" value="-530"/>
+			<Column name="Sequence" value="4"/>
+			<Column name="ObjectStyle" value="NSL=0;DUID=F296DBD3;"/>
+			<Column name="Instance_ID" value="20466"/>
+			<Extension Diagram_ID="{C4B618F7-56F1-4afa-9DA7-7631C7E4F421}" Object_ID="{0971865F-5783-4311-931A-8293BDCBC153}"/>
+		</Row>
+		<Row>
+			<Column name="Diagram_ID" value="1034"/>
+			<Column name="Object_ID" value="10334"/>
+			<Column name="RectTop" value="-200"/>
+			<Column name="RectLeft" value="410"/>
+			<Column name="RectRight" value="658"/>
+			<Column name="RectBottom" value="-348"/>
+			<Column name="Sequence" value="6"/>
+			<Column name="ObjectStyle" value="DUID=3A7A5899;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
+			<Column name="Instance_ID" value="20464"/>
+			<Extension Diagram_ID="{C4B618F7-56F1-4afa-9DA7-7631C7E4F421}" Object_ID="{7FA0D346-92B8-4423-BAE6-DA965C7B4975}"/>
+		</Row>
+		<Row>
+			<Column name="Diagram_ID" value="1034"/>
+			<Column name="Object_ID" value="10335"/>
+			<Column name="RectTop" value="-182"/>
+			<Column name="RectLeft" value="738"/>
+			<Column name="RectRight" value="973"/>
+			<Column name="RectBottom" value="-407"/>
+			<Column name="Sequence" value="5"/>
+			<Column name="ObjectStyle" value="DUID=BE96CA94;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;"/>
+			<Column name="Instance_ID" value="20465"/>
+			<Extension Diagram_ID="{C4B618F7-56F1-4afa-9DA7-7631C7E4F421}" Object_ID="{D958CEB9-9D24-4395-995D-1288D01F068B}"/>
+		</Row>
+		<Row>
+			<Column name="Diagram_ID" value="1034"/>
+			<Column name="Object_ID" value="19002"/>
+			<Column name="RectTop" value="-52"/>
+			<Column name="RectLeft" value="457"/>
+			<Column name="RectRight" value="615"/>
+			<Column name="RectBottom" value="-122"/>
+			<Column name="Sequence" value="3"/>
+			<Column name="ObjectStyle" value="DUID=E14265E3;"/>
+			<Column name="Instance_ID" value="20471"/>
+			<Extension Diagram_ID="{C4B618F7-56F1-4afa-9DA7-7631C7E4F421}" Object_ID="{24F409E4-E72A-4a05-B7C6-A6DB98CCBE32}"/>
+		</Row>
+		<Row>
+			<Column name="Diagram_ID" value="1034"/>
+			<Column name="Object_ID" value="19011"/>
+			<Column name="RectTop" value="-223"/>
+			<Column name="RectLeft" value="9"/>
+			<Column name="RectRight" value="284"/>
+			<Column name="RectBottom" value="-324"/>
+			<Column name="Sequence" value="2"/>
+			<Column name="ObjectStyle" value="DUID=602A5C51;ImageID=0;"/>
+			<Column name="Instance_ID" value="20515"/>
+			<Extension Diagram_ID="{C4B618F7-56F1-4afa-9DA7-7631C7E4F421}" Object_ID="{D5C3ABB5-B431-4273-BBD1-640E066B6B33}"/>
+		</Row>
+		<Row>
+			<Column name="Diagram_ID" value="1034"/>
+			<Column name="Object_ID" value="19012"/>
+			<Column name="RectTop" value="-393"/>
+			<Column name="RectLeft" value="81"/>
+			<Column name="RectRight" value="213"/>
+			<Column name="RectBottom" value="-540"/>
+			<Column name="Sequence" value="1"/>
+			<Column name="ObjectStyle" value="NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;ImageID=0;DUID=5E92353E;"/>
+			<Column name="Instance_ID" value="20516"/>
+			<Extension Diagram_ID="{C4B618F7-56F1-4afa-9DA7-7631C7E4F421}" Object_ID="{BDC1A1C1-6D8C-4fc7-BF15-5474B782DB55}"/>
+		</Row>
+	</Table>
+	<Table name="t_diagramlinks">
+		<Row>
+			<Column name="DiagramID" value="1034"/>
+			<Column name="ConnectorID" value="10135"/>
+			<Column name="Geometry" value="EDGE=4;SX=-79;SY=8;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;"/>
+			<Column name="Style" value="Mode=3;EOID=3A7A5899;SOID=BE96CA94;Color=-1;LWidth=0;"/>
+			<Column name="Hidden" value="0"/>
+			<Column name="Instance_ID" value="19157"/>
+			<Extension DiagramID="{C4B618F7-56F1-4afa-9DA7-7631C7E4F421}" ConnectorID="{875C699C-B4F6-4e32-95D7-0A86BECD09EA}"/>
+		</Row>
+		<Row>
+			<Column name="DiagramID" value="1034"/>
+			<Column name="ConnectorID" value="20728"/>
+			<Column name="Geometry" value="SX=0;SY=3;EX=1;EY=3;EDGE=3;$LLB=CX=17:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LLT=;LMT=CX=42:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LMB=;LRT=;LRB=CX=6:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;"/>
+			<Column name="Style" value="Mode=3;EOID=F296DBD3;SOID=3A7A5899;Color=-1;LWidth=0;"/>
+			<Column name="Hidden" value="0"/>
+			<Column name="Instance_ID" value="19158"/>
+			<Extension DiagramID="{C4B618F7-56F1-4afa-9DA7-7631C7E4F421}" ConnectorID="{5CD9F5FF-DFE0-4d29-BCB7-7E6666A9EAAB}"/>
+		</Row>
+		<Row>
+			<Column name="DiagramID" value="1034"/>
+			<Column name="ConnectorID" value="20731"/>
+			<Column name="Geometry" value="SX=0;SY=0;EX=0;EY=0;EDGE=1;$LLB=CX=17:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LLT=;LMT=CX=62:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LMB=;LRT=;LRB=CX=17:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;IRHS=;ILHS=;"/>
+			<Column name="Style" value="Mode=3;EOID=E14265E3;SOID=3A7A5899;Color=-1;LWidth=0;"/>
+			<Column name="Hidden" value="0"/>
+			<Column name="Instance_ID" value="19162"/>
+			<Extension DiagramID="{C4B618F7-56F1-4afa-9DA7-7631C7E4F421}" ConnectorID="{5B45C0C3-7E17-4943-A09A-038D9ADF3481}"/>
+		</Row>
+		<Row>
+			<Column name="DiagramID" value="1034"/>
+			<Column name="ConnectorID" value="20768"/>
+			<Column name="Geometry" value="SX=0;SY=0;EX=0;EY=0;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;"/>
+			<Column name="Style" value="Mode=3;EOID=602A5C51;SOID=5E92353E;Color=-1;LWidth=0;"/>
+			<Column name="Hidden" value="0"/>
+			<Column name="Instance_ID" value="19216"/>
+			<Extension DiagramID="{C4B618F7-56F1-4afa-9DA7-7631C7E4F421}" ConnectorID="{D27EA765-5A27-4361-8F60-BACE151ED2E9}"/>
+		</Row>
+		<Row>
+			<Column name="DiagramID" value="1034"/>
+			<Column name="ConnectorID" value="20769"/>
+			<Column name="Geometry" value="SX=0;SY=0;EX=0;EY=0;EDGE=4;$LLB=CX=6:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LLT=;LMT=CX=81:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LMB=;LRT=;LRB=CX=17:CY=14:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;IRHS=;ILHS=;"/>
+			<Column name="Style" value="Mode=3;EOID=602A5C51;SOID=3A7A5899;Color=-1;LWidth=0;"/>
+			<Column name="Hidden" value="0"/>
+			<Column name="Instance_ID" value="19217"/>
+			<Extension DiagramID="{C4B618F7-56F1-4afa-9DA7-7631C7E4F421}" ConnectorID="{7115E64F-0B3B-4bc8-AE7C-6B9E883DED5B}"/>
+		</Row>
+	</Table>
+	<Table name="t_xref">
+		<Row>
+			<Column name="XrefID" value="{3D009A11-6FDD-47ea-8429-9DCD0EF8DF48}"/>
+			<Column name="Name" value="Stereotypes"/>
+			<Column name="Type" value="attribute property"/>
+			<Column name="Visibility" value="Public"/>
+			<Column name="Partition" value="0"/>
+			<Column name="Description" value="@STEREO;Name=enum;GUID={D990F099-E450-4633-B502-F3739990E127};@ENDSTEREO;"/>
+			<Column name="Client" value="{07A013BD-A06C-4854-8791-EB395681FE9D}"/>
+			<Column name="Supplier" value="&lt;none&gt;"/>
+		</Row>
+		<Row>
+			<Column name="XrefID" value="{CAAA4ED6-0214-4df7-A7E0-D0C04C057A8F}"/>
+			<Column name="Name" value="Stereotypes"/>
+			<Column name="Type" value="attribute property"/>
+			<Column name="Visibility" value="Public"/>
+			<Column name="Partition" value="0"/>
+			<Column name="Description" value="@STEREO;Name=enum;GUID={D990F099-E450-4633-B502-F3739990E127};@ENDSTEREO;"/>
+			<Column name="Client" value="{0F74E6E5-6EE3-4405-B3CD-354A233E6B3C}"/>
+			<Column name="Supplier" value="&lt;none&gt;"/>
+		</Row>
+		<Row>
+			<Column name="XrefID" value="{39ECCA70-2248-415c-A6D4-775BBBC7E25C}"/>
+			<Column name="Name" value="Stereotypes"/>
+			<Column name="Type" value="attribute property"/>
+			<Column name="Visibility" value="Public"/>
+			<Column name="Partition" value="0"/>
+			<Column name="Description" value="@STEREO;Name=enum;GUID={D990F099-E450-4633-B502-F3739990E127};@ENDSTEREO;"/>
+			<Column name="Client" value="{3A29C5F3-8111-4a13-8E47-F6E2EBF93FEC}"/>
+			<Column name="Supplier" value="&lt;none&gt;"/>
+		</Row>
+		<Row>
+			<Column name="XrefID" value="{C96846D9-1122-44aa-9113-E77694CF5001}"/>
+			<Column name="Name" value="Stereotypes"/>
+			<Column name="Type" value="attribute property"/>
+			<Column name="Visibility" value="Public"/>
+			<Column name="Partition" value="0"/>
+			<Column name="Description" value="@STEREO;Name=enum;GUID={D990F099-E450-4633-B502-F3739990E127};@ENDSTEREO;"/>
+			<Column name="Client" value="{4D4AEAE5-041E-4085-8AB1-95436EA43617}"/>
+			<Column name="Supplier" value="&lt;none&gt;"/>
+		</Row>
+		<Row>
+			<Column name="XrefID" value="{24BFB09E-C9BB-451f-AB76-0A5C9924C511}"/>
+			<Column name="Name" value="Stereotypes"/>
+			<Column name="Type" value="attribute property"/>
+			<Column name="Visibility" value="Public"/>
+			<Column name="Partition" value="0"/>
+			<Column name="Description" value="@STEREO;Name=enum;GUID={D990F099-E450-4633-B502-F3739990E127};@ENDSTEREO;"/>
+			<Column name="Client" value="{5F2618EA-A7EB-42d5-8918-5D302BA4ADEB}"/>
+			<Column name="Supplier" value="&lt;none&gt;"/>
+		</Row>
+		<Row>
+			<Column name="XrefID" value="{5C5B0FE3-810F-44d8-B93A-7E34B9DA9735}"/>
+			<Column name="Name" value="Stereotypes"/>
+			<Column name="Type" value="attribute property"/>
+			<Column name="Visibility" value="Public"/>
+			<Column name="Partition" value="0"/>
+			<Column name="Description" value="@STEREO;Name=enum;GUID={D990F099-E450-4633-B502-F3739990E127};@ENDSTEREO;"/>
+			<Column name="Client" value="{60A4AC42-6700-4e82-AA3B-C8C937B88287}"/>
+			<Column name="Supplier" value="&lt;none&gt;"/>
+		</Row>
+		<Row>
+			<Column name="XrefID" value="{5FD47E46-3F0D-4f02-9E87-C108C86408DC}"/>
+			<Column name="Name" value="Stereotypes"/>
+			<Column name="Type" value="attribute property"/>
+			<Column name="Visibility" value="Public"/>
+			<Column name="Partition" value="0"/>
+			<Column name="Description" value="@STEREO;Name=enum;GUID={D990F099-E450-4633-B502-F3739990E127};@ENDSTEREO;"/>
+			<Column name="Client" value="{915D8CB2-10B4-48e6-81E6-277A3DF5DAF7}"/>
+			<Column name="Supplier" value="&lt;none&gt;"/>
+		</Row>
+		<Row>
+			<Column name="XrefID" value="{0622C33D-DBA2-4266-96FF-14860AA8C030}"/>
+			<Column name="Name" value="Stereotypes"/>
+			<Column name="Type" value="attribute property"/>
+			<Column name="Visibility" value="Public"/>
+			<Column name="Partition" value="0"/>
+			<Column name="Description" value="@STEREO;Name=enum;GUID={D990F099-E450-4633-B502-F3739990E127};@ENDSTEREO;"/>
+			<Column name="Client" value="{ACA6EE7A-7C84-45f9-8C8E-34FCDD3FFD34}"/>
+			<Column name="Supplier" value="&lt;none&gt;"/>
+		</Row>
+		<Row>
+			<Column name="XrefID" value="{6B222B46-19FF-42f6-803A-9A620F1AEF39}"/>
+			<Column name="Name" value="Stereotypes"/>
+			<Column name="Type" value="attribute property"/>
+			<Column name="Visibility" value="Public"/>
+			<Column name="Partition" value="0"/>
+			<Column name="Description" value="@STEREO;Name=enum;GUID={D990F099-E450-4633-B502-F3739990E127};@ENDSTEREO;"/>
+			<Column name="Client" value="{B242E9B2-50CB-4092-A424-F1BA367E7C5B}"/>
+			<Column name="Supplier" value="&lt;none&gt;"/>
+		</Row>
+		<Row>
+			<Column name="XrefID" value="{E35F0C00-1033-4db8-9E20-8033B2ADE78E}"/>
+			<Column name="Name" value="Stereotypes"/>
+			<Column name="Type" value="attribute property"/>
+			<Column name="Visibility" value="Public"/>
+			<Column name="Partition" value="0"/>
+			<Column name="Description" value="@STEREO;Name=enum;GUID={D990F099-E450-4633-B502-F3739990E127};@ENDSTEREO;"/>
+			<Column name="Client" value="{C1C9AFD7-D8BB-4b74-9C95-9410F1C165C9}"/>
+			<Column name="Supplier" value="&lt;none&gt;"/>
+		</Row>
+		<Row>
+			<Column name="XrefID" value="{6F2F29AE-C44F-47a5-8BBD-3B65369C9FBA}"/>
+			<Column name="Name" value="CustomProperties"/>
+			<Column name="Type" value="diagram properties"/>
+			<Column name="Visibility" value="Public"/>
+			<Column name="Partition" value="0"/>
+			<Column name="Description" value="DGS=On=0:CNT=8:W=120:H=40:SG=0:SGH=0:AEB=0:;AR=0;DCL=0;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-21,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-21,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-21,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-21,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-21,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-21,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-21,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-21,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-21,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-21,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-21,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-21,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-21,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-21,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-21,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-21,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-21,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-21,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-21,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-21,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-21,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-21,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=1;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-21,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;Swimlanes=locked=false;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;hh=0;cls=0;bw=0;hli=0;bro=0;SwimlaneFont=lfh:-21,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;;"/>
+			<Column name="Client" value="{C4B618F7-56F1-4afa-9DA7-7631C7E4F421}"/>
+		</Row>
+		<Row>
+			<Column name="XrefID" value="{B9E4086D-76A8-48ad-B5C3-8622E95B8C33}"/>
+			<Column name="Name" value="Stereotypes"/>
+			<Column name="Type" value="attribute property"/>
+			<Column name="Visibility" value="Public"/>
+			<Column name="Partition" value="0"/>
+			<Column name="Description" value="@STEREO;Name=enum;GUID={D990F099-E450-4633-B502-F3739990E127};@ENDSTEREO;"/>
+			<Column name="Client" value="{C881FC2A-6729-4b30-B9A7-348AA721C020}"/>
+			<Column name="Supplier" value="&lt;none&gt;"/>
+		</Row>
+		<Row>
+			<Column name="XrefID" value="{BBAC5F35-17A7-406d-BA8C-D0B9CC22C836}"/>
+			<Column name="Name" value="Stereotypes"/>
+			<Column name="Type" value="attribute property"/>
+			<Column name="Visibility" value="Public"/>
+			<Column name="Partition" value="0"/>
+			<Column name="Description" value="@STEREO;Name=enum;GUID={D990F099-E450-4633-B502-F3739990E127};@ENDSTEREO;"/>
+			<Column name="Client" value="{DC5E08C8-985F-48a1-B9CF-45BDAB413F36}"/>
+			<Column name="Supplier" value="&lt;none&gt;"/>
+		</Row>
+		<Row>
+			<Column name="XrefID" value="{6BD1C300-51C7-4c65-B6B7-599C187CB09E}"/>
+			<Column name="Name" value="Stereotypes"/>
+			<Column name="Type" value="connector property"/>
+			<Column name="Visibility" value="Public"/>
+			<Column name="Partition" value="0"/>
+			<Column name="Description" value="@STEREO;Name=trace;FQName=EAUML::trace;@ENDSTEREO;"/>
+			<Column name="Client" value="{ECF79936-94C3-4975-8A57-B633322E86BB}"/>
+			<Column name="Supplier" value="&lt;none&gt;"/>
+		</Row>
+	</Table>
+</Package>

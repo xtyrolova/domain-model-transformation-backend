@@ -1,0 +1,20 @@
+<transition>
+    <id>${transitionElement.id.text()}</id>
+    <x>${transitionElement.x.text()}</x>
+    <y>${transitionElement.y.text()}</y>
+    <label>${transitionElement.label.text()}</label>
+    <!-- Add other necessary elements from the original XML as needed -->
+    <roleRef>
+        <id>${transitionElement.roleRef.id.text()}</id>
+        <logic>
+            <perform>${transitionElement.roleRef.logic.perform.text()}</perform>
+            <delegate>${transitionElement.roleRef.logic.delegate.text()}</delegate>
+            <cancel>${transitionElement.roleRef.logic.cancel.text()}</cancel>
+            <assign>${transitionElement.roleRef.logic.assign.text()}</assign>
+        </logic>
+    </roleRef>
+    <dataGroup>
+        <!-- Add logic to transform dataGroup if needed -->
+    </dataGroup>
+    ${transformEvents(transitionElement.event)}
+</transition>

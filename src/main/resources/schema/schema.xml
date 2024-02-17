@@ -1,0 +1,15 @@
+<document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://petriflow.com/petriflow.schema.xsd">
+    <id>${root.id.text()}</id>
+    <initials>${root.initials.text()}</initials>
+    <title>${root.title.text()}</title>
+    <icon>${root.icon.text()}</icon>
+    <defaultRole>${root.defaultRole.text()}</defaultRole>
+    <anonymousRole>${root.anonymousRole.text()}</anonymousRole>
+    <transitionRole>${root.transitionRole.text()}</transitionRole>
+
+    <!-- Transformation of data elements -->
+    ${transformData(root.data)}
+
+    <!-- Transformation of transition -->
+    ${transformTransition(root.transition)}
+</document>

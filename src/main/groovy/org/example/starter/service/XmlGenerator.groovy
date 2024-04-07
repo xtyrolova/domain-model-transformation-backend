@@ -64,7 +64,7 @@ class XmlGenerator {
 
             Integer counter = 0
             StringWriter writer = new StringWriter()
-            new MarkupBuilder(writer).document('xmlns:xsi': "http://www.w3.org/2001/XMLSchema-instance", 'xsi:noNamespaceSchemaLocation': "../../du_schema.xsd") {
+            new MarkupBuilder(writer).document('xmlns:xsi': "http://www.w3.org/2001/XMLSchema-instance", 'xsi:noNamespaceSchemaLocation': "https://petriflow.com/petriflow.schema.xsd") {
                 id modelName.toLowerCase()
                 initials modelName.take(3).toUpperCase()
                 title modelName

@@ -1,7 +1,9 @@
 package org.example.starter.service;
 
 import groovy.xml.MarkupBuilder
+import groovy.util.slurpersupport.GPathResult
 
+import java.nio.file.Path
 import java.nio.file.StandardOpenOption
 import java.text.Normalizer
 
@@ -9,66 +11,142 @@ import java.nio.file.Files
 import java.nio.file.Paths
 
 class XmlGenerator {
-    private static OUTPUT_DIR = "src/main/resources/petriNets/transformed/"
+    private static OUTPUT_DIR = "src/main/resources/petriNets/"
+    private static N_OF_COLS = 4
+    private static TEMPLATE = 'material'
+    private static APPEARANCE = 'outline'
+    private static LAYOUT = 'grid'
 
     static void createXml(String filePath) {
-        def fileContent = new File(filePath).getText('UTF-8')
-        def root = new XmlSlurper().parseText(fileContent)
+        String fileContent = new File(filePath).getText('UTF-8')
+        GPathResult root = new XmlSlurper().parseText(fileContent)
+        String domainModelName = root.@name.text()
+        LinkedHashMap domainModels = new LinkedHashMap()
 
-        def domainModelName = root.@name.text()
-
-        def tables = root.'**'.findAll { it.name() == 'Table' && it.@name.text() == 't_attribute' }
-        def attributesData = [:]
-        tables.each { table ->
+        root.'**'.findAll { it.name() == 'Table' && it.@name.text() == 't_object' }.each { table ->
             table.Row.each { row ->
-                def nameColumn = row.Column.find { it.@name.text() == 'Name' }
-                def typeColumn = row.Column.find { it.@name.text() == 'Type' }
+                String objectId = row.Column.find { it.@name.text() == 'Object_ID' }?.@value.text()
+                String objectName = row.Column.find { it.@name.text() == 'Name' }?.@value.text()
+                String objectType = row.Column.find { it.@name.text() == 'Object_Type' }?.@value.text()
 
-                def nameValue = nameColumn ? nameColumn.@value.text() : null
-                def typeValue = typeColumn ? typeColumn.@value.text() : null
-
-                if (nameValue && typeValue) {
-                    attributesData[nameValue] = typeValue
+                if (objectId && objectName && objectType == 'Class') {
+                    domainModels[objectId] = objectName
                 }
             }
         }
 
-        // Now, generate the new XML document based on the extracted data
-        def writer = new StringWriter()
-        def builder = new MarkupBuilder(writer)
-        builder.document('xmlns:xsi': "http://www.w3.org/2001/XMLSchema-instance", 'xsi:noNamespaceSchemaLocation': "../../du_schema.xsd") {
-            id domainModelName.toLowerCase()
-            initials domainModelName.take(3).toUpperCase()
-            title domainModelName
-            icon 'device_hub'
-            defaultRole true
-            anonymousRole true
-            transitionRole false
+        if (domainModels.isEmpty()) {
+            println "Input XML files has no domain classes."
+            return
+        }
 
-            attributesData.each { attribute ->
-                data(type: attribute.value) {
-                    id Normalizer.normalize(attribute.key, Normalizer.Form.NFD)
-                            .replaceAll("\\p{InCombiningDiacriticalMarks}+", "")
-                            .toLowerCase()
-                            .replaceAll(" ", "_")
-                    title attribute.key
+        domainModels.each { objectId, modelName ->
+            Map attributes = new LinkedHashMap()
+            Map enumerations = new LinkedHashMap()
+
+            root.'**'.findAll { it.name() == 'Table' && it.@name.text() == 't_attribute' }.each { table ->
+                table.Row.each { row ->
+                    if (row.Column.any { col -> col.@name.text() == 'Object_ID' && col.@value.text() == objectId }) {
+                        String name = row.Column.find { col -> col.@name.text() == 'Name' }?.@value.text()
+                        String type = row.Column.find { col -> col.@name.text() == 'Type' }?.@value.text()
+                        boolean isEnumeration = type == 'enumeration'
+
+                        if (name && type) {
+                            if (isEnumeration) {
+                                enumerations[name] = type
+                            } else {
+                                attributes[name] = convertType(type)
+                            }
+                        }
+                    }
                 }
             }
-        }
-        writer.close()
 
-        println writer.toString()
-        saveXmlToFile(writer.toString(), new File(OUTPUT_DIR, "${domainModelName.toLowerCase()}.xml").absolutePath)
+            Integer counter = 0
+            StringWriter writer = new StringWriter()
+            new MarkupBuilder(writer).document('xmlns:xsi': "http://www.w3.org/2001/XMLSchema-instance", 'xsi:noNamespaceSchemaLocation': "../../du_schema.xsd") {
+                id modelName.toLowerCase()
+                initials modelName.take(3).toUpperCase()
+                title modelName
+                icon 'device_hub'
+                defaultRole true
+                anonymousRole true
+                transitionRole false
+
+                attributes.each { name, type ->
+                    data(type: type) {
+                        id convertToId(name)
+                        title name
+                    }
+                }
+                transition {
+                    id 'generic_transition'
+                    x '300'
+                    y '140'
+                    label modelName
+                    roleRef {
+                        id 'default'
+                        logic {
+                            perform true
+                            assign true
+                            delegate false
+                            cancel false
+                        }
+                    }
+                    dataGroup {
+                        id 'generic_transition_0'
+                        cols N_OF_COLS
+                        layout LAYOUT
+                        attributes.each { name, type ->
+                            dataRef {
+                                id convertToId(name)
+                                logic {
+                                    behaviour 'editable'
+                                }
+                                layout {
+                                    x '0'
+                                    y {counter++}
+                                    rows '1'
+                                    cols N_OF_COLS
+                                    template TEMPLATE
+                                    appearance APPEARANCE
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            String fileName = convertToId(modelName.toString())
+            saveXmlToFile(writer.toString(), new File(OUTPUT_DIR, "${domainModelName.toLowerCase()}/${fileName}.xml").absolutePath)
+        }
     }
 
     static void saveXmlToFile(String xmlContent, String outputFilePath) {
         try {
-            def path = Paths.get(outputFilePath)
-            Files.createDirectories(path.parent) // Ensure parent directories are created
+            Path path = Paths.get(outputFilePath)
+            Files.createDirectories(path.parent)
             Files.write(path, xmlContent.bytes, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING)
             println "XML document created successfully at: $outputFilePath"
         } catch (Exception e) {
             e.printStackTrace()
+        }
+    }
+    static String convertToId(String name) {
+        Normalizer.normalize(name, Normalizer.Form.NFD)
+                .replaceAll("\\p{InCombiningDiacriticalMarks}+", "")
+                .toLowerCase()
+                .replaceAll(" ", "_")
+    }
+
+    static String convertType(String type) {
+        switch (type) {
+            case "string":
+                return "text"
+            case "datetime":
+                return "dateTime"
+            default:
+                return "text"
         }
     }
 }

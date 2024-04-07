@@ -12,9 +12,7 @@ class DomainTransformService {
     IWorkflowService workflowService
 
     public static void transformFiles(FileListField filesToImport) {
-//        TODO
         def filePath = filesToImport.value.namesPaths.path[0].toString()
-
         XmlGenerator.createXml(filePath)
     }
 }

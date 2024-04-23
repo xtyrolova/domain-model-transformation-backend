@@ -1,7 +1,12 @@
-package org.example.starter.service;
+package org.example.starter.service
 
+import domain.Attribute
+import domain.Connector
+import domain.Domain;
 import groovy.xml.MarkupBuilder
 import groovy.util.slurpersupport.GPathResult
+import org.example.starter.helper.DomainTransformHelper
+import org.springframework.stereotype.Service
 
 import java.nio.file.Path
 import java.nio.file.StandardOpenOption
@@ -10,18 +15,24 @@ import java.text.Normalizer
 import java.nio.file.Files
 import java.nio.file.Paths
 
+@Service
 class XmlGenerator {
-    private static OUTPUT_DIR = "src/main/resources/petriNets/"
-    private static N_OF_COLS = 4
-    private static TEMPLATE = 'material'
-    private static APPEARANCE = 'outline'
-    private static LAYOUT = 'grid'
+    private static final OUTPUT_DIR = "src/main/resources/petriNets/"
+    private static final N_OF_COLS = 4
+    private static final TEMPLATE = 'material'
+    private static final APPEARANCE = 'outline'
+    private static final LAYOUT = 'grid'
 
-    static void createXml(String filePath) {
+    private List<Domain> domainList;
+    private List<Connector> connectorList;
+    private List<Attribute> attributeList;
+
+    void createXml(String filePath) {
         String fileContent = new File(filePath).getText('UTF-8')
         GPathResult root = new XmlSlurper().parseText(fileContent)
         String domainModelName = root.@name.text()
-        LinkedHashMap domainModels = new LinkedHashMap()
+        this.domainList = new ArrayList<>();
+        this.connectorList = new ArrayList<>();
 
         root.'**'.findAll { it.name() == 'Table' && it.@name.text() == 't_object' }.each { table ->
             table.Row.each { row ->
@@ -30,19 +41,38 @@ class XmlGenerator {
                 String objectType = row.Column.find { it.@name.text() == 'Object_Type' }?.@value.text()
 
                 if (objectId && objectName && objectType == 'Class') {
-                    domainModels[objectId] = objectName
+                    domainList.add(new Domain(objectName, objectId));
                 }
             }
         }
 
-        if (domainModels.isEmpty()) {
-            println "Input XML files has no domain classes."
+        if (domainList.isEmpty()) {
+            println "Input XML file has no domain classes."
             return
         }
 
-        domainModels.each { objectId, modelName ->
-            Map attributes = new LinkedHashMap()
-            Map enumerations = new LinkedHashMap()
+        root.'**'.findAll { it.name() == 'Table' && it.@name.text() == 't_connector' }.each { table ->
+            table.Row.each { row ->
+                def startObjectId = row.Column.find { it.@name.text() == 'Start_Object_ID' }?.@value.text()
+                def endObjectId = row.Column.find { it.@name.text() == 'End_Object_ID' }?.@value.text()
+
+                if (domainList.stream().anyMatch(d -> d.getObjectId().equals(startObjectId)) &&
+                        domainList.stream().anyMatch(d -> d.getObjectId().equals(endObjectId))) {
+                    String connectorName = row.Column.findAll { it.@name.text() == 'Name' }?.@value.text()
+                    String connectorType = row.Column.findAll { it.@name.text() == 'Connector_Type' }?.@value.text()
+                    String sourceCard = row.Column.findAll { it.@name.text() == 'SourceCard' }?.@value.text()
+                    String destCard = row.Column.findAll { it.@name.text() == 'DestCard' }?.@value.text()
+                    boolean sourceMultiplicity = sourceCard.contains("*");
+                    boolean destinationMultiplicity = destCard.contains("*");
+                    connectorList.add(new Connector(connectorName, startObjectId, endObjectId, connectorType, sourceCard, destCard, sourceMultiplicity, destinationMultiplicity))
+                }
+            }
+        }
+
+        domainList.each {domain ->
+            String objectId = domain.getObjectId()
+            String modelName = domain.getName()
+            this.attributeList = new ArrayList<>()
 
             root.'**'.findAll { it.name() == 'Table' && it.@name.text() == 't_attribute' }.each { table ->
                 table.Row.each { row ->
@@ -52,10 +82,11 @@ class XmlGenerator {
                         boolean isEnumeration = type == 'enumeration'
 
                         if (name && type) {
+                            type = DomainTransformHelper.convertType(type)
                             if (isEnumeration) {
-                                enumerations[name] = type
+                                attributeList.add(new Attribute(name, type, true, null))
                             } else {
-                                attributes[name] = convertType(type)
+                                attributeList.add(new Attribute(name, type, false, null))
                             }
                         }
                     }
@@ -73,12 +104,41 @@ class XmlGenerator {
                 anonymousRole true
                 transitionRole false
 
-                attributes.each { name, type ->
-                    data(type: type) {
-                        id convertToId(name)
-                        title name
+                attributeList.each { attribute ->
+                    data(type: attribute.getType()) {
+                        id "${DomainTransformHelper.convertToId(attribute.getName())}"
+                        title attribute.getName()
                     }
                 }
+
+                connectorList.each { connector ->
+                    if (connector.getStartObjectId() == objectId) {
+                        data(type: 'caseRef') {
+                            id "${DomainTransformHelper.resolveRelationName(connector.destinationMultiplicity, "caseRef", domainList, connector.endObjectId)}"
+                            title ""
+                            allowedNets {
+                                allowedNet "${DomainTransformHelper.resolveDomainName(connector.getEndObjectId(), domainList)}"
+                            }
+                        }
+                        data(type: 'taskRef') {
+                            id "${DomainTransformHelper.resolveRelationName(connector.destinationMultiplicity, "taskRef", domainList, connector.endObjectId)}"
+                            title ""
+                        }
+                    } else if (connector.getEndObjectId() == objectId) {
+                        data(type: 'caseRef') {
+                            id "${DomainTransformHelper.resolveRelationName(connector.sourceMultiplicity, "caseRef", domainList, connector.startObjectId)}"
+                            title ""
+                            allowedNets {
+                                allowedNet "${DomainTransformHelper.resolveDomainName(connector.getStartObjectId(), domainList)}"
+                            }
+                        }
+                        data(type: 'taskRef') {
+                            id "${DomainTransformHelper.resolveRelationName(connector.sourceMultiplicity, "taskRef", domainList, connector.startObjectId)}"
+                            title ""
+                        }
+                    }
+                }
+
                 transition {
                     id 'generic_transition'
                     x '300'
@@ -97,27 +157,28 @@ class XmlGenerator {
                         id 'generic_transition_0'
                         cols N_OF_COLS
                         layout LAYOUT
-                        attributes.each { name, type ->
+                        attributeList.each { attribute ->
                             dataRef {
-                                id convertToId(name)
+                                id DomainTransformHelper.convertToId(attribute.getName())
                                 logic {
-                                    behaviour 'editable'
+                                    behavior 'editable'
                                 }
                                 layout {
                                     x '0'
-                                    y {counter++}
+                                    y "${counter}"
                                     rows '1'
                                     cols N_OF_COLS
                                     template TEMPLATE
                                     appearance APPEARANCE
                                 }
                             }
+                            counter++
                         }
                     }
                 }
             }
 
-            String fileName = convertToId(modelName.toString())
+            String fileName = DomainTransformHelper.convertToId(modelName.toString())
             saveXmlToFile(writer.toString(), new File(OUTPUT_DIR, "${domainModelName.toLowerCase()}/${fileName}.xml").absolutePath)
         }
     }
@@ -132,21 +193,5 @@ class XmlGenerator {
             e.printStackTrace()
         }
     }
-    static String convertToId(String name) {
-        Normalizer.normalize(name, Normalizer.Form.NFD)
-                .replaceAll("\\p{InCombiningDiacriticalMarks}+", "")
-                .toLowerCase()
-                .replaceAll(" ", "_")
-    }
 
-    static String convertType(String type) {
-        switch (type) {
-            case "string":
-                return "text"
-            case "datetime":
-                return "dateTime"
-            default:
-                return "text"
-        }
-    }
 }

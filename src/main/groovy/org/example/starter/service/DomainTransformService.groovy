@@ -11,8 +11,11 @@ class DomainTransformService {
     @Autowired
     IWorkflowService workflowService
 
-    public static void transformFiles(FileListField filesToImport) {
+    @Autowired
+    XmlGenerator xmlGenerator
+
+    void transformFiles(FileListField filesToImport) {
         def filePath = filesToImport.value.namesPaths.path[0].toString()
-        XmlGenerator.createXml(filePath)
+        xmlGenerator.createXml(filePath)
     }
 }

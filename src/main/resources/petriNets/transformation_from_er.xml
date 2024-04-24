@@ -6,29 +6,59 @@
 	<defaultRole>true</defaultRole>
 	<anonymousRole>true</anonymousRole>
 	<transitionRole>false</transitionRole>
-	<caseName>Transformation from ER</caseName>
-	<data type="number">
-		<id>success</id>
-		<title>Success</title>
-		<init>1</init>
-	</data>
-	<data type="number">
-		<id>fail</id>
-		<title>Fail</title>
-		<init>1</init>
-	</data>
+	<caseName>Transformácia domény</caseName>
 	<data type="fileList">
 		<id>import_files</id>
 		<title>Vstupné súbory</title>
+		<placeholder>Zadajte XML doménového modelu</placeholder>
+	</data>
+	<data type="fileList">
+		<id>download_files</id>
+		<title>Súbory na stiahnutie</title>
+	</data>
+	<data type="i18n">
+		<id>divider</id>
+		<title/>
+		<component>
+			<name>divider</name>
+		</component>
+	</data>
+	<data type="button">
+		<id>button_generate</id>
+		<title/>
+		<placeholder>Generovať</placeholder>
+		<component>
+			<name>flat</name>
+		</component>
+	</data>
+	<data type="i18n">
+		<id>process_title</id>
+		<title/>
+		<component>
+			<name>divider</name>
+		</component>
+	</data>
+	<data type="taskRef">
+		<id>generated_taskRef</id>
+		<title/>
+	</data>
+	<data type="multichoice_map">
+		<id>processes_map</id>
+		<title>Procesy</title>
+	</data>
+	<data type="button">
+		<id>button_create_process</id>
+		<title/>
+		<placeholder>Vytvoriť prípad</placeholder>
 	</data>
 	<transition>
-		<id>t1</id>
+		<id>import_export_trans</id>
 		<x>300</x>
 		<y>140</y>
-		<label>Import</label>
+		<label>Import/Export</label>
 		<assignPolicy>auto</assignPolicy>
 		<dataGroup>
-			<id>t1_0</id>
+			<id>import_export_trans_0</id>
 			<cols>4</cols>
 			<layout>grid</layout>
 			<dataRef>
@@ -38,20 +68,61 @@
 				</logic>
 				<layout>
 					<x>0</x>
+					<y>1</y>
+					<rows>1</rows>
+					<cols>3</cols>
+					<template>material</template>
+					<appearance>outline</appearance>
+				</layout>
+			</dataRef>
+			<dataRef>
+				<id>download_files</id>
+				<logic>
+					<behavior>hidden</behavior>
+				</logic>
+				<layout>
+					<x>0</x>
+					<y>2</y>
+					<rows>1</rows>
+					<cols>3</cols>
+					<template>material</template>
+					<appearance>outline</appearance>
+				</layout>
+			</dataRef>
+			<dataRef>
+				<id>divider</id>
+				<logic>
+					<behavior>editable</behavior>
+				</logic>
+				<layout>
+					<x>0</x>
 					<y>0</y>
 					<rows>1</rows>
-					<cols>2</cols>
+					<cols>4</cols>
+					<template>material</template>
+					<appearance>outline</appearance>
+				</layout>
+			</dataRef>
+			<dataRef>
+				<id>button_generate</id>
+				<logic>
+					<behavior>editable</behavior>
+				</logic>
+				<layout>
+					<x>3</x>
+					<y>1</y>
+					<rows>1</rows>
+					<cols>1</cols>
 					<template>material</template>
 					<appearance>outline</appearance>
 				</layout>
 			</dataRef>
 		</dataGroup>
 		<event type="assign">
-			<id>t1_assign</id>
-			<title/>
+			<id>import_export_trans_assign</id>
 		</event>
 		<event type="finish">
-			<id>t1_finish</id>
+			<id>import_export_trans_finish</id>
 			<title>Ďalej</title>
 			<actions phase="post">
 				<action>
@@ -62,32 +133,95 @@
 			</actions>
 		</event>
 		<event type="cancel">
-			<id>t1_cancel</id>
+			<id>import_export_trans_cancel</id>
 			<title/>
 		</event>
 		<event type="delegate">
-			<id>t1_delegate</id>
+			<id>import_export_trans_delegate</id>
 			<title/>
 		</event>
 	</transition>
 	<transition>
-		<id>t2</id>
-		<x>620</x>
-		<y>140</y>
-		<label>Export</label>
-	</transition>
-	<transition>
-		<id>t3</id>
-		<x>300</x>
+		<id>generated_process_trans</id>
+		<x>420</x>
 		<y>260</y>
-		<label>Import Error</label>
-		<icon>settings</icon>
-	</transition>
-	<transition>
-		<id>t4</id>
-		<x>740</x>
-		<y>60</y>
-		<label>More files</label>
+		<label>Generovaný proces</label>
+		<dataGroup>
+			<id>generated_process_trans_0</id>
+			<cols>4</cols>
+			<layout>grid</layout>
+			<dataRef>
+				<id>process_title</id>
+				<logic>
+					<behavior>hidden</behavior>
+				</logic>
+				<layout>
+					<x>0</x>
+					<y>1</y>
+					<rows>1</rows>
+					<cols>4</cols>
+					<template>material</template>
+					<appearance>outline</appearance>
+				</layout>
+			</dataRef>
+			<dataRef>
+				<id>generated_taskRef</id>
+				<logic>
+					<behavior>hidden</behavior>
+				</logic>
+				<layout>
+					<x>0</x>
+					<y>2</y>
+					<rows>1</rows>
+					<cols>4</cols>
+					<template>material</template>
+					<appearance>outline</appearance>
+				</layout>
+			</dataRef>
+			<dataRef>
+				<id>processes_map</id>
+				<logic>
+					<behavior>editable</behavior>
+				</logic>
+				<layout>
+					<x>0</x>
+					<y>0</y>
+					<rows>1</rows>
+					<cols>3</cols>
+					<template>material</template>
+					<appearance>outline</appearance>
+				</layout>
+			</dataRef>
+			<dataRef>
+				<id>button_create_process</id>
+				<logic>
+					<behavior>editable</behavior>
+				</logic>
+				<layout>
+					<x>3</x>
+					<y>0</y>
+					<rows>1</rows>
+					<cols>1</cols>
+					<template>material</template>
+					<appearance>outline</appearance>
+				</layout>
+				<component>
+					<name>flat</name>
+				</component>
+			</dataRef>
+		</dataGroup>
+		<event type="assign">
+			<id>generated_process_trans_assign</id>
+		</event>
+		<event type="finish">
+			<id>generated_process_trans_finish</id>
+		</event>
+		<event type="cancel">
+			<id>generated_process_trans_cancel</id>
+		</event>
+		<event type="delegate">
+			<id>generated_process_trans_delegate</id>
+		</event>
 	</transition>
 	<place>
 		<id>p1</id>
@@ -105,8 +239,8 @@
 	</place>
 	<place>
 		<id>p3</id>
-		<x>740</x>
-		<y>140</y>
+		<x>580</x>
+		<y>260</y>
 		<tokens>0</tokens>
 		<static>false</static>
 	</place>
@@ -114,70 +248,39 @@
 		<id>a1</id>
 		<type>regular</type>
 		<sourceId>p1</sourceId>
-		<destinationId>t1</destinationId>
+		<destinationId>import_export_trans</destinationId>
 		<multiplicity>1</multiplicity>
 	</arc>
 	<arc>
 		<id>a2</id>
 		<type>regular</type>
-		<sourceId>t1</sourceId>
+		<sourceId>import_export_trans</sourceId>
 		<destinationId>p2</destinationId>
 		<multiplicity>1</multiplicity>
 	</arc>
 	<arc>
-		<id>a3</id>
-		<type>regular</type>
-		<sourceId>p2</sourceId>
-		<destinationId>t2</destinationId>
-		<multiplicity>1</multiplicity>
-		<reference>success</reference>
-	</arc>
-	<arc>
 		<id>a4</id>
 		<type>regular</type>
-		<sourceId>t2</sourceId>
+		<sourceId>generated_process_trans</sourceId>
 		<destinationId>p3</destinationId>
 		<multiplicity>1</multiplicity>
 	</arc>
 	<arc>
-		<id>a6</id>
+		<id>a14</id>
 		<type>regular</type>
 		<sourceId>p2</sourceId>
-		<destinationId>t3</destinationId>
+		<destinationId>generated_process_trans</destinationId>
 		<multiplicity>1</multiplicity>
-		<reference>fail</reference>
-		<breakpoint>
-			<x>420</x>
-			<y>260</y>
-		</breakpoint>
 	</arc>
 	<arc>
-		<id>a11</id>
+		<id>a17</id>
 		<type>regular</type>
-		<sourceId>t3</sourceId>
+		<sourceId>generated_process_trans</sourceId>
 		<destinationId>p1</destinationId>
 		<multiplicity>1</multiplicity>
 		<breakpoint>
 			<x>180</x>
 			<y>260</y>
-		</breakpoint>
-	</arc>
-	<arc>
-		<id>a12</id>
-		<type>regular</type>
-		<sourceId>p3</sourceId>
-		<destinationId>t4</destinationId>
-		<multiplicity>1</multiplicity>
-	</arc>
-	<arc>
-		<id>a13</id>
-		<type>regular</type>
-		<sourceId>t4</sourceId>
-		<destinationId>p1</destinationId>
-		<multiplicity>1</multiplicity>
-		<breakpoint>
-			<x>180</x>
-			<y>60</y>
 		</breakpoint>
 	</arc>
 </document>

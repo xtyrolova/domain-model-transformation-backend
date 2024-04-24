@@ -12,4 +12,6 @@ public class Attribute {
     private String type;
     private boolean isEnumeration;
     private List<String> options;
+    private String parentObjectId;
+    private String enumerationId;
 }

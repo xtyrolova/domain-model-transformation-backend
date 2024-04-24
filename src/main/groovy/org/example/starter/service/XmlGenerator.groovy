@@ -1,8 +1,6 @@
 package org.example.starter.service
 
-import domain.Attribute
-import domain.Connector
-import domain.Domain;
+import domain.*
 import groovy.xml.MarkupBuilder
 import groovy.util.slurpersupport.GPathResult
 import org.example.starter.helper.DomainTransformHelper
@@ -10,7 +8,6 @@ import org.springframework.stereotype.Service
 
 import java.nio.file.Path
 import java.nio.file.StandardOpenOption
-import java.text.Normalizer
 
 import java.nio.file.Files
 import java.nio.file.Paths
@@ -23,16 +20,18 @@ class XmlGenerator {
     private static final APPEARANCE = 'outline'
     private static final LAYOUT = 'grid'
 
-    private List<Domain> domainList;
-    private List<Connector> connectorList;
-    private List<Attribute> attributeList;
+    private List<Domain> domainList
+    private List<Connector> connectorList
+    private List<Attribute> attributeList
+    private List<Attribute> enumerationList
 
     void createXml(String filePath) {
         String fileContent = new File(filePath).getText('UTF-8')
         GPathResult root = new XmlSlurper().parseText(fileContent)
         String domainModelName = root.@name.text()
-        this.domainList = new ArrayList<>();
-        this.connectorList = new ArrayList<>();
+        this.domainList = new ArrayList<>()
+        this.connectorList = new ArrayList<>()
+        this.enumerationList = new ArrayList<>()
 
         root.'**'.findAll { it.name() == 'Table' && it.@name.text() == 't_object' }.each { table ->
             table.Row.each { row ->
@@ -41,7 +40,11 @@ class XmlGenerator {
                 String objectType = row.Column.find { it.@name.text() == 'Object_Type' }?.@value.text()
 
                 if (objectId && objectName && objectType == 'Class') {
-                    domainList.add(new Domain(objectName, objectId));
+                    domainList.add(new Domain(objectName, objectId, new ArrayList<>(), new ArrayList<>()));
+                }
+                if (objectId && objectName && objectType == 'Enumeration') {
+                    objectType = DomainTransformHelper.convertType(objectType)
+                    enumerationList.add(new Attribute(objectName, objectType, true, new ArrayList<>(), null, objectId))
                 }
             }
         }
@@ -56,8 +59,9 @@ class XmlGenerator {
                 def startObjectId = row.Column.find { it.@name.text() == 'Start_Object_ID' }?.@value.text()
                 def endObjectId = row.Column.find { it.@name.text() == 'End_Object_ID' }?.@value.text()
 
-                if (domainList.stream().anyMatch(d -> d.getObjectId().equals(startObjectId)) &&
-                        domainList.stream().anyMatch(d -> d.getObjectId().equals(endObjectId))) {
+                if ((domainList.stream().anyMatch(d -> d.getObjectId().equals(startObjectId)) &&
+                        domainList.stream().anyMatch(d -> d.getObjectId().equals(endObjectId))) ||
+                        (enumerationList.stream().anyMatch(d -> d.getEnumerationId().equals(startObjectId)))) {
                     String connectorName = row.Column.findAll { it.@name.text() == 'Name' }?.@value.text()
                     String connectorType = row.Column.findAll { it.@name.text() == 'Connector_Type' }?.@value.text()
                     String sourceCard = row.Column.findAll { it.@name.text() == 'SourceCard' }?.@value.text()
@@ -70,29 +74,49 @@ class XmlGenerator {
         }
 
         domainList.each {domain ->
+            connectorList.each {connector ->
+                if (connector.startObjectId == domain.objectId || connector.endObjectId == domain.objectId && !domain.connectors.contains(connector)){
+                    List<Connector> domainConnectors = domain.getConnectors();
+                    domainConnectors.add(connector)
+                    domain.setConnectors(domainConnectors)
+                }
+            }
             String objectId = domain.getObjectId()
             String modelName = domain.getName()
             this.attributeList = new ArrayList<>()
 
             root.'**'.findAll { it.name() == 'Table' && it.@name.text() == 't_attribute' }.each { table ->
                 table.Row.each { row ->
-                    if (row.Column.any { col -> col.@name.text() == 'Object_ID' && col.@value.text() == objectId }) {
+                    if (row.Column.any { col -> col.@name.text() == 'Object_ID' && col.@value.text() == objectId}) {
                         String name = row.Column.find { col -> col.@name.text() == 'Name' }?.@value.text()
                         String type = row.Column.find { col -> col.@name.text() == 'Type' }?.@value.text()
-                        boolean isEnumeration = type == 'enumeration'
 
                         if (name && type) {
                             type = DomainTransformHelper.convertType(type)
-                            if (isEnumeration) {
-                                attributeList.add(new Attribute(name, type, true, null))
-                            } else {
-                                attributeList.add(new Attribute(name, type, false, null))
+                            attributeList.add(new Attribute(name, type, false, null, objectId, null))
+                        }
+                    }
+                    if (domain.getConnectors().stream().anyMatch {c -> c.getStartObjectId().equals(row.Column.findAll { it.@name.text() == 'Object_ID' }?.@value.text())}) {
+                        String name = row.Column.find { col -> col.@name.text() == 'Name' }?.@value.text()
+                        String stereotype = row.Column.find { col -> col.@name.text() == 'Stereotype' }?.@value.text()
+                        boolean isEnumeration = stereotype == 'enum'
+
+                        if (isEnumeration) {
+                            String enumParentObjectId = row.Column.find { col -> col.@name.text() == 'Object_ID' }?.@value.text()
+                            Attribute enumParentAttribute = enumerationList.stream()
+                                    .filter(d -> d.getEnumerationId().equals(enumParentObjectId))
+                                    .findFirst().value;
+                            if (name ==~ /.*[A-Za-z0-9].*/) {
+                                enumParentAttribute.getOptions().add(name)
+                                if (!attributeList.contains(enumParentAttribute)) {
+                                    attributeList.add(enumParentAttribute)
+                                }
                             }
                         }
                     }
                 }
             }
-
+            domain.setAttributes(attributeList)
             Integer counter = 0
             StringWriter writer = new StringWriter()
             new MarkupBuilder(writer).document('xmlns:xsi': "http://www.w3.org/2001/XMLSchema-instance", 'xsi:noNamespaceSchemaLocation': "https://petriflow.com/petriflow.schema.xsd") {
@@ -104,15 +128,27 @@ class XmlGenerator {
                 anonymousRole true
                 transitionRole false
 
-                attributeList.each { attribute ->
-                    data(type: attribute.getType()) {
-                        id "${DomainTransformHelper.convertToId(attribute.getName())}"
-                        title attribute.getName()
+                domain.getAttributes().each { attribute ->
+                    if (attribute.getType() == "enumeration_map") {
+                        data(type: attribute.getType()) {
+                            id "${DomainTransformHelper.convertToId(attribute.getName())}"
+                            title attribute.getName()
+                            options {
+                                attribute.getOptions().each { o ->
+                                    option(key: "${DomainTransformHelper.convertToId(o)}", o)
+                                }
+                            }
+                        }
+                    } else {
+                        data(type: attribute.getType()) {
+                            id "${DomainTransformHelper.convertToId(attribute.getName())}"
+                            title attribute.getName()
+                        }
                     }
                 }
 
                 connectorList.each { connector ->
-                    if (connector.getStartObjectId() == objectId) {
+                    if (connector.getStartObjectId() == objectId && connector.getType() != 'Aggregation') {
                         data(type: 'caseRef') {
                             id "${DomainTransformHelper.resolveRelationName(connector.destinationMultiplicity, "caseRef", domainList, connector.endObjectId)}"
                             title ""
@@ -124,7 +160,7 @@ class XmlGenerator {
                             id "${DomainTransformHelper.resolveRelationName(connector.destinationMultiplicity, "taskRef", domainList, connector.endObjectId)}"
                             title ""
                         }
-                    } else if (connector.getEndObjectId() == objectId) {
+                    } else if (connector.getEndObjectId() == objectId && connector.getType() != 'Aggregation') {
                         data(type: 'caseRef') {
                             id "${DomainTransformHelper.resolveRelationName(connector.sourceMultiplicity, "caseRef", domainList, connector.startObjectId)}"
                             title ""

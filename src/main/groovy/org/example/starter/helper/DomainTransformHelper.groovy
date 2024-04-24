@@ -12,7 +12,7 @@ class DomainTransformHelper {
                 return "text"
             case "datetime":
                 return "dateTime"
-            case "enumeration":
+            case "Enumeration":
                 return "enumeration_map"
             default:
                 return "text"

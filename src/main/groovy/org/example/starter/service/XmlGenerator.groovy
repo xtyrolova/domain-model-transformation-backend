@@ -1,5 +1,8 @@
 package org.example.starter.service
 
+import com.netgrif.application.engine.petrinet.domain.dataset.FileFieldValue
+import com.netgrif.application.engine.petrinet.domain.dataset.FileListField
+import com.netgrif.application.engine.petrinet.domain.dataset.FileListFieldValue
 import domain.*
 import groovy.xml.MarkupBuilder
 import groovy.util.slurpersupport.GPathResult
@@ -8,6 +11,8 @@ import org.springframework.stereotype.Service
 
 import java.nio.file.Path
 import java.nio.file.StandardOpenOption
+
+import groovy.xml.XmlSlurper
 
 import java.nio.file.Files
 import java.nio.file.Paths
@@ -25,9 +30,12 @@ class XmlGenerator {
     private List<Attribute> attributeList
     private List<Attribute> enumerationList
 
-    void createXml(String filePath) {
-        String fileContent = new File(filePath).getText('UTF-8')
-        GPathResult root = new XmlSlurper().parseText(fileContent)
+    FileListFieldValue createXml(String filePath) {
+        FileListFieldValue transformedFiles = new FileListFieldValue();
+        HashSet<FileFieldValue> fieldValueHashSet = new HashSet<>()
+        String fileContent = new File(filePath).getText("Windows-1252")
+        println(fileContent)
+        def root = new XmlSlurper().parseText(fileContent)
         String domainModelName = root.@name.text()
         this.domainList = new ArrayList<>()
         this.connectorList = new ArrayList<>()
@@ -50,8 +58,7 @@ class XmlGenerator {
         }
 
         if (domainList.isEmpty()) {
-            println "Input XML file has no domain classes."
-            return
+            throw new IllegalArgumentException("Vložený XML súbor nemá doménové objekty")
         }
 
         root.'**'.findAll { it.name() == 'Table' && it.@name.text() == 't_connector' }.each { table ->
@@ -120,7 +127,7 @@ class XmlGenerator {
             Integer counter = 0
             StringWriter writer = new StringWriter()
             new MarkupBuilder(writer).document('xmlns:xsi': "http://www.w3.org/2001/XMLSchema-instance", 'xsi:noNamespaceSchemaLocation': "https://petriflow.com/petriflow.schema.xsd") {
-                id modelName.toLowerCase()
+                id "${DomainTransformHelper.convertToId(modelName.toLowerCase())}"
                 initials modelName.take(3).toUpperCase()
                 title modelName
                 icon 'device_hub'
@@ -215,8 +222,13 @@ class XmlGenerator {
             }
 
             String fileName = DomainTransformHelper.convertToId(modelName.toString())
-            saveXmlToFile(writer.toString(), new File(OUTPUT_DIR, "${domainModelName.toLowerCase()}/${fileName}.xml").absolutePath)
+            File createdFile = new File(OUTPUT_DIR, "${domainModelName.toLowerCase()}/${fileName}.xml")
+            saveXmlToFile(writer.toString(), createdFile.absolutePath)
+
+            fieldValueHashSet.add(new FileFieldValue(createdFile.name, createdFile.absolutePath))
         }
+        transformedFiles.namesPaths = fieldValueHashSet
+        return transformedFiles
     }
 
     static void saveXmlToFile(String xmlContent, String outputFilePath) {

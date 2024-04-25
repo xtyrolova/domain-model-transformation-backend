@@ -50,6 +50,9 @@
 		<id>button_create_process</id>
 		<title/>
 		<placeholder>Vytvoriť prípad</placeholder>
+		<component>
+			<name>flat</name>
+		</component>
 	</data>
 	<transition>
 		<id>import_export_trans</id>
@@ -116,6 +119,21 @@
 					<template>material</template>
 					<appearance>outline</appearance>
 				</layout>
+				<event type="set">
+					<id>button_generate_set</id>
+					<actions phase="post">
+						<action>
+							trans: t.this,
+							download_files: f.download_files,
+							import_files: f.import_files;
+
+							def transformedFiles = domainTransformService.transformFiles(import_files)
+
+							change download_files value { transformedFiles }
+							make download_files, visible on trans when { true }
+						</action>
+					</actions>
+				</event>
 			</dataRef>
 		</dataGroup>
 		<event type="assign">
@@ -126,9 +144,7 @@
 			<title>Ďalej</title>
 			<actions phase="post">
 				<action>
-					import_files: f.import_files;
-
-					domainTransformService.transformFiles(import_files)
+					<!-- TODO naplnit enumeraciu v dalsom transitione -->
 				</action>
 			</actions>
 		</event>
@@ -146,6 +162,7 @@
 		<x>420</x>
 		<y>260</y>
 		<label>Generovaný proces</label>
+		<assignPolicy>auto</assignPolicy>
 		<dataGroup>
 			<id>generated_process_trans_0</id>
 			<cols>4</cols>
@@ -205,9 +222,14 @@
 					<template>material</template>
 					<appearance>outline</appearance>
 				</layout>
-				<component>
-					<name>flat</name>
-				</component>
+				<event type="set">
+					<id>button_create_process_set</id>
+					<actions phase="post">
+						<action>
+							<!-- TODO: z enumeracie vybrat proces a setnut title aj taskref (vzdy aj vynulovat taskref) -->
+						</action>
+					</actions>
+				</event>
 			</dataRef>
 		</dataGroup>
 		<event type="assign">

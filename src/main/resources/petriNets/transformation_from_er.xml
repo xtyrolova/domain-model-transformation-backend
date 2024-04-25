@@ -45,9 +45,6 @@
 	<data type="enumeration_map">
 		<id>processes_map</id>
 		<title>Procesy</title>
-		<options>
-			<option key="zabitema">zabite ma</option>
-		</options>
 	</data>
 	<data type="button">
 		<id>button_create_process</id>
@@ -163,6 +160,10 @@
 					def processes = download_files.value
 					def processMap = [:]
 
+					if (processes == null) {
+						throw new IllegalArgumentException("Neboli zadané žiadne vstupné súbory")
+					}
+
 					processes.namesPaths.each {
 						def name = it.name.replace(".xml", "")
 						processMap.put(name.toString(), name.toString())
@@ -270,10 +271,18 @@
 							def filePath = ""
 							def files = download_files.value.namesPaths
 
+							if (chosenNet == null || chosenNet == "") {
+								throw new IllegalArgumentException("Nebol zvolený žiaden proces")
+							}
+
 							files.each {
 								if (it.path.toString().contains(chosenNet)) {
 									filePath = it.path.toString()
 								}
+							}
+
+							if (filePath == null || filePath == "") {
+								throw new IllegalArgumentException("Cesta k zvolenému súboru neexistuje")
 							}
 
 							java.io.InputStream fileStream = new java.io.FileInputStream(filePath)
@@ -298,6 +307,24 @@
 		<event type="finish">
 			<id>generated_process_trans_finish</id>
 			<title>Import ďalších modelov</title>
+			<actions phase="pre">
+				<action>
+					trans: t.import_export_trans,
+					trans2: t.this,
+					import_files: f.import_files,
+					download_files: f.download_files,
+					process_title: f.process_title,
+					generated_taskRef: f.generated_taskRef,
+					processes_map: f.processes_map;
+
+					change import_files value { null }
+					change download_files value { null }
+					make download_files, hidden on trans when { true }
+					make process_title, hidden on trans2 when { true }
+					change generated_taskRef value { [] }
+					change processes_map value { [:] }
+				</action>
+			</actions>
 		</event>
 		<event type="cancel">
 			<id>generated_process_trans_cancel</id>

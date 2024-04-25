@@ -32,7 +32,7 @@ class XmlGenerator {
         FileListFieldValue transformedFiles = new FileListFieldValue();
         HashSet<FileFieldValue> fieldValueHashSet = new HashSet<>()
         String fileContent = new File(filePath).getText("Windows-1252")
-        println(fileContent)
+
         def root = new XmlSlurper().parseText(fileContent)
         String domainModelName = root.@name.text()
         this.domainList = new ArrayList<>()

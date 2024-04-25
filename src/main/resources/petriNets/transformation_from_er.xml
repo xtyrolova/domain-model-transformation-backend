@@ -282,7 +282,6 @@
 							def createdCase = createCase(chosenNet)
 
 							change generated_taskRef value { [createdCase.tasks.find { it.transition == "generic_transition" }?.task] }
-							fun(createdCase)
 							change process_title value { new com.netgrif.application.engine.petrinet.domain.I18nString(createdCase.petriNet.title) }
 
 							make process_title, visible on trans when { true }

@@ -1,11 +1,9 @@
 package org.example.starter.service
 
 import com.netgrif.application.engine.petrinet.domain.dataset.FileFieldValue
-import com.netgrif.application.engine.petrinet.domain.dataset.FileListField
 import com.netgrif.application.engine.petrinet.domain.dataset.FileListFieldValue
 import domain.*
 import groovy.xml.MarkupBuilder
-import groovy.util.slurpersupport.GPathResult
 import org.example.starter.helper.DomainTransformHelper
 import org.springframework.stereotype.Service
 
@@ -156,26 +154,26 @@ class XmlGenerator {
 
                 connectorList.each { connector ->
                     if (connector.getStartObjectId() == objectId && connector.getType() != 'Aggregation') {
-                        data(type: 'caseRef') {
+                        data(type: "caseRef") {
                             id "${DomainTransformHelper.resolveRelationName(connector.destinationMultiplicity, "caseRef", domainList, connector.endObjectId)}"
                             title ""
                             allowedNets {
                                 allowedNet "${DomainTransformHelper.resolveDomainName(connector.getEndObjectId(), domainList)}"
                             }
                         }
-                        data(type: 'taskRef') {
+                        data(type: "taskRef") {
                             id "${DomainTransformHelper.resolveRelationName(connector.destinationMultiplicity, "taskRef", domainList, connector.endObjectId)}"
                             title ""
                         }
                     } else if (connector.getEndObjectId() == objectId && connector.getType() != 'Aggregation') {
-                        data(type: 'caseRef') {
+                        data(type: "caseRef") {
                             id "${DomainTransformHelper.resolveRelationName(connector.sourceMultiplicity, "caseRef", domainList, connector.startObjectId)}"
                             title ""
                             allowedNets {
                                 allowedNet "${DomainTransformHelper.resolveDomainName(connector.getStartObjectId(), domainList)}"
                             }
                         }
-                        data(type: 'taskRef') {
+                        data(type: "taskRef") {
                             id "${DomainTransformHelper.resolveRelationName(connector.sourceMultiplicity, "taskRef", domainList, connector.startObjectId)}"
                             title ""
                         }

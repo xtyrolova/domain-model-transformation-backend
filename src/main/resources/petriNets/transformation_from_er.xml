@@ -42,9 +42,12 @@
 		<id>generated_taskRef</id>
 		<title/>
 	</data>
-	<data type="multichoice_map">
+	<data type="enumeration_map">
 		<id>processes_map</id>
 		<title>Procesy</title>
+		<options>
+			<option key="zabitema">zabite ma</option>
+		</options>
 	</data>
 	<data type="button">
 		<id>button_create_process</id>
@@ -60,6 +63,15 @@
 		<y>140</y>
 		<label>Import/Export</label>
 		<assignPolicy>auto</assignPolicy>
+		<roleRef>
+			<id>default</id>
+			<logic>
+				<perform>true</perform>
+				<assign>true</assign>
+				<delegate>false</delegate>
+				<cancel>false</cancel>
+			</logic>
+		</roleRef>
 		<dataGroup>
 			<id>import_export_trans_0</id>
 			<cols>4</cols>
@@ -125,7 +137,8 @@
 						<action>
 							trans: t.this,
 							download_files: f.download_files,
-							import_files: f.import_files;
+							import_files: f.import_files,
+							processes_map: f.processes_map;
 
 							def transformedFiles = domainTransformService.transformFiles(import_files)
 
@@ -142,9 +155,21 @@
 		<event type="finish">
 			<id>import_export_trans_finish</id>
 			<title>Ďalej</title>
-			<actions phase="post">
+			<actions phase="pre">
 				<action>
-					<!-- TODO naplnit enumeraciu v dalsom transitione -->
+					download_files: f.download_files,
+					processes_map: f.processes_map;
+
+					def processes = download_files.value
+					def processMap = [:]
+
+					processes.namesPaths.each {
+						def name = it.name.replace(".xml", "")
+						processMap.put(name.toString(), name.toString())
+					}
+
+					change processes_map value { "" }
+					change processes_map options { processMap }
 				</action>
 			</actions>
 		</event>
@@ -163,6 +188,15 @@
 		<y>260</y>
 		<label>Generovaný proces</label>
 		<assignPolicy>auto</assignPolicy>
+		<roleRef>
+			<id>default</id>
+			<logic>
+				<perform>true</perform>
+				<assign>true</assign>
+				<delegate>false</delegate>
+				<cancel>false</cancel>
+			</logic>
+		</roleRef>
 		<dataGroup>
 			<id>generated_process_trans_0</id>
 			<cols>4</cols>
@@ -226,7 +260,33 @@
 					<id>button_create_process_set</id>
 					<actions phase="post">
 						<action>
-							<!-- TODO: z enumeracie vybrat proces a setnut title aj taskref (vzdy aj vynulovat taskref) -->
+							trans: t.this,
+							download_files: f.download_files,
+							process_title: f.process_title,
+							generated_taskRef: f.generated_taskRef,
+							processes_map: f.processes_map;
+
+							def chosenNet = processes_map.value
+							def filePath = ""
+							def files = download_files.value.namesPaths
+
+							files.each {
+								if (it.path.toString().contains(chosenNet)) {
+									filePath = it.path.toString()
+								}
+							}
+
+							java.io.InputStream fileStream = new java.io.FileInputStream(filePath)
+							petriNetService.importPetriNet(fileStream, com.netgrif.application.engine.petrinet.domain.VersionType.MAJOR, userService.loggedUserFromContext)
+
+							def createdCase = createCase(chosenNet)
+
+							change generated_taskRef value { [createdCase.tasks.find { it.transition == "generic_transition" }?.task] }
+							fun(createdCase)
+							change process_title value { new com.netgrif.application.engine.petrinet.domain.I18nString(createdCase.petriNet.title) }
+
+							make process_title, visible on trans when { true }
+							make generated_taskRef, editable on trans when { true }
 						</action>
 					</actions>
 				</event>
@@ -234,15 +294,19 @@
 		</dataGroup>
 		<event type="assign">
 			<id>generated_process_trans_assign</id>
+			<title/>
 		</event>
 		<event type="finish">
 			<id>generated_process_trans_finish</id>
+			<title>Import ďalších modelov</title>
 		</event>
 		<event type="cancel">
 			<id>generated_process_trans_cancel</id>
+			<title/>
 		</event>
 		<event type="delegate">
 			<id>generated_process_trans_delegate</id>
+			<title/>
 		</event>
 	</transition>
 	<place>

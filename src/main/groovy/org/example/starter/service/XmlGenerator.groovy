@@ -1,10 +1,20 @@
 package org.example.starter.service
 
+import com.netgrif.application.engine.auth.service.interfaces.IUserService
+import com.netgrif.application.engine.elastic.service.interfaces.IElasticCaseService
+import com.netgrif.application.engine.petrinet.domain.I18nString
 import com.netgrif.application.engine.petrinet.domain.dataset.FileFieldValue
 import com.netgrif.application.engine.petrinet.domain.dataset.FileListFieldValue
+import com.netgrif.application.engine.petrinet.service.PetriNetService
+import com.netgrif.application.engine.petrinet.service.interfaces.IPetriNetAuthorizationService
+import com.netgrif.application.engine.workflow.domain.Case
+import com.netgrif.application.engine.workflow.service.interfaces.IDataService
+import com.netgrif.application.engine.workflow.service.interfaces.IWorkflowService
 import domain.*
 import groovy.xml.MarkupBuilder
 import org.example.starter.helper.DomainTransformHelper
+import org.example.starter.startup.NetRunner
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 
 import java.nio.file.Path
@@ -27,6 +37,12 @@ class XmlGenerator {
     private List<Connector> connectorList
     private List<Attribute> attributeList
     private List<Attribute> enumerationList
+
+    @Autowired
+    IWorkflowService workflowService
+
+    @Autowired
+    IUserService userService
 
     FileListFieldValue createXml(String filePath) {
         FileListFieldValue transformedFiles = new FileListFieldValue();
@@ -215,6 +231,43 @@ class XmlGenerator {
                             }
                             counter++
                         }
+                        connectorList.each { connector ->
+                            if (connector.getStartObjectId() == objectId && connector.getType() != 'Aggregation') {
+
+                                dataRef {
+                                    id "${DomainTransformHelper.resolveRelationName(connector.destinationMultiplicity, "taskRef", domainList, connector.endObjectId)}"
+                                    logic {
+                                        behavior 'visible'
+                                    }
+                                    layout {
+                                        x '0'
+                                        y "${counter}"
+                                        rows '1'
+                                        cols N_OF_COLS
+                                        template TEMPLATE
+                                        appearance APPEARANCE
+                                    }
+                                }
+                                counter++
+                            } else if (connector.getEndObjectId() == objectId && connector.getType() != 'Aggregation') {
+
+                                dataRef {
+                                    id "${DomainTransformHelper.resolveRelationName(connector.sourceMultiplicity, "taskRef", domainList, connector.startObjectId)}"
+                                    logic {
+                                        behavior 'visible'
+                                    }
+                                    layout {
+                                        x '0'
+                                        y "${counter}"
+                                        rows '1'
+                                        cols N_OF_COLS
+                                        template TEMPLATE
+                                        appearance APPEARANCE
+                                    }
+                                }
+                                counter++
+                            }
+                        }
                     }
                 }
             }
@@ -225,6 +278,34 @@ class XmlGenerator {
 
             fieldValueHashSet.add(new FileFieldValue(createdFile.name, createdFile.absolutePath))
         }
+        Case domainCase = workflowService.createCaseByIdentifier(
+                NetRunner.PetriNetEnum.DOMAIN.identifier,
+                domainModelName,
+                "",
+                userService.getSystem().transformToLoggedUser()
+        ).case
+
+        def entities = domainList.collect{it.name}
+        def entityOptions = [:]
+
+
+        entities.each {
+            Case entityCase = workflowService.createCaseByIdentifier(
+                    NetRunner.PetriNetEnum.ENTITY.identifier,
+                    domainModelName,
+                    "",
+                    userService.getSystem().transformToLoggedUser()
+            ).case
+            entityCase.getDataField("entity_name").setValue(DomainTransformHelper.convertToId(it))
+            entityOptions.put(entityCase.stringId, it)
+            workflowService.save(entityCase)
+        }
+
+        domainCase.getDataField("domain_name").setValue(domainModelName)
+        domainCase.getDataField("entities").setOptions(entityOptions)
+
+        workflowService.save(domainCase)
+
         transformedFiles.namesPaths = fieldValueHashSet
         return transformedFiles
     }

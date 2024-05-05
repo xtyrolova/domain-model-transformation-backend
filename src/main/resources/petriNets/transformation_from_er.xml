@@ -262,31 +262,15 @@
 					<actions phase="post">
 						<action>
 							trans: t.this,
-							download_files: f.download_files,
 							process_title: f.process_title,
 							generated_taskRef: f.generated_taskRef,
 							processes_map: f.processes_map;
 
 							def chosenNet = processes_map.value
-							def filePath = ""
-							def files = download_files.value.namesPaths
 
 							if (chosenNet == null || chosenNet == "") {
-								throw new IllegalArgumentException("Nebol zvolený žiaden proces")
+								throw new IllegalArgumentException("Nebol zvolený proces")
 							}
-
-							files.each {
-								if (it.path.toString().contains(chosenNet)) {
-									filePath = it.path.toString()
-								}
-							}
-
-							if (filePath == null || filePath == "") {
-								throw new IllegalArgumentException("Cesta k zvolenému súboru neexistuje")
-							}
-
-							java.io.InputStream fileStream = new java.io.FileInputStream(filePath)
-							petriNetService.importPetriNet(fileStream, com.netgrif.application.engine.petrinet.domain.VersionType.MAJOR, userService.loggedUserFromContext)
 
 							def createdCase = createCase(chosenNet)
 

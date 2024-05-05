@@ -1,0 +1,38 @@
+<document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://petriflow.com/petriflow.schema.xsd">
+    <id>domain</id>
+    <initials>DMN</initials>
+    <title>Doména</title>
+    <icon>device_hub</icon>
+    <defaultRole>true</defaultRole>
+    <anonymousRole>true</anonymousRole>
+    <transitionRole>false</transitionRole>
+    <caseName>Doména</caseName>
+    <data type="text">
+        <id>domain_name</id>
+        <title>Doména</title>
+    </data>
+    <data type="enumeration_map">
+        <id>entities</id>
+        <title>Entity</title>
+    </data>
+    <transition>
+        <id>t1</id>
+        <x>300</x>
+        <y>180</y>
+        <label>Generic transition</label>
+        <assignPolicy>auto</assignPolicy>
+
+        <event type="assign">
+            <id>t1_assign</id>
+        </event>
+        <event type="finish">
+            <id>t1_finish</id>
+        </event>
+        <event type="cancel">
+            <id>t1_cancel</id>
+        </event>
+        <event type="delegate">
+            <id>t1_delegate</id>
+        </event>
+    </transition>
+</document>

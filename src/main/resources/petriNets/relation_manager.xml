@@ -1,0 +1,467 @@
+<document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://petriflow.com/petriflow.schema.xsd">
+	<id>relation_manager</id>
+	<initials>RMN</initials>
+	<title>Správa asociácií</title>
+	<icon>device_hub</icon>
+	<defaultRole>true</defaultRole>
+	<anonymousRole>true</anonymousRole>
+	<transitionRole>false</transitionRole>
+	<caseName>Správa asociácií</caseName>
+	<processEvents>
+		<event type="upload">
+			<id>upload_event</id>
+			<actions phase="post">
+				<action>
+					createCase("relation_manager")
+				</action>
+			</actions>
+		</event>
+	</processEvents>
+	<data type="enumeration_map">
+		<id>all_domain_models</id>
+		<title>Doménové modely</title>
+	</data>
+	<data type="enumeration_map">
+		<id>domain_model_nets</id>
+		<title>Entity doménového modelu</title>
+	</data>
+	<data type="enumeration_map">
+		<id>existing_cases_map</id>
+		<title>Existujúce prípady</title>
+	</data>
+	<data type="i18n">
+		<id>i18n_0</id>
+		<title/>
+	</data>
+	<data type="i18n">
+		<id>net_title</id>
+		<title/>
+	</data>
+	<data type="taskRef">
+		<id>chosen_net_form</id>
+		<title/>
+	</data>
+	<data type="button">
+		<id>button_add_case</id>
+		<title/>
+		<placeholder>Pridať nový prípad</placeholder>
+		<component>
+			<name>flat</name>
+			<properties>
+				<property key="stretch">true</property>
+			</properties>
+		</component>
+	</data>
+	<data type="taskRef">
+		<id>created_case_form</id>
+		<title/>
+	</data>
+	<data type="button">
+		<id>button_save</id>
+		<title/>
+		<placeholder>Uložiť</placeholder>
+		<component>
+			<name>flat</name>
+			<properties>
+				<property key="stretch">true</property>
+			</properties>
+		</component>
+	</data>
+	<data type="text">
+		<id>current_case</id>
+		<title/>
+	</data>
+	<data type="enumeration_map">
+		<id>all_entity_associations</id>
+		<title>Všetky entity v asociácii</title>
+	</data>
+	<data type="enumeration_map">
+		<id>association_cases</id>
+		<title>Existujúce prípady</title>
+	</data>
+	<data type="button">
+		<id>create_association</id>
+		<title/>
+		<placeholder>Vytvoriť asociáciu</placeholder>
+		<component>
+			<name>flat</name>
+			<properties>
+				<property key="stretch">true</property>
+			</properties>
+		</component>
+	</data>
+	<transition>
+		<id>t1</id>
+		<x>300</x>
+		<y>180</y>
+		<label>Správa asociácií</label>
+		<assignPolicy>auto</assignPolicy>
+		<dataGroup>
+			<id>t1_0</id>
+			<cols>4</cols>
+			<layout>grid</layout>
+			<dataRef>
+				<id>all_domain_models</id>
+				<logic>
+					<behavior>editable</behavior>
+				</logic>
+				<layout>
+					<x>0</x>
+					<y>0</y>
+					<rows>1</rows>
+					<cols>3</cols>
+					<template>material</template>
+					<appearance>outline</appearance>
+				</layout>
+				<event type="get">
+					<id>all_domain_models_get</id>
+					<actions phase="pre">
+						<action>
+							all_domain_models: f.all_domain_models;
+
+							def domainCases = findCases { it.processIdentifier.eq(org.example.starter.startup.NetRunner.PetriNetEnum.DOMAIN.identifier) }
+							def domainOptions = [:]
+
+							domainCases.each {
+								domainOptions.put(it.stringId, it.dataSet["domain_name"].value)
+							}
+							change all_domain_models options { domainOptions }
+						</action>
+					</actions>
+				</event>
+				<event type="set">
+					<id>all_domain_models_set</id>
+					<actions phase="post">
+						<action>
+							domain_model_nets: f.domain_model_nets,
+							all_domain_models: f.all_domain_models;
+
+							def domainCase = workflowService.findOne(all_domain_models.value)
+							def entities = domainCase.dataSet["entities"].options
+							change domain_model_nets options { entities }
+						</action>
+					</actions>
+				</event>
+			</dataRef>
+			<dataRef>
+				<id>domain_model_nets</id>
+				<logic>
+					<behavior>editable</behavior>
+				</logic>
+				<layout>
+					<x>0</x>
+					<y>1</y>
+					<rows>1</rows>
+					<cols>3</cols>
+					<template>material</template>
+					<appearance>outline</appearance>
+				</layout>
+				<event type="set">
+					<id>domain_model_nets_set</id>
+					<actions phase="post">
+						<action>
+							existing_cases_map: f.existing_cases_map,
+							domain_model_nets: f.domain_model_nets;
+
+							def entityCase = workflowService.findOne(domain_model_nets.value)
+							def entityIdentifier = entityCase.dataSet["entity_name"].value
+
+							def existingCases = findCases({it.processIdentifier.eq(entityIdentifier)})
+
+							def existingCasesOptions = [:]
+							existingCases.each {
+								existingCasesOptions.put(it.stringId, it.visualId)
+							}
+
+							change existing_cases_map options { existingCasesOptions }
+						</action>
+					</actions>
+				</event>
+			</dataRef>
+			<dataRef>
+				<id>existing_cases_map</id>
+				<logic>
+					<behavior>editable</behavior>
+				</logic>
+				<layout>
+					<x>0</x>
+					<y>2</y>
+					<rows>1</rows>
+					<cols>3</cols>
+					<template>material</template>
+					<appearance>outline</appearance>
+				</layout>
+				<event type="set">
+					<id>existing_cases_map_set</id>
+					<actions phase="post">
+						<action>
+							all_entity_associations: f.all_entity_associations,
+							net_title: f.net_title,
+							existing_cases_map: f.existing_cases_map,
+							chosen_net_form: f.chosen_net_form;
+
+							if (existing_cases_map.value != null) {
+								def chosenCase = workflowService.findOne(existing_cases_map.value)
+								def chosenTask = chosenCase.tasks.find { it.transition == "generic_transition" }.task
+
+								change chosen_net_form value { [chosenTask] }
+								change net_title value { new com.netgrif.application.engine.petrinet.domain.I18nString(chosenCase.petriNet.title) }
+
+								def caseFields = chosenCase.dataSet.keySet().findAll { key -> key.contains("id") }
+								def associations = [:]
+
+								caseFields.each {
+									def allowedNet = chosenCase.dataSet[it].allowedNets[0]
+									associations.put(allowedNet, allowedNet)
+								}
+								change all_entity_associations options { associations }
+							}
+						</action>
+					</actions>
+				</event>
+			</dataRef>
+			<dataRef>
+				<id>net_title</id>
+				<logic>
+					<behavior>visible</behavior>
+				</logic>
+				<layout>
+					<x>0</x>
+					<y>5</y>
+					<rows>1</rows>
+					<cols>4</cols>
+					<template>material</template>
+					<appearance>outline</appearance>
+				</layout>
+				<component>
+					<name>divider</name>
+				</component>
+			</dataRef>
+			<dataRef>
+				<id>chosen_net_form</id>
+				<logic>
+					<behavior>editable</behavior>
+				</logic>
+				<layout>
+					<x>0</x>
+					<y>6</y>
+					<rows>1</rows>
+					<cols>4</cols>
+					<template>material</template>
+					<appearance>outline</appearance>
+				</layout>
+			</dataRef>
+			<dataRef>
+				<id>button_add_case</id>
+				<logic>
+					<behavior>editable</behavior>
+				</logic>
+				<layout>
+					<x>3</x>
+					<y>2</y>
+					<rows>1</rows>
+					<cols>1</cols>
+					<template>material</template>
+					<appearance>outline</appearance>
+				</layout>
+				<event type="set">
+					<id>button_add_case_set</id>
+					<actions phase="post">
+						<action>
+							current_case: f.current_case,
+							created_case_form: f.created_case_form,
+							domain_model_nets: f.domain_model_nets;
+
+							if (domain_model_nets.value != null) {
+								def entityCase = workflowService.findOne(domain_model_nets.value)
+								def entityIdentifier = entityCase.dataSet["entity_name"].value
+
+								def newCase = createCase(entityIdentifier)
+								def chosenTask = newCase.tasks.find { it.transition == "generic_transition" }.task
+
+								change created_case_form value { [chosenTask] }
+								change current_case value { newCase.stringId }
+							}
+						</action>
+					</actions>
+				</event>
+			</dataRef>
+			<dataRef>
+				<id>created_case_form</id>
+				<logic>
+					<behavior>editable</behavior>
+				</logic>
+				<layout>
+					<x>0</x>
+					<y>3</y>
+					<rows>1</rows>
+					<cols>4</cols>
+					<template>material</template>
+					<appearance>outline</appearance>
+				</layout>
+			</dataRef>
+			<dataRef>
+				<id>button_save</id>
+				<logic>
+					<behavior>editable</behavior>
+				</logic>
+				<layout>
+					<x>3</x>
+					<y>4</y>
+					<rows>1</rows>
+					<cols>1</cols>
+					<template>material</template>
+					<appearance>outline</appearance>
+				</layout>
+				<event type="set">
+					<id>button_save_set</id>
+					<actions phase="post">
+						<action>
+							created_case_form: f.created_case_form,
+							existing_cases_map: f.existing_cases_map,
+							current_case: f.current_case;
+
+							def chosenCase = workflowService.findOne(current_case.value)
+							def mapOptions = existing_cases_map.options
+							mapOptions.put(chosenCase.stringId, chosenCase.visualId)
+							change existing_cases_map options { mapOptions }
+							change created_case_form value { [] }
+						</action>
+					</actions>
+				</event>
+			</dataRef>
+			<dataRef>
+				<id>all_entity_associations</id>
+				<logic>
+					<behavior>editable</behavior>
+				</logic>
+				<layout>
+					<x>0</x>
+					<y>7</y>
+					<rows>1</rows>
+					<cols>2</cols>
+					<template>material</template>
+					<appearance>outline</appearance>
+				</layout>
+				<event type="set">
+					<id>button_cancel_set</id>
+					<actions phase="post">
+						<action>
+							association_cases: f.association_cases,
+							all_entity_associations: f.all_entity_associations;
+
+							if (all_entity_associations.value != null) {
+								def existingCases = [:]
+
+								def foundCases = findCases({it.processIdentifier.eq(all_entity_associations.value)})
+
+								foundCases.each {
+									existingCases.put(it.stringId, it.visualId)
+								}
+
+								change association_cases options { existingCases }
+							}
+						</action>
+					</actions>
+				</event>
+			</dataRef>
+			<dataRef>
+				<id>association_cases</id>
+				<logic>
+					<behavior>editable</behavior>
+				</logic>
+				<layout>
+					<x>2</x>
+					<y>7</y>
+					<rows>1</rows>
+					<cols>2</cols>
+					<template>material</template>
+					<appearance>outline</appearance>
+				</layout>
+			</dataRef>
+			<dataRef>
+				<id>create_association</id>
+				<logic>
+					<behavior>editable</behavior>
+				</logic>
+				<layout>
+					<x>3</x>
+					<y>8</y>
+					<rows>1</rows>
+					<cols>1</cols>
+					<template>material</template>
+					<appearance>outline</appearance>
+				</layout>
+				<event type="set">
+					<id>button_cancel_set</id>
+					<actions phase="post">
+						<action>
+							all_entity_associations: f.all_entity_associations,
+							existing_cases_map: f.existing_cases_map,
+							chosen_net_form: f.chosen_net_form,
+							association_cases: f.association_cases;
+
+							def associatedCase = workflowService.findOne(association_cases.value)
+							def chosenCase = workflowService.findOne(existing_cases_map.value)
+
+							def identifierId = chosenCase.dataSet.keySet().findAll { key -> key.contains("_id") }
+							def identifierForm = chosenCase.dataSet.keySet().findAll { key -> key.contains("_form") }
+							fun()
+							identifierId.each {
+								setData("generic_transition", chosenCase, [
+									(it): [
+										"type": "caseRef",
+										"value": [associatedCase.stringId]
+									]
+								])
+							}
+							identifierForm.each {
+								setData("generic_transition", chosenCase, [
+									(it): [
+										"type": "taskRef",
+										"value": [associatedCase.tasks.find {it.transition == "generic_transition"}.task]
+									]
+								])
+							}
+
+							def entityName = workflowService.findOne(useCase.dataSet["domain_model_nets"].value).dataSet["entity_name"].value
+
+							identifierId = associatedCase.dataSet.keySet().findAll { key -> key.contains("_id") &amp;&amp; key.contains(entityName) }
+							identifierForm = associatedCase.dataSet.keySet().findAll { key -> key.contains("_form") &amp;&amp; key.contains(entityName) }
+
+							identifierId.each {
+								setData("generic_transition", associatedCase, [
+									(it): [
+										"type": "caseRef",
+										"value": [chosenCase.stringId]
+									]
+								])
+							}
+							identifierForm.each {
+								setData("generic_transition", associatedCase, [
+									(it): [
+										"type": "taskRef",
+										"value": [chosenCase.tasks.find {it.transition == "generic_transition"}?.task]
+									]
+								])
+							}
+							fun()
+						</action>
+					</actions>
+				</event>
+			</dataRef>
+		</dataGroup>
+		<event type="assign">
+			<id>t1_assign</id>
+		</event>
+		<event type="finish">
+			<id>t1_finish</id>
+		</event>
+		<event type="cancel">
+			<id>t1_cancel</id>
+		</event>
+		<event type="delegate">
+			<id>t1_delegate</id>
+		</event>
+	</transition>
+</document>

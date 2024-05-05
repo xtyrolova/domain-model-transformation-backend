@@ -36,6 +36,9 @@ class NetRunner extends AbstractOrderedCommandLineRunner {
 
     enum PetriNetEnum {
         TRANSFORMER("/transformation_from_er.xml", "transformation_from_er"),
+        MANAGER("/relation_manager.xml", "relation_manager"),
+        DOMAIN("/domain.xml", "domain"),
+        ENTITY("/entity.xml", "entity"),
 
 
         public final String file

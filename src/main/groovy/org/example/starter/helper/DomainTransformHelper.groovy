@@ -27,12 +27,11 @@ class DomainTransformHelper {
     }
 
     static String convertToId(String name) {
-        Normalizer.normalize(name, Normalizer.Form.NFD)
+        return Normalizer.normalize(name, Normalizer.Form.NFD)
                 .replaceAll("\\p{InCombiningDiacriticalMarks}+", "")
                 .toLowerCase()
-                .replaceAll(" ", "_")
+                .replaceAll("[^\\p{Alnum}]+", "_")
     }
-
 
     static String resolveRelationName(boolean destinationMultiplicity, String dataType, List<Domain> domainModels, String endObjectId) {
         String endString = resolveRelationType(destinationMultiplicity, dataType)

@@ -30,7 +30,14 @@ class DomainTransformService {
     FileListFieldValue transformFiles(FileListField filesToImport) {
         String filePath = filesToImport.value.namesPaths.path[0].toString()
 
+        long startTime = System.currentTimeMillis()
+
         FileListFieldValue files = xmlGenerator.createXml(filePath)
+
+        long endTime = System.currentTimeMillis()
+
+        long duration = endTime - startTime
+        println "Execution time of createXml: ${duration} ms"
 
         files.namesPaths.each {
             String importedFilePath = it.path.toString()

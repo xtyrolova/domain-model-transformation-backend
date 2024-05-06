@@ -133,12 +133,18 @@
 					<id>all_domain_models_set</id>
 					<actions phase="post">
 						<action>
+							trans: t.this,
 							domain_model_nets: f.domain_model_nets,
 							all_domain_models: f.all_domain_models;
 
-							def domainCase = workflowService.findOne(all_domain_models.value)
-							def entities = domainCase.dataSet["entities"].options
-							change domain_model_nets options { entities }
+							if (all_domain_models.value != null) {
+								def domainCase = workflowService.findOne(all_domain_models.value)
+								def entities = domainCase.dataSet["entities"].options
+								change domain_model_nets options { entities }
+								make domain_model_nets, editable on trans when { true }
+							} else {
+								make domain_model_nets, hidden on trans when { true }
+							}
 						</action>
 					</actions>
 				</event>
@@ -146,7 +152,7 @@
 			<dataRef>
 				<id>domain_model_nets</id>
 				<logic>
-					<behavior>editable</behavior>
+					<behavior>hidden</behavior>
 				</logic>
 				<layout>
 					<x>0</x>
@@ -160,20 +166,27 @@
 					<id>domain_model_nets_set</id>
 					<actions phase="post">
 						<action>
+							trans: t.this,
+							button_add_case: f.button_add_case,
 							existing_cases_map: f.existing_cases_map,
 							domain_model_nets: f.domain_model_nets;
 
-							def entityCase = workflowService.findOne(domain_model_nets.value)
-							def entityIdentifier = entityCase.dataSet["entity_name"].value
+							if (domain_model_nets.value != null) {
+								def entityCase = workflowService.findOne(domain_model_nets.value)
+								def entityIdentifier = entityCase.dataSet["entity_name"].value
 
-							def existingCases = findCases({it.processIdentifier.eq(entityIdentifier)})
+								def existingCases = findCases({it.processIdentifier.eq(entityIdentifier)})
 
-							def existingCasesOptions = [:]
-							existingCases.each {
-								existingCasesOptions.put(it.stringId, it.visualId)
+								def existingCasesOptions = [:]
+								existingCases.each {
+									existingCasesOptions.put(it.stringId, it.visualId)
+								}
+
+								change existing_cases_map options { existingCasesOptions }
+								make [existing_cases_map, button_add_case], editable on trans when { true }
+							} else {
+								make [existing_cases_map, button_add_case], hidden on trans when { true }
 							}
-
-							change existing_cases_map options { existingCasesOptions }
 						</action>
 					</actions>
 				</event>
@@ -181,7 +194,7 @@
 			<dataRef>
 				<id>existing_cases_map</id>
 				<logic>
-					<behavior>editable</behavior>
+					<behavior>hidden</behavior>
 				</logic>
 				<layout>
 					<x>0</x>
@@ -195,6 +208,9 @@
 					<id>existing_cases_map_set</id>
 					<actions phase="post">
 						<action>
+							trans: t.this,
+							create_association: f.create_association,
+							association_cases: f.association_cases,
 							all_entity_associations: f.all_entity_associations,
 							net_title: f.net_title,
 							existing_cases_map: f.existing_cases_map,
@@ -215,6 +231,10 @@
 									associations.put(allowedNet, allowedNet)
 								}
 								change all_entity_associations options { associations }
+								make [chosen_net_form, all_entity_associations, association_cases, create_association], editable on trans when { true }
+								make net_title, visible on trans when { true }
+							} else {
+								make [net_title, chosen_net_form, all_entity_associations, association_cases, create_association], hidden on trans when { true }
 							}
 						</action>
 					</actions>
@@ -223,7 +243,7 @@
 			<dataRef>
 				<id>net_title</id>
 				<logic>
-					<behavior>visible</behavior>
+					<behavior>hidden</behavior>
 				</logic>
 				<layout>
 					<x>0</x>
@@ -254,7 +274,7 @@
 			<dataRef>
 				<id>button_add_case</id>
 				<logic>
-					<behavior>editable</behavior>
+					<behavior>hidden</behavior>
 				</logic>
 				<layout>
 					<x>3</x>
@@ -268,6 +288,8 @@
 					<id>button_add_case_set</id>
 					<actions phase="post">
 						<action>
+							trans: t.this,
+							button_save: f.button_save,
 							current_case: f.current_case,
 							created_case_form: f.created_case_form,
 							domain_model_nets: f.domain_model_nets;
@@ -281,6 +303,9 @@
 
 								change created_case_form value { [chosenTask] }
 								change current_case value { newCase.stringId }
+								make button_save, editable on trans when { true }
+							} else {
+								make button_save, hidden on trans when { true }
 							}
 						</action>
 					</actions>
@@ -303,7 +328,7 @@
 			<dataRef>
 				<id>button_save</id>
 				<logic>
-					<behavior>editable</behavior>
+					<behavior>hidden</behavior>
 				</logic>
 				<layout>
 					<x>3</x>
@@ -317,6 +342,8 @@
 					<id>button_save_set</id>
 					<actions phase="post">
 						<action>
+							trans: t.this,
+							button_save: f.button_save,
 							created_case_form: f.created_case_form,
 							existing_cases_map: f.existing_cases_map,
 							current_case: f.current_case;
@@ -326,6 +353,7 @@
 							mapOptions.put(chosenCase.stringId, chosenCase.visualId)
 							change existing_cases_map options { mapOptions }
 							change created_case_form value { [] }
+							make button_save, hidden on trans when { true }
 						</action>
 					</actions>
 				</event>
@@ -333,7 +361,7 @@
 			<dataRef>
 				<id>all_entity_associations</id>
 				<logic>
-					<behavior>editable</behavior>
+					<behavior>hidden</behavior>
 				</logic>
 				<layout>
 					<x>0</x>
@@ -344,7 +372,7 @@
 					<appearance>outline</appearance>
 				</layout>
 				<event type="set">
-					<id>button_cancel_set</id>
+					<id>all_entity_associations_set</id>
 					<actions phase="post">
 						<action>
 							association_cases: f.association_cases,
@@ -368,7 +396,7 @@
 			<dataRef>
 				<id>association_cases</id>
 				<logic>
-					<behavior>editable</behavior>
+					<behavior>hidden</behavior>
 				</logic>
 				<layout>
 					<x>2</x>
@@ -382,7 +410,7 @@
 			<dataRef>
 				<id>create_association</id>
 				<logic>
-					<behavior>editable</behavior>
+					<behavior>hidden</behavior>
 				</logic>
 				<layout>
 					<x>3</x>
@@ -393,7 +421,7 @@
 					<appearance>outline</appearance>
 				</layout>
 				<event type="set">
-					<id>button_cancel_set</id>
+					<id>create_association_set</id>
 					<actions phase="post">
 						<action>
 							all_entity_associations: f.all_entity_associations,
@@ -406,7 +434,7 @@
 
 							def identifierId = chosenCase.dataSet.keySet().findAll { key -> key.contains("_id") }
 							def identifierForm = chosenCase.dataSet.keySet().findAll { key -> key.contains("_form") }
-							fun()
+
 							identifierId.each {
 								setData("generic_transition", chosenCase, [
 									(it): [
@@ -445,7 +473,6 @@
 									]
 								])
 							}
-							fun()
 						</action>
 					</actions>
 				</event>

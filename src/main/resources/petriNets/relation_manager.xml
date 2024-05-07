@@ -223,7 +223,7 @@
 								change chosen_net_form value { [chosenTask] }
 								change net_title value { new com.netgrif.application.engine.petrinet.domain.I18nString(chosenCase.petriNet.title) }
 
-								def caseFields = chosenCase.dataSet.keySet().findAll { key -> key.contains("id") }
+								def caseFields = chosenCase.dataSet.keySet().findAll { key -> key.contains("_id") }
 								def associations = [:]
 
 								caseFields.each {

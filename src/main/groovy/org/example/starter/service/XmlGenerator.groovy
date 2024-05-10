@@ -1,14 +1,9 @@
 package org.example.starter.service
 
 import com.netgrif.application.engine.auth.service.interfaces.IUserService
-import com.netgrif.application.engine.elastic.service.interfaces.IElasticCaseService
-import com.netgrif.application.engine.petrinet.domain.I18nString
 import com.netgrif.application.engine.petrinet.domain.dataset.FileFieldValue
 import com.netgrif.application.engine.petrinet.domain.dataset.FileListFieldValue
-import com.netgrif.application.engine.petrinet.service.PetriNetService
-import com.netgrif.application.engine.petrinet.service.interfaces.IPetriNetAuthorizationService
 import com.netgrif.application.engine.workflow.domain.Case
-import com.netgrif.application.engine.workflow.service.interfaces.IDataService
 import com.netgrif.application.engine.workflow.service.interfaces.IWorkflowService
 import domain.*
 import groovy.xml.MarkupBuilder
@@ -44,6 +39,11 @@ class XmlGenerator {
     @Autowired
     IUserService userService
 
+    /**
+     * Method transformes input domain model file to Petriflow process file.
+     * @param filePath of the input file
+     * @return transformed process files in FileListFieldValue type
+     */
     FileListFieldValue createXml(String filePath) {
         FileListFieldValue transformedFiles = new FileListFieldValue();
         HashSet<FileFieldValue> fieldValueHashSet = new HashSet<>()

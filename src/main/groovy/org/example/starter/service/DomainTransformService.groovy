@@ -9,9 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import com.netgrif.application.engine.petrinet.domain.VersionType
 
-import java.io.FileInputStream
-import java.io.InputStream
-
 @Service
 class DomainTransformService {
 
@@ -27,6 +24,11 @@ class DomainTransformService {
     @Autowired
     XmlGenerator xmlGenerator
 
+    /**
+     * Method reads the input file path, call xmlGenerator method and measure execution time of the transformation.
+     * @param filesToImport
+     * @return transformed files for user to download
+     */
     FileListFieldValue transformFiles(FileListField filesToImport) {
         String filePath = filesToImport.value.namesPaths.path[0].toString()
 

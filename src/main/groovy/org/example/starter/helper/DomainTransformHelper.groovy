@@ -14,6 +14,8 @@ class DomainTransformHelper {
                 return "dateTime"
             case "Enumeration":
                 return "enumeration_map"
+            case "int":
+                return "number"
             default:
                 return "text"
         }

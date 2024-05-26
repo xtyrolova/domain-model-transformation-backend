@@ -12,8 +12,4 @@ class CustomActionDelegate extends ActionDelegate {
 
     @Autowired
     private DomainTransformService domainTransformService
-
-    def fun() {
-        println("cusik")
-    }
 }
